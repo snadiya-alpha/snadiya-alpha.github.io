@@ -12,7 +12,7 @@ FEATURED = {'silentwhale.html'}
 MANUAL = {'jjp.html': ("Jessica & Judy's Peril", 0, 0), 'animation.html': ("Sperm Whale: Animation", 0, 16)}
 CATS = [
     ("Boundborne", ["boundborne.html","pack01.html","pack00.html","gag.html","jjp.html"]),
-    ("Federal Bureau of Fetish Control", ["corridor.html","fbfc-comic.html","fbfc-art.html"]),
+    ("Federal Bureau of Fetish Control", ["corridor.html","fbfc-comic.html","fbfc-art.html","fbfc-files.html"]),
     ("Video Game Inspired", ["boundborne.html","corridor.html","disgust.html","fallgirls.html"]),
     ("DC", ["dc1.html","dc2.html","harleyraven.html"]),
     ("Peril", ["bulletgirl.html","perilvore.html","jjp.html"]),
