@@ -88,10 +88,9 @@ for name, files in AUTO:
     secs.append(section(name, files))
 
 allf = sorted(items, key=lambda f: items[f][0].lower())
-aisl = ('      <a class="card" href="aislinne.html">\n'
-        '        <span class="cardtext"><span class="name">Aislinne</span>'
-        '<span class="meta">script</span></span>\n      </a>')
-secs.append('    <h2>All</h2>\n    <div class="grid">\n' + aisl + "\n" +
+# No Aislinne card: the user asked for it not to be copied, so the file is not
+# in the repo and a hardcoded card here just 404s.
+secs.append('    <h2>All</h2>\n    <div class="grid">\n' +
             "\n".join(card(f) for f in allf) + '\n    </div>')
 
 CARDCSS = ('/*cards*/'
@@ -114,7 +113,7 @@ else:
     new = re.sub(r'\.card\{display:flex;flex-direction:column;gap:0.*?\.cardtext\{[^}]*\}', '', new, flags=re.S)
     new = new.replace('</style>', '  ' + CARDCSS + '\n</style>', 1)
 io.open(OUT, 'w', encoding='utf-8', newline='\n').write(new)
-print("  " + str(len(items) + 1) + " works, " + str(len(secs)) + " sections -> " + OUT)
+print("  " + str(len(items)) + " works, " + str(len(secs)) + " sections -> " + OUT)
 for n, fs in CATS:
     got = [f for f in fs if f in items]
     if got:
