@@ -4,17 +4,15 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
 <title>Project T White</title>
-<meta name="author" content="Snadiya">
-<meta name="source" content="https://drive.google.com/drive/folders/1lGsmq3lSWKATX1Si9_6LMI7uiLwI1PHh">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Project T White">
-<meta property="og:image" content="https://snade-comics-b-1.neocities.org/ptw/c1_001.jpg">
+<meta property="og:image" content="ptw/c1_001.jpg">
 <meta property="og:image:width" content="1300">
 <meta property="og:image:height" content="1920">
 <meta property="og:url" content="https://directrixphantom.github.io/comic-reader/ptw.html">
 <meta property="og:site_name" content="Snadiya">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://snade-comics-b-1.neocities.org/ptw/c1_001.jpg">
+<meta name="author" content="Snadiya">
+<meta name="source" content="https://drive.google.com/drive/folders/1lGsmq3lSWKATX1Si9_6LMI7uiLwI1PHh">
 
 
 <!-- =====================================================================
@@ -130,14 +128,6 @@
   @keyframes spin{to{transform:rotate(360deg)}}
   #stage{position:absolute;inset:0;display:flex;align-items:safe center;justify-content:safe center;padding:14px;overflow:auto;overscroll-behavior:contain}
   #titleBtn b,.card .big,.endwrap h2,#peekChap{font-family:var(--font-head);font-weight:600}
-  @keyframes slideR{from{transform:translateX(90px)}to{transform:none}}
-  @keyframes slideL{from{transform:translateX(-90px)}to{transform:none}}
-  @keyframes slideD{from{transform:translateY(90px)}to{transform:none}}
-  @keyframes slideU{from{transform:translateY(-90px)}to{transform:none}}
-  #stage img.slide-right{animation:slideR .34s cubic-bezier(.2,.8,.3,1)}
-  #stage img.slide-left{animation:slideL .34s cubic-bezier(.2,.8,.3,1)}
-  #stage img.slide-down{animation:slideD .34s cubic-bezier(.2,.8,.3,1)}
-  #stage img.slide-up{animation:slideU .34s cubic-bezier(.2,.8,.3,1)}
   @media (prefers-reduced-motion: reduce){ #stage img{animation:none !important} }
   #stage img{opacity:1;display:block;max-width:min(100%,var(--measure));max-height:100%;width:auto;height:auto;transform-origin:center center}
   .edge{position:absolute;left:50%;transform:translateX(-50%);z-index:20;width:34px;height:22px;
@@ -179,6 +169,17 @@
 
   #botnav{flex:none;min-height:var(--nav-h);display:flex;align-items:center;gap:8px;padding:0 8px;
     background:var(--surface);border-top:1px solid var(--sep);position:relative}
+  .pop .chapitem{position:relative;isolation:isolate}
+  .pop .chapitem::before{content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
+    background-image:var(--pv);background-size:cover;background-position:center 22%;
+    opacity:0;transition:opacity .18s ease;pointer-events:none}
+  .pop .chapitem.haspv:hover::before,.pop .chapitem.haspv:focus-visible::before{opacity:.22}
+  #dpad{display:none;grid-template-areas:". u ." "l d r";grid-auto-rows:19px;column-gap:1px;flex:0 0 auto;margin:0 2px}
+  #dpad.on{display:grid}
+  .dbtn{width:24px;height:19px;display:flex;align-items:center;justify-content:center;border:0;background:none;padding:0;color:var(--text-2);opacity:.25;cursor:default}
+  .dbtn.live{opacity:1;color:var(--tint);cursor:pointer}
+  .dbtn .ico{width:15px;height:15px}
+  #dUp{grid-area:u} #dLeft{grid-area:l} #dDown{grid-area:d} #dRight{grid-area:r}
   #scrubZone{flex:1;min-width:0;position:relative;height:44px;display:flex;align-items:center;cursor:pointer;touch-action:none;padding:0 8px}
   #track{position:relative;width:100%;height:6px;background:var(--plum);transition:height .16s cubic-bezier(.2,.8,.3,1)}
   #scrubZone.live #track{height:16px}
@@ -319,6 +320,12 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
       <button class="sizebtn" id="zOut" aria-label="Zoom out"><span class="ico" data-i="minus"></span></button>
       <button class="sizebtn" id="zIn" aria-label="Zoom in"><span class="ico" data-i="plus"></span></button>
     </div>
+    <div id="dpad" role="group" aria-label="Grid navigation">
+      <button class="dbtn" id="dUp" aria-label="Up"><span class="ico" data-i="chev-up"></span></button>
+      <button class="dbtn" id="dLeft" aria-label="Left"><span class="ico" data-i="chev-left"></span></button>
+      <button class="dbtn" id="dDown" aria-label="Down"><span class="ico" data-i="chev-down"></span></button>
+      <button class="dbtn" id="dRight" aria-label="Right"><span class="ico" data-i="chev-right"></span></button>
+    </div>
     <span id="countTxt"></span>
     <button class="btn filled" id="nextBtn"><span class="lab">Next</span><span class="ico" data-i="nav-arrow-right"></span></button>
   </div>
@@ -336,6 +343,7 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
 
   var ICONS = {
   "chev-up": "<path d=\"M6 15L12 9L18 15\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
+  "chev-left": "<path d=\"M15 6L9 12L15 18\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
   "chev-down": "<path d=\"M6 9L12 15L18 9\" stroke=\"currentColor\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/>",
   "plus": "<path d=\"M12 5V19\" stroke=\"currentColor\" stroke-linecap=\"round\"/><path d=\"M5 12H19\" stroke=\"currentColor\" stroke-linecap=\"round\"/>",
   "minus": "<path d=\"M5 12H19\" stroke=\"currentColor\" stroke-linecap=\"round\"/>",
@@ -468,6 +476,7 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
       CHAPTERS.forEach(function(ch){
         var b=document.createElement("button");b.className="btn chapitem";b.type="button";
         b.innerHTML='<span>'+ch.title+'</span><span class="rng">'+(ch.from+1)+'–'+(ch.to+1)+'</span>';
+        b.addEventListener("pointerenter",function(){ armPreview(b,ch); });
         b.addEventListener("click",function(){ go(ch.from);closeAllPops();toast(ch.title); });
         m.appendChild(b);ch.menuEl=b;
       });
@@ -481,6 +490,14 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
         m.appendChild(b);
       });
     }
+  }
+  function armPreview(b,ch){
+    if(b.dataset.pv){ return; }
+    b.dataset.pv="1";
+    var p=PAGES[ch.from]; if(!p){ return; }
+    var pre=new Image();
+    pre.onload=function(){ b.style.setProperty("--pv","url("+JSON.stringify(pre.src)+")"); b.classList.add("haspv"); };
+    pre.src=p.src;
   }
   function buildThumbs(){
     var g=document.getElementById("thumbGrid");g.textContent="";thumbs=[];
@@ -548,10 +565,8 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
     if(!fit){ im.style.maxHeight="none";im.style.width="100%"; }
         function swap(){
       if(page!==want||onCard){ return; }
-      im.classList.add("slide-"+(navDir||"right"));
       stage.textContent=""; stage.appendChild(im); stage.scrollTop=0;
       stage.classList.remove("loading");
-      navDir="right";
       measureFit(im); applyZoom(); syncZoomCursor(); syncEdges();
     }
     var swapped=false;
@@ -606,6 +621,10 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
       if(page>0){ go(page-1); } else { toast("You're at the start"); }
     }
   }
+  document.getElementById("dUp").addEventListener("click",function(){gridVertical(-1);});
+  document.getElementById("dDown").addEventListener("click",function(){gridVertical(1);});
+  document.getElementById("dLeft").addEventListener("click",function(){if(!gridHorizontal(-1)){step(-1);}});
+  document.getElementById("dRight").addEventListener("click",function(){if(!gridHorizontal(1)){step(1);}});
   document.getElementById("prevBtn").addEventListener("click",function(){step(-1);});
   document.getElementById("nextBtn").addEventListener("click",function(){step(1);});
 
@@ -840,14 +859,28 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
   }
   function gridVertical(d){
     var g=gridInfo();
-    if(g){ return gridJump(d*(g.c.grid.swap?1:g.cols)); }
+    if(g&&gridJump(d*(g.c.grid.swap?1:g.cols))){ return true; }
     if(mode!=="pages"||onCard||!MULTI){ return false; }
     var ci=PAGES[page].chapter, c=CHAPTERS[ci], off=page-c.from;
-    var t=ci+d; if(t<0||t>=CHAPTERS.length){ return true; }
+    var t=ci+d; if(t<0||t>=CHAPTERS.length){ return false; }
     var n=CHAPTERS[t];
-    navDir=d>0?"down":"up";
     go(Math.min(n.to, n.from+off));
     return true;
+  }
+  function canVert(d){
+    var g=gridInfo();
+    if(g){ var t=g.local+d*(g.c.grid.swap?1:g.cols); if(t>=0&&t<g.span){ return true; } }
+    if(mode!=="pages"||onCard||!MULTI){ return false; }
+    var t2=PAGES[page].chapter+d; return t2>=0&&t2<CHAPTERS.length;
+  }
+  function syncDpad(){
+    var pad=document.getElementById("dpad"); if(!pad){ return; }
+    var on=(mode==="pages"&&!onCard&&(!!gridInfo()||(MULTI&&CHAPTERS.length>1)));
+    pad.classList.toggle("on",on); if(!on){ return; }
+    document.getElementById("dUp").classList.toggle("live",canVert(-1));
+    document.getElementById("dDown").classList.toggle("live",canVert(1));
+    document.getElementById("dLeft").classList.toggle("live",page>0);
+    document.getElementById("dRight").classList.toggle("live",page<TOTAL-1);
   }
   function gridHorizontal(d){
     var g=gridInfo(); if(!g||!g.c.grid.swap){ return false; }
@@ -870,6 +903,7 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
       }
     }
     up.classList.toggle("on",canUp); dn.classList.toggle("on",canDn);
+    syncDpad();
   }
   document.addEventListener("keydown",function(e){
     if(e.metaKey||e.ctrlKey||e.altKey){return;} var tag=(e.target.tagName||"").toLowerCase(); if(tag==="input"||tag==="textarea"){return;}
@@ -895,7 +929,7 @@ window.CONFIG = { title:"Project T White", artist:"Snadiya", artistSite:"https:/
   paintIcons(document);
   buildScroll();buildChapMenu();buildChapBar();buildThumbs();placeTicks();
   var savedPos=rd(K_POS,null); if(savedPos&&typeof savedPos.i==="number"){ page=Math.min(TOTAL-1,Math.max(0,savedPos.i)); }
-  var savedMode=rd(K_MODE,(window.matchMedia&&matchMedia("(pointer:coarse)").matches)||navigator.maxTouchPoints>0?"scroll":"pages"); var s0=savedMode==="pages"?sPages:sScroll;
+  var savedMode=rd(K_MODE,"pages"); var s0=savedMode==="pages"?sPages:sScroll;
   fit=s0.fit!==false;
   document.getElementById("oFit").setAttribute("aria-pressed",String(fit));
   renderMarks();renderHelp();
