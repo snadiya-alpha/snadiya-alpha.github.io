@@ -33,7 +33,8 @@
   .name{font-weight:700;font-size:17px;line-height:1.3;overflow-wrap:anywhere}
   .meta{color:var(--text-2);font-size:13px}
   a.plain{color:var(--orange)}
-  .card{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden}.thumb{display:block;width:100%;height:230px;object-fit:contain;background:#15121b;border-bottom:1px solid var(--line)}.cardtext{display:flex;flex-direction:column;gap:6px;padding:14px 16px}
+  
+  /*cards*/.card{display:flex;flex-direction:column;gap:0;padding:0;overflow:hidden}.thumb{display:block;width:100%;height:230px;object-fit:contain;background:#15121b;border-bottom:1px solid var(--line)}.cardtext{display:flex;flex-direction:column;gap:6px;padding:14px 16px}.card.featured{border-color:var(--orange);box-shadow:0 0 0 2px var(--orange)}.card.featured .thumb{border-bottom-color:var(--orange)}/*endcards*/
 </style>
 </head>
 <body>
@@ -219,6 +220,17 @@
         <span class="cardtext"><span class="name">Kyra II</span><span class="meta">8 Images</span></span>
       </a>
     </div>
+    <h2>Margaret</h2>
+    <div class="grid">
+      <a class="card" href="program.html">
+        <img class="thumb" src="thumbs/program.webp" width="520" height="365" loading="lazy" decoding="async" alt="">
+        <span class="cardtext"><span class="name">Program</span><span class="meta">18 Images</span></span>
+      </a>
+      <a class="card featured" href="silentwhale.html">
+        <img class="thumb" src="thumbs/silentwhale.webp" width="520" height="477" loading="lazy" decoding="async" alt="">
+        <span class="cardtext"><span class="name">Silent Whale</span><span class="meta">108 Images</span></span>
+      </a>
+    </div>
     <h2>Poison Ivy</h2>
     <div class="grid">
       <a class="card" href="dc1.html">
@@ -362,6 +374,10 @@
       <a class="card" href="sid.html">
         <img class="thumb" src="thumbs/sid.webp" width="520" height="871" loading="lazy" decoding="async" alt="">
         <span class="cardtext"><span class="name">Sid</span><span class="meta">12 Images</span></span>
+      </a>
+      <a class="card featured" href="silentwhale.html">
+        <img class="thumb" src="thumbs/silentwhale.webp" width="520" height="477" loading="lazy" decoding="async" alt="">
+        <span class="cardtext"><span class="name">Silent Whale</span><span class="meta">108 Images</span></span>
       </a>
       <a class="card" href="sim.html">
         <img class="thumb" src="thumbs/sim.webp" width="520" height="309" loading="lazy" decoding="async" alt="">
