@@ -72,12 +72,13 @@ def card(f):
         img = ('        <a class="thumbwrap" href="' + f + '" tabindex="-1" aria-hidden="true">'
                '<img class="thumb" src="thumbs/' + slug + '.webp" width="' + str(w) +
                '" height="' + str(h) + '" loading="lazy" decoding="async" alt=""></a>\n')
+    # tags stay in data-tags so filtering still works, but are not drawn on the
+    # card -- a variable-length chip block made every card a different height
     mine = all_tags(f)
-    chips = ('<span class="tags">' + "".join(chip(x) for x in mine) + '</span>') if mine else ''
     cls = 'card featured' if f in FEATURED else 'card'
     return ('      <div class="' + cls + '" data-tags="' + html.escape("|".join(mine), True) + '">\n' + img +
-            '        <span class="cardtext"><a class="name" href="' + f + '">' + html.escape(t) + '</a>' +
-            chips + '</span>\n      </div>')
+            '        <span class="cardtext"><a class="name" href="' + f + '">' + html.escape(t) +
+            '</a></span>\n      </div>')
 
 
 def section(name, files):
@@ -112,13 +113,14 @@ BODY = ('<!--body-->\n' + TAGBAR + '\n    <div id="sections">\n' + "\n".join(sec
         '    <div id="results" hidden><div class="grid"></div></div>\n    <!--endbody-->')
 
 CSS = ('/*cards*/'
+       '.grid{align-items:start}'
        '.card{display:flex;flex-direction:column;gap:0;padding:0}'
        # overflow lives on the thumb wrapper, never the card -- the card must be
        # free to grow so no tag is ever clipped
        '.thumbwrap{display:block;line-height:0;overflow:hidden;border-radius:11px 11px 0 0}'
        '.thumb{display:block;width:100%;height:230px;object-fit:contain;background:#15121b;'
        'border-bottom:1px solid var(--line)}'
-       '.cardtext{display:flex;flex-direction:column;gap:8px;padding:14px 16px}'
+       '.cardtext{display:flex;align-items:center;padding:14px 16px;min-height:74px}'
        '.name{font-weight:700;font-size:17px;line-height:1.3;overflow-wrap:anywhere;'
        'color:var(--text);text-decoration:none}'
        '.name:hover,.name:focus-visible{color:var(--orange);text-decoration:underline}'
