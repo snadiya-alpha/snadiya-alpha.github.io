@@ -1,7 +1,7 @@
 import io,re,glob,sys
 tpl=io.open('reader-template.html',encoding='utf-8').read()
 ta=tpl.index('window.CONFIG'); tb=tpl.index('};', tpl.index('dims:',ta))+2
-HEAD_KEEP=re.compile(r'<meta (?:property="og:|name="(?:twitter:|author|characters|themes|source|format)")[^>]*>')
+HEAD_KEEP=re.compile(r'<meta (?:property="og:|name="(?:twitter:|author|characters|themes|settings|franchise|source|format)")[^>]*>')
 done=[];skip=[]
 for f in sorted(glob.glob('*.html')):
     if f in ('reader-template.html','index.html'): continue

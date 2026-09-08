@@ -9,10 +9,10 @@
 <meta property="og:image" content="silentwhale/sw-003.webp">
 <meta property="og:url" content="silentwhale.html">
 <meta property="og:site_name" content="Snadiya">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="Snadiya">
 <meta name="characters" content="Margaret">
-<meta name="themes" content="Afflatus, Science Fiction, Mummification, Encasement, Latex, Bondage, Gags">
+<meta name="themes" content="Sci-Fi, Mummification, Encasement, Latex, Rope Bondage, Cloth Gag, Group Captivity">
+<meta name="settings" content="Sci-Fi Facility">
 <meta name="source" content="https://drive.google.com/drive/folders/1XYX-datco-YXdV2SI-kqFjHg8gp1y76-">
 
 
@@ -175,6 +175,10 @@
     background-image:var(--pv);background-size:cover;background-position:center 22%;
     opacity:0;transition:opacity .18s ease;pointer-events:none}
   .pop .chapitem.haspv:hover::before,.pop .chapitem.haspv:focus-visible::before{opacity:.22}
+  .tagrow{display:flex;flex-wrap:wrap;gap:5px;padding:4px 14px 12px}
+  .tagrow a{font-size:12px;line-height:1.35;padding:3px 9px;border-radius:999px;
+    border:1px solid var(--line);color:var(--text-2);text-decoration:none;white-space:normal}
+  .tagrow a:hover,.tagrow a:focus-visible{border-color:var(--orange);color:var(--orange);outline:none}
   #dpad{display:none;grid-template-areas:". u ." "l d r";grid-auto-rows:19px;column-gap:1px;flex:0 0 auto;margin:0 2px}
   #dpad.on{display:grid}
   .dbtn{width:24px;height:19px;display:flex;align-items:center;justify-content:center;border:0;background:none;padding:0;color:var(--text-2);opacity:.25;cursor:default}
@@ -297,6 +301,8 @@ window.CONFIG = { title:"Silent Whale", artist:"Snadiya", artistSite:"https://li
         <button class="btn" id="oFit" aria-pressed="true">Fit page to screen</button>
         <button class="btn" id="oFull"><span class="ico" data-i="expand"></span>Fullscreen</button>
         <button class="btn" id="oHelp">Keyboard shortcuts</button>
+        <div class="sep tagsep" hidden></div>
+        <div class="tagrow" id="tagRow"></div>
       </div>
     </div>
   </div>
@@ -924,9 +930,30 @@ window.CONFIG = { title:"Silent Whale", artist:"Snadiya", artistSite:"https://li
       case "End":e.preventDefault();vp.scrollTo({top:maxScroll(),behavior:"smooth"});break; }
   });
 
+  function buildTags(){
+    var row=document.getElementById("tagRow"); if(!row){ return; }
+    var out=[];
+    ["characters","themes","settings","franchise"].forEach(function(k){
+      var m=document.querySelector('meta[name="'+k+'"]');
+      if(!m){ return; }
+      m.content.split(",").forEach(function(t){
+        t=t.trim(); if(t&&out.indexOf(t)<0){ out.push(t); }
+      });
+    });
+    if(!out.length){ return; }
+    row.replaceChildren();
+    out.forEach(function(t){
+      var a=document.createElement("a");
+      a.href=C.gallery+"?tag="+encodeURIComponent(t);
+      a.textContent=t;
+      row.appendChild(a);
+    });
+    var sep=document.querySelector(".tagsep"); if(sep){ sep.hidden=false; }
+  }
+
   /* ---------- boot ---------- */
   paintIcons(document);
-  buildScroll();buildChapMenu();buildChapBar();buildThumbs();placeTicks();
+  buildScroll();buildChapMenu();buildChapBar();buildThumbs();buildTags();placeTicks();
   var savedPos=rd(K_POS,null); if(savedPos&&typeof savedPos.i==="number"){ page=Math.min(TOTAL-1,Math.max(0,savedPos.i)); }
   var savedMode=rd(K_MODE,"pages"); var s0=savedMode==="pages"?sPages:sScroll;
   fit=s0.fit!==false;
