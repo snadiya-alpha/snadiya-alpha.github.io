@@ -3,7 +3,8 @@
    Season Mix / Season Sans are licensed fonts, so this uses the kit's own fallbacks: Newsreader and Instrument Sans.
 
    1. Tokens   2. Page and type   3. Header band   4. Filter tags   5. Cards and links   6. States
-   7. List pages (Sperm Whale, vault)   8. Animation page   9. Coming-soon page */
+   7. List pages (Sperm Whale, vault)   8. Animation page   9. Coming-soon page
+   10. Home: collections, tag counts, More tags panel, active filters */
 
 /* 1. Tokens: kit palette and components */
 :root{
@@ -116,5 +117,35 @@ section.grp > p.sub{color:var(--snz-deep-crimson)}
 .w a:hover{background:transparent;border-color:var(--snz-deep-crimson);color:var(--snz-deep-crimson)}
 .w a:active{transform:translateY(1px)}
 .w a:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px}
+
+/* 10. Home: collections first, then All comics with a slim tag bar */
+#collections h2{margin-top:8px}
+#all > h2{margin-top:72px}
+.coll{gap:12px;color:var(--snz-deep-crimson)}
+.coll-img{border-radius:4px;background:var(--snz-deep-crimson);transition:box-shadow var(--snz-t)}
+.coll-name{font-family:var(--snz-sans);font-weight:600;font-size:20px;color:var(--snz-deep-crimson)}
+.coll:hover .coll-img{box-shadow:0 0 0 3px var(--snz-deep-crimson)}
+.coll[aria-pressed="true"] .coll-img{box-shadow:0 0 0 4px var(--snz-orange)}
+.coll:active{transform:translateY(1px)}
+.coll:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:4px;border-radius:4px}
+.chip-n{font-weight:400}
+.chip[aria-disabled="true"]{border-style:dashed;cursor:not-allowed;background:var(--snz-ivory);color:var(--snz-deep-crimson)}
+.chip[aria-disabled="true"]:hover{background:var(--snz-ivory);color:var(--snz-deep-crimson)}
+.more-btn{font-family:var(--snz-sans);font-weight:600;font-size:16px;line-height:1;padding:.6em 1.1em;border-radius:var(--snz-btn-radius);
+  border:var(--snz-btn-border) solid var(--snz-deep-crimson);background:var(--snz-deep-crimson);color:var(--snz-ivory);
+  transition:background-color var(--snz-t),color var(--snz-t)}
+.more-btn::after{content:' \25BE'}
+.more-btn:hover,.more-btn[aria-expanded="true"]{background:var(--snz-ivory);color:var(--snz-deep-crimson)}
+.more-btn[aria-expanded="true"]::after{content:' \25B4'}
+.more-btn:focus-visible,.clear-btn:focus-visible,#active .chip:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px}
+.more-panel{background:var(--snz-ivory);border:var(--snz-btn-border) solid var(--snz-deep-crimson);border-radius:12px;
+  box-shadow:0 12px 32px rgba(60,24,21,.25)}
+#active .chip.on{font-family:var(--snz-sans);font-weight:600;font-size:16px;line-height:1;padding:.6em 1em;border-radius:var(--snz-btn-radius);
+  border:var(--snz-btn-border) solid var(--snz-deep-crimson);background:var(--snz-deep-crimson);color:var(--snz-ivory);cursor:pointer}
+#active .chip.on:hover{background:var(--snz-ivory);color:var(--snz-deep-crimson)}
+.chip-x{font-size:1.15em;line-height:0}
+.clear-btn{font-family:var(--snz-sans);font-size:18px;background:none;border:0;padding:.3em .2em;color:var(--snz-deep-crimson);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.clear-btn:hover{text-decoration-color:var(--snz-orange)}
 
 @media (prefers-reduced-motion:reduce){:root{--snz-t:1ms}}
