@@ -1,0 +1,120 @@
+/* SNZweig look for Snadiya's browsing pages (home, lists, galleries). Not used by the comic readers or the page
+   templates. Values from the SNZweig brand kit (jetwong.neocities.org/snzweig-brand-kit), logo excluded.
+   Season Mix / Season Sans are licensed fonts, so this uses the kit's own fallbacks: Newsreader and Instrument Sans.
+
+   1. Tokens   2. Page and type   3. Header band   4. Filter tags   5. Cards and links   6. States
+   7. List pages (Sperm Whale, vault)   8. Animation page   9. Coming-soon page */
+
+/* 1. Tokens: kit palette and components */
+:root{
+  --snz-orange:#FF4818; --snz-light-orange:#FF7515; --snz-deep-crimson:#3C1815;
+  --snz-deep-sea:#2A4551; --snz-ivory:#FFFFF0;
+  --snz-mix:"Newsreader",Georgia,serif;
+  --snz-sans:"Instrument Sans",Helvetica,Arial,sans-serif;
+  --snz-btn-radius:100px; --snz-btn-border:2px;
+  --snz-btn-gradient:linear-gradient(90deg,#FF4818 0%,#FF7515 100%);
+  --snz-t:150ms;
+  /* Snadiya's own variables, pointed at the kit so her existing rules follow */
+  --ink:var(--snz-ivory); --surface:var(--snz-ivory); --text:var(--snz-deep-crimson); --text-2:var(--snz-deep-crimson);
+  --orange:var(--snz-orange); --sep:var(--snz-deep-crimson); --line:var(--snz-deep-crimson);
+  --bg:var(--snz-ivory); --surface-2:var(--snz-deep-crimson); --amber:var(--snz-deep-crimson); --tint:var(--snz-deep-crimson);
+  --font:var(--snz-sans);
+}
+
+/* 2. Page and type: Ivory ground, Deep Crimson ink */
+html,body{background:var(--snz-ivory);color:var(--snz-deep-crimson);font-family:var(--snz-sans)}
+body{font-size:20px;line-height:1.45}
+h1,h2{font-family:var(--snz-mix);font-weight:420;letter-spacing:0;color:var(--snz-deep-crimson)}
+h2{font-size:42px;line-height:1.05;margin:56px 0 20px}
+#tagbar h3{font-family:var(--snz-sans);font-weight:700;font-size:15px;line-height:1.2;letter-spacing:0;
+  text-transform:uppercase;color:var(--snz-deep-crimson)}
+
+/* 3. Header band: the kit's Deep Crimson band with Ivory type, full bleed without widening the page */
+.wrap > h1{font-size:clamp(40px,7vw,52px);line-height:1;color:var(--snz-ivory);background:var(--snz-deep-crimson);
+  box-shadow:0 0 0 100vmax var(--snz-deep-crimson);clip-path:inset(-100vmax -100vmax 0 -100vmax);
+  margin:-48px 0 48px;padding:56px 0 40px}
+
+/* 4. Filter tags: pills with a constant 2px edge, so hover never shifts the box */
+.chip{font-family:var(--snz-sans);font-weight:600;font-size:16px;line-height:1;padding:.6em 1.1em;
+  border-radius:var(--snz-btn-radius);border:var(--snz-btn-border) solid var(--snz-deep-crimson);
+  background:var(--snz-ivory);color:var(--snz-deep-crimson);cursor:pointer;
+  transition:background-color var(--snz-t),color var(--snz-t),border-color var(--snz-t)}
+#tagbar .chips{gap:10px 8px}
+
+/* 5. Cards and links. Titles are inline links: Deep Crimson with a 1px rule that turns orange */
+.card{border:0;border-radius:4px;background:transparent;box-shadow:none;gap:0}
+.card:hover,.card:focus-within{background:transparent;border-color:transparent}
+.thumbwrap{border-radius:4px}
+.thumb{background:var(--snz-deep-crimson);border-bottom:0}
+.cardtext{padding:14px 0 0;min-height:0}
+.name,a.plain{font-family:var(--snz-sans);font-weight:400;font-size:20px;line-height:1.45;color:var(--snz-deep-crimson);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;
+  text-decoration-color:var(--snz-deep-crimson);transition:text-decoration-color var(--snz-t)}
+.card.featured{border:0;box-shadow:none}
+.card.featured .thumbwrap{box-shadow:0 0 0 3px var(--snz-orange)}
+
+/* 6. States. Hover and pressed answer within 150ms. Focus is a ring, not just a colour change.
+   Selected tag = the kit's Standard gradient button. */
+.chip:hover{background:var(--snz-deep-crimson);color:var(--snz-ivory);border-color:var(--snz-deep-crimson)}
+.chip:active{transform:translateY(1px)}
+.chip[aria-pressed="true"]{background:var(--snz-btn-gradient);border-color:transparent;color:var(--snz-deep-crimson);font-weight:600}
+.chip[aria-pressed="true"]:hover{background:none;border-color:var(--snz-deep-crimson);color:var(--snz-deep-crimson)}
+.chip:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px;border-color:var(--snz-deep-crimson);color:var(--snz-deep-crimson)}
+.card:hover .name,.name:hover,a.plain:hover{color:var(--snz-deep-crimson);text-decoration:underline;text-decoration-color:var(--snz-orange)}
+.card:hover .thumbwrap{box-shadow:0 0 0 3px var(--snz-deep-crimson)}
+.card.featured:hover .thumbwrap{box-shadow:0 0 0 3px var(--snz-orange)}
+.card:active{transform:translateY(1px)}
+.name:focus-visible,a.plain:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px;text-decoration-color:var(--snz-orange)}
+.thumbwrap:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px}
+
+/* 7. List pages: the header becomes the band; rows lose their rules (no dividers) and read as links */
+header.pg,.wrap > header{background:var(--snz-deep-crimson);color:var(--snz-ivory);border-bottom:0;margin-bottom:24px;
+  box-shadow:0 0 0 100vmax var(--snz-deep-crimson);clip-path:inset(-100vmax -100vmax 0 -100vmax);padding:40px 0 32px}
+header.pg h1,.wrap > header h1{font-family:var(--snz-mix);font-weight:420;font-size:clamp(36px,6vw,52px);line-height:1;letter-spacing:0;color:var(--snz-ivory)}
+header.pg .by,.wrap > header .by,header .count{font-family:var(--snz-sans);font-size:16px;color:var(--snz-ivory)}
+header.pg .by a,.wrap > header .by a{color:var(--snz-ivory);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+header.pg .by a:hover,.wrap > header .by a:hover{text-decoration-color:var(--snz-orange)}
+.back{color:var(--snz-deep-crimson);font-family:var(--snz-sans);font-weight:600;font-size:18px;text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:.2em}
+.back:hover{text-decoration-color:var(--snz-orange)}
+/* the back link sits on the band, so it takes the band's Ivory */
+body > .wrap > .back{position:relative;z-index:1;color:var(--snz-ivory)}
+body > .wrap > .back:hover{color:var(--snz-ivory);text-decoration-color:var(--snz-orange)}
+a.row{border-bottom:0;padding:16px 0;color:var(--snz-deep-crimson)}
+a.row:hover{background:transparent}
+a.row .meta .t{font-family:var(--snz-sans);font-weight:400;font-size:20px;letter-spacing:0;text-decoration:underline;
+  text-decoration-thickness:1px;text-underline-offset:.2em;transition:text-decoration-color var(--snz-t)}
+a.row:hover .meta .t{text-decoration-color:var(--snz-orange)}
+a.row:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px}
+.meta .n,.meta .d,.meta .s{color:var(--snz-deep-crimson)}
+.chev,a.row:hover .chev{color:var(--snz-deep-crimson)}
+a.row:hover .chev{color:var(--snz-orange)}
+.cover{border:0;border-radius:4px;background:var(--snz-deep-crimson)}
+.cover.empty span{color:var(--snz-ivory)}
+footer.pg{border-top:0;color:var(--snz-deep-crimson)}
+footer.pg a{color:var(--snz-deep-crimson);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+footer.pg a:hover{text-decoration-color:var(--snz-orange)}
+
+/* 8. Animation page */
+section.grp > h2{font-family:var(--snz-mix);font-weight:420;font-size:42px;line-height:1.05;letter-spacing:0;color:var(--snz-deep-crimson);margin:40px 0 8px}
+section.grp > p.sub{color:var(--snz-deep-crimson)}
+.stage{background:var(--snz-deep-crimson);border-radius:4px;overflow:hidden}
+.grid > .card{border:0;background:transparent}
+.grid > .card:focus-within{border-color:transparent}
+.grid > .card .meta{padding:12px 0 0}
+.grid > .card .meta .t{font-family:var(--snz-sans);font-weight:600;font-size:20px;letter-spacing:0}
+.playbtn{color:var(--snz-ivory);font-family:var(--snz-sans)}
+.playbtn:focus-visible{outline:2px solid var(--snz-ivory);outline-offset:-4px}
+
+/* 9. Coming-soon page: its one link is the kit's Standard gradient button */
+.w h1{font-family:var(--snz-mix);font-weight:420;letter-spacing:0;color:var(--snz-deep-crimson)}
+.w p{color:var(--snz-deep-crimson)}
+.w a{font-family:var(--snz-sans);font-weight:600;font-size:18px;line-height:1;padding:20px 25.4px;border-radius:var(--snz-btn-radius);
+  border:var(--snz-btn-border) solid transparent;background:var(--snz-btn-gradient);color:var(--snz-deep-crimson);
+  text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em;
+  transition:background var(--snz-t),border-color var(--snz-t)}
+.w a:hover{background:transparent;border-color:var(--snz-deep-crimson);color:var(--snz-deep-crimson)}
+.w a:active{transform:translateY(1px)}
+.w a:focus-visible{outline:2px solid var(--snz-deep-crimson);outline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){:root{--snz-t:1ms}}
