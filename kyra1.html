@@ -425,7 +425,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
       track=document.getElementById("track"),peek=document.getElementById("peek");
   zone.setAttribute("aria-valuemax",String(TOTAL));
 
-  var mode="pages",page=0,navDir="right",onCard=null,nodes=[],thumbs=[],toastT=null,marks=[],fit=true,stageZoom=1,stripZoom=1,zscroll=0;
+  var mode="pages",page=0,navDir="right",onCard=null,nodes=[],thumbs=[],toastT=null,marks=[],fit=true,stageZoom=1,userZoom=1,carryPt=null,stripZoom=1,zscroll=0;
   var WHEEL_NOTCH=30;
   var autoIdx=0,autoSecs=0,autoTimer=null;
 
@@ -577,7 +577,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
   }
   function renderPage(){
     onCard=null; shell.classList.remove("oncard");
-    stageZoom = SPOT[page] ? 1.5 : 1;
+    stageZoom = SPOT[page] ? Math.max(1.5,userZoom) : userZoom;
     var want=page;
     stage.classList.add("loading");
     var im=document.createElement("img");im.decoding="async";
@@ -587,7 +587,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
       if(page!==want||onCard){ return; }
       stage.textContent=""; stage.appendChild(im); stage.scrollTop=0;
       stage.classList.remove("loading");
-      measureFit(im); applyZoom(); syncZoomCursor(); syncEdges();
+      measureFit(im); applyZoom(); if(stageZoom>1.001&&carryPt){ var sc=stageCenter(); placePoint(carryPt,sc.x,sc.y); } syncZoomCursor(); syncEdges();
     }
     var swapped=false;
     function once(){ if(swapped){return;} swapped=true; swap(); }
@@ -628,7 +628,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
     syncNav();
     if(autoSecs>0){ if(c.isEnd){ setAuto(0); } else { scheduleAuto(); } }
   }
-  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} page=i;stageZoom=1;
+  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
     if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:"smooth"}); } } }
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
@@ -700,7 +700,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
     document.getElementById("mPages").setAttribute("aria-pressed",String(m==="pages"));
     wr(K_MODE,m); var s=cur(); fit=s.fit!==false;
     document.getElementById("oFit").setAttribute("aria-pressed",String(fit));
-    if(m==="pages"){ page=carry;stageZoom=1;renderPage(); } else { void vp.offsetHeight; if(nodes[carry]){ vp.scrollTop=nodes[carry].offsetTop; } syncNav(); }
+    if(m==="pages"){ page=carry;carryPt=null;renderPage(); } else { void vp.offsetHeight; if(nodes[carry]){ vp.scrollTop=nodes[carry].offsetTop; } syncNav(); }
     renderHelp();
     if(autoSecs>0){ scheduleAuto(); }
   }
@@ -809,7 +809,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
   stage.addEventListener("wheel",function(e){
     if(mode!=="pages"||onCard){ return; }
     e.preventDefault();
-    setStageZoom(stageZoom*(e.deltaY<0?1.12:1/1.12));
+    setStageZoom(stageZoom*(e.deltaY<0?1.12:1/1.12),{cx:e.clientX,cy:e.clientY});
   },{passive:false});
   // wheel over the page scrubber steps through pages; everywhere else the wheel scrolls normally
   zone.addEventListener("wheel",function(e){
@@ -845,18 +845,33 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
     syncEdges();
   }
   function syncZoomCursor(){ var im=stage.querySelector("img"); if(im){ im.style.cursor = stageZoom>1.01?"grab":"auto"; } }
-  function setStageZoom(z){ if(onCard){return;}
-    var prev=stageZoom;
-    stageZoom=Math.max(1,Math.min(6,z));
-    var st=stage, before={x:st.scrollLeft+st.clientWidth/2, y:st.scrollTop+st.clientHeight/2};
+  function stageCenter(){ var r=stage.getBoundingClientRect(); return {x:r.left+r.width/2, y:r.top+r.height/2}; }
+  function imgPoint(cx,cy){ var im=stage.querySelector("img"); if(!im){ return null; } var r=im.getBoundingClientRect(); if(!r.width){ return null; }
+    return {x:Math.max(0,Math.min(1,(cx-r.left)/r.width)), y:Math.max(0,Math.min(1,(cy-r.top)/r.height))}; }
+  function placePoint(p,cx,cy){ var im=stage.querySelector("img"); if(!im||!p){ return; } var r=im.getBoundingClientRect();
+    stage.scrollLeft+=(r.left+p.x*r.width)-cx; stage.scrollTop+=(r.top+p.y*r.height)-cy; }
+  function setStageZoom(z,o){ if(onCard){return;}
+    o=o||{}; var sc=stageCenter(), cx=(o.cx!=null?o.cx:sc.x), cy=(o.cy!=null?o.cy:sc.y), pt=imgPoint(cx,cy);
+    stageZoom=Math.max(1,Math.min(6,z)); userZoom=stageZoom;
     applyZoom();
-    if(stageZoom>1.001&&prev>0){
-      var r=stageZoom/prev;
-      st.scrollLeft=before.x*r-st.clientWidth/2;
-      st.scrollTop=before.y*r-st.clientHeight/2;
-    }
+    if(stageZoom>1.001&&pt){ placePoint(pt,cx,cy); }
     syncZoomCursor();
-    toast(stageZoom===1?"Zoom reset":"Zoom "+stageZoom.toFixed(1)+"x"); }
+    if(!o.quiet){ toast(stageZoom===1?"Zoom reset":"Zoom "+stageZoom.toFixed(1)+"x"); } }
+  // pinch zooms the page only, never the bars; one finger still scrolls natively
+  var pinch=null;
+  function tdist(t){ return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY)||1; }
+  stage.addEventListener("touchstart",function(e){
+    if(mode!=="pages"||onCard||e.touches.length!==2){ return; }
+    e.preventDefault(); pinch={d0:tdist(e.touches),z0:stageZoom};
+  },{passive:false});
+  stage.addEventListener("touchmove",function(e){
+    if(!pinch||e.touches.length!==2){ return; }
+    e.preventDefault();
+    setStageZoom(pinch.z0*tdist(e.touches)/pinch.d0,{quiet:true,cx:(e.touches[0].clientX+e.touches[1].clientX)/2,cy:(e.touches[0].clientY+e.touches[1].clientY)/2});
+  },{passive:false});
+  stage.addEventListener("touchend",function(e){ if(pinch&&e.touches.length<2){ pinch=null; if(stageZoom<1.05){ setStageZoom(1,{quiet:true}); } } });
+  stage.addEventListener("touchcancel",function(){ pinch=null; });
+  ["gesturestart","gesturechange"].forEach(function(n){ stage.addEventListener(n,function(e){ if(mode==="pages"){ e.preventDefault(); } },{passive:false}); });
 
   /* ---- grid navigation: left/right = one step, up/down = one row ---- */
   function gridInfo(){
