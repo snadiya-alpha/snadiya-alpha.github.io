@@ -11,12 +11,20 @@ SKIP = {'index.html','reader-template.html','gallery-template.html','measure-dim
 FEATURED = {'silentwhale.html'}
 MANUAL = {'jjp.html': ("Jessica & Judy's Peril", 0, 0), 'animation.html': ("Sperm Whale: Animation", 0, 16)}
 CATS = [
-    ("Boundborne", ["boundborne.html","pack01.html","pack00.html","gag.html","jjp.html"]),
-    ("Federal Bureau of Fetish Control", ["corridor.html","fbfc-comic.html","fbfc-art.html","fbfc-files.html"]),
-    ("Video Game Inspired", ["boundborne.html","corridor.html","disgust.html","fallgirls.html"]),
-    ("DC", ["dc1.html","dc2.html","harleyraven.html"]),
-    ("Peril", ["bulletgirl.html","perilvore.html","jjp.html"]),
-    ("Gag Packs", ["gag.html","bunny.html"]),
+    ("Boundborne", ["boundborne.html","jjp.html","pack00.html","pack01.html","gag.html","extra01.html","ff.html"]),
+    ("FBFC", ["fbfc-comic.html","corridor.html","fbfc-art.html","fbfc-files.html","pack1.html"]),
+    ("Sperm Whale", ["whale.html","renders.html","animation.html"]),
+    ("Afflatus", ["afflatus.html"]),
+    ("PanTied", ["pantied.html"]),
+    ("Silent Whale", ["silentwhale.html"]),
+]
+# lower on the page: works that parody a game, one button per game
+GAMES = [
+    ("Control", ["corridor.html","fbfc-comic.html","fbfc-art.html","fbfc-files.html","pack1.html"]),
+    ("Silent Hill", ["disgust.html","traveler.html"]),
+    ("Marathon", ["pantied.html"]),
+    ("Fallout", ["silentwhale.html"]),
+    ("Fall Guys", ["fallgirls.html"]),
 ]
 FACETS = [('characters', 'Characters'), ('themes', 'Themes'),
           ('settings', 'Settings'), ('franchise', 'Games')]
@@ -102,18 +110,24 @@ def coll_button(name, files):
             img + '<span class="coll-name">' + html.escape(name) + '</span></button>')
 
 
-colls = {}
+colls, gcolls = {}, {}
+for name, files in GAMES:
+    got = [f for f in files if f in items]
+    if got:
+        gcolls[name] = got
 for name, files in CATS:
     got = [f for f in files if f in items]
     if got:
         colls[name] = got
 in_coll = collections.defaultdict(list)
-for name, files in colls.items():
+for name, files in list(colls.items()) + list(gcolls.items()):
     for f in files:
         in_coll[f].append(name)
 
-COLLS = ('    <section id="collections">\n    <h2>Collections</h2>\n    <div class="coll-grid">\n' +
+COLLS = ('    <section id="collections">\n    <h2>Curated &amp; Featured</h2>\n    <div class="coll-grid">\n' +
          "\n".join(coll_button(n, fs) for n, fs in colls.items()) + '\n    </div>\n    </section>')
+GAMESEC = ('    <section id="games">\n    <h2>Video Games</h2>\n    <div class="coll-grid">\n' +
+           "\n".join(coll_button(n, fs) for n, fs in gcolls.items()) + '\n    </div>\n    </section>')
 
 
 def card_all(f):
@@ -156,7 +170,7 @@ ACTIVE = ('      <div id="active" aria-live="polite"><div class="chips"></div>'
 ALLSEC = ('    <section id="all">\n    <h2>All comics</h2>\n' + TAGBAR + '\n' + ACTIVE +
           '\n    <div class="grid" id="all-grid">\n' + "\n".join(card_all(f) for f in allf) + '\n    </div>\n    </section>')
 
-BODY = '<!--body-->\n' + COLLS + '\n' + ALLSEC + '\n    <!--endbody-->'
+BODY = '<!--body-->\n' + COLLS + '\n' + ALLSEC + '\n' + GAMESEC + '\n    <!--endbody-->'
 
 CSS = ('/*cards*/'
        '.grid{align-items:start}'
@@ -174,7 +188,7 @@ CSS = ('/*cards*/'
        '.coll-name{font-size:20px;line-height:1.25;overflow-wrap:anywhere}'
        '.chip{font:inherit;cursor:pointer;display:inline-flex;align-items:baseline;gap:.45em;white-space:normal;text-align:left}'
        '.chip-n{font-variant-numeric:tabular-nums}'
-       '#tagbar{display:flex;flex-direction:column;gap:14px;margin:0 0 18px}'
+       '#games{margin-top:48px}#tagbar{display:flex;flex-direction:column;gap:14px;margin:0 0 18px}'
        '#tagbar .facet{display:flex;flex-direction:column;gap:7px}'
        '#tagbar h3{margin:0}'
        '#tagbar .chips,#active .chips{display:flex;flex-wrap:wrap;gap:6px}'
