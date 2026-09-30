@@ -80,7 +80,7 @@
   .btn.bordered{border-color:var(--sep);background:var(--surface)} .btn.bordered:hover{border-color:var(--tint)}
   .ico{display:inline-flex;align-items:center;flex:none} .ico svg{width:22px;height:22px;stroke-width:1.7;display:block}
 
-  #topnav{flex:none;height:var(--nav-h);display:flex;align-items:center;gap:6px;padding:0 8px 0 4px;
+  #topnav{flex:none;min-height:var(--nav-h);display:flex;align-items:center;gap:6px;padding:0 8px 0 4px;
     background:var(--surface);border-bottom:1px solid var(--sep)}
   #backBtn{flex:none;min-height:44px;display:inline-flex;align-items:center;gap:2px;padding:0 8px 0 4px;
     background:transparent;border:0;color:var(--tint);cursor:pointer;font-family:var(--font);font-size:17px;
@@ -103,7 +103,7 @@
     background:transparent;border:0;color:var(--text);cursor:pointer;font-family:var(--font);font-size:18px;
     font-weight:600;letter-spacing:-.02em;touch-action:manipulation}
   #titleBtn:hover{background:var(--surface-2)} #titleBtn:focus-visible{outline:2px solid var(--tint);outline-offset:-2px}
-  #titleBtn b{font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  #titleBtn b{font-weight:600;white-space:normal;text-align:left;line-height:1.15}
   #titleBtn .caret{flex:none;color:var(--text-2);display:inline-flex} #titleBtn .caret svg{width:18px;height:18px;stroke-width:2}
   #titleBtn.static{cursor:default;pointer-events:none} #titleBtn.static:hover{background:transparent}
 
@@ -175,8 +175,8 @@
     opacity:0;transition:opacity .18s ease;pointer-events:none}
   .pop .chapitem.haspv:hover::before,.pop .chapitem.haspv:focus-visible::before{opacity:.22}
   .tagrow{display:flex;flex-wrap:wrap;gap:5px;padding:4px 14px 12px}
-  .tagrow a{font-size:12px;line-height:1.35;padding:3px 9px;border-radius:999px;
-    border:1px solid var(--line);color:var(--text-2);text-decoration:none;white-space:normal}
+  .tagrow a{font-size:16px;line-height:1.35;padding:5px 11px;border-radius:999px;
+    border:1px solid var(--line);color:var(--text);text-decoration:none;white-space:normal}
   .tagrow a:hover,.tagrow a:focus-visible{border-color:var(--orange);color:var(--orange);outline:none}
   #dpad{display:none;grid-template-areas:". u ." "l d r";grid-auto-rows:19px;column-gap:1px;flex:0 0 auto;margin:0 2px}
   #dpad.on{display:grid}
@@ -256,6 +256,19 @@
     #countBtn{padding:0 8px}
     #countTxt{min-width:44px}
     #scrubZone{min-width:120px}
+    :root{--nav-h:60px}
+    #topnav{padding:4px 6px 4px 2px}
+    #titleBtn{font-size:19px;padding:4px 6px}
+    #optBtn .lab{display:none} #optBtn{padding:0 12px;min-width:50px}
+    .ico svg{width:26px;height:26px}
+    .seg button{min-width:50px;min-height:48px} .seg button svg{width:24px;height:24px}
+    #botnav{flex-wrap:wrap;row-gap:0;padding:2px 8px calc(6px + env(safe-area-inset-bottom))}
+    #scrubZone{order:-1;flex:1 0 100%;height:40px;padding:0 14px}
+    #track{height:8px} #knob{width:22px;height:22px;margin:-11px 0 0 -11px}
+    #dpad,#dpad.on{display:none}
+    #prevBtn,#nextBtn{min-height:54px;min-width:76px}
+    #countTxt{flex:1;min-width:0;font-size:19px;color:var(--text);line-height:1.2;white-space:normal}
+    #countTxt .cc{display:block;font-size:17px;font-weight:500}
   }
   @media(max-width:520px){ #byline{display:none} }
   @media(pointer:coarse){
@@ -526,13 +539,13 @@ window.CONFIG = { title:"Evil Domination", artist:"Snadiya", artistSite:"https:/
     var base=(i+1)+" / "+TOTAL;
     if(!MULTI){ return base; }
     var c=CHAPTERS[PAGES[i].chapter];
-    return base+"  "+c.title+" "+(i-c.from+1)+"/"+(c.to-c.from+1);
+    return base+'<span class="cc"> '+c.title+" "+(i-c.from+1)+"/"+(c.to-c.from+1)+"</span>";
   }
   function syncNav(){ syncChapBar();
     var i=currentIndex(),ci=PAGES[i].chapter;
     if(MULTI){ CHAPTERS.forEach(function(ch,n){ if(ch.menuEl){ ch.menuEl.setAttribute("aria-current",n===ci?"true":"false"); } }); }
     if(onCard){ document.getElementById("countTxt").textContent = onCard.isEnd ? "—" : "Preview"; }
-    else { document.getElementById("countTxt").textContent=posLabel(i); }
+    else { document.getElementById("countTxt").innerHTML=posLabel(i); }
     var f=TOTAL>1?i/(TOTAL-1):0;
     document.getElementById("fill").style.width=(f*100)+"%";document.getElementById("knob").style.left=(f*100)+"%";
     zone.setAttribute("aria-valuenow",String(i+1));
@@ -658,7 +671,7 @@ window.CONFIG = { title:"Evil Domination", artist:"Snadiya", artistSite:"https:/
   }
   function previewTo(i,x){ previewIdx=i; var f=TOTAL>1?i/(TOTAL-1):0;
     document.getElementById("fill").style.width=(f*100)+"%";document.getElementById("knob").style.left=(f*100)+"%";
-    document.getElementById("countTxt").textContent=posLabel(i);showPeek(i,x); }
+    document.getElementById("countTxt").innerHTML=posLabel(i);showPeek(i,x); }
   function endScrub(){ if(!liveS){return;} liveS=false;zone.classList.remove("live");peek.classList.remove("on");go(previewIdx); }
   zone.addEventListener("pointerdown",function(e){ e.stopPropagation();liveS=true;zone.classList.add("live");zone.setPointerCapture(e.pointerId);previewTo(idxFromX(e.clientX),e.clientX); });
   zone.addEventListener("pointermove",function(e){ if(liveS){ previewTo(idxFromX(e.clientX),e.clientX); } });
