@@ -16,6 +16,7 @@ CATS = [
     ("Video Game Inspired", ["boundborne.html","corridor.html","disgust.html","fallgirls.html"]),
     ("DC", ["dc1.html","dc2.html","harleyraven.html"]),
     ("Peril", ["bulletgirl.html","perilvore.html","jjp.html"]),
+    ("Gag Packs", ["gag.html","bunny.html"]),
 ]
 FACETS = [('characters', 'Characters'), ('themes', 'Themes'),
           ('settings', 'Settings'), ('franchise', 'Games')]
