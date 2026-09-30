@@ -90,14 +90,12 @@ def card(f):
             '</a></span>\n      </div>')
 
 
-MIN_SHOWN = 3   # tags that match fewer comics than this go into the "More tags" panel
-
-
 USED_COVERS = set()
 
 
-def coll_button(name, files):
-    # each collection gets its own cover: the first of its comics not already used by an earlier collection
+def coll_button(name, files, key):
+    # each collection gets its own cover: the first of its comics not already used by an earlier collection.
+    # A collection button simply ticks the matching sidebar box (Universe or Franchise).
     f0 = next((f for f in files if f not in USED_COVERS and os.path.exists(os.path.join(THUMBDIR, f[:-5] + '.webp'))), files[0])
     USED_COVERS.add(f0)
     slug = f0[:-5]
@@ -106,8 +104,8 @@ def coll_button(name, files):
         w, h = DIMS.get(slug, (520, 768))
         img = ('<img class="coll-img" src="thumbs/' + slug + '.webp" width="' + str(w) + '" height="' + str(h) +
                '" loading="lazy" decoding="async" alt="">')
-    return ('      <button type="button" class="coll" data-coll="' + html.escape(name, True) + '" aria-pressed="false">' +
-            img + '<span class="coll-name">' + html.escape(name) + '</span></button>')
+    return ('      <button type="button" class="coll" data-k="' + key + '" data-v="' + html.escape(name, True) +
+            '" aria-pressed="false">' + img + '<span class="coll-name">' + html.escape(name) + '</span></button>')
 
 
 colls, gcolls = {}, {}
@@ -119,61 +117,50 @@ for name, files in CATS:
     got = [f for f in files if f in items]
     if got:
         colls[name] = got
-in_coll = collections.defaultdict(list)
-for name, files in list(colls.items()) + list(gcolls.items()):
-    for f in files:
-        in_coll[f].append(name)
 
 COLLS = ('    <section id="collections">\n    <h2>Curated &amp; Featured</h2>\n    <div class="coll-grid">\n' +
-         "\n".join(coll_button(n, fs) for n, fs in colls.items()) + '\n    </div>\n    </section>')
+         "\n".join(coll_button(n, fs, 'settings') for n, fs in colls.items()) + '\n    </div>\n    </section>')
 GAMESEC = ('    <section id="games">\n    <h2>Video Games</h2>\n    <div class="coll-grid">\n' +
-           "\n".join(coll_button(n, fs) for n, fs in gcolls.items()) + '\n    </div>\n    </section>')
-
-
-def card_all(f):
-    c = card(f)
-    return c.replace('<div class="', '<div data-colls="' + html.escape("|".join(in_coll.get(f, [])), True) + '" class="', 1)
-
+           "\n".join(coll_button(n, fs, 'franchise') for n, fs in gcolls.items()) + '\n    </div>\n    </section>')
 
 allf = sorted(items, key=lambda f: items[f][0].lower())
 
 
-# --- the tag bar: tags matching MIN_SHOWN+ comics up front, the rest in a panel; every chip shows its count
-def tchip(t, n):
-    return ('<button type="button" class="chip filt" data-tag="' + html.escape(t, True) + '" aria-pressed="false">' +
-            '<span class="chip-t">' + html.escape(t) + '</span><span class="chip-n">' + str(n) + '</span></button>')
+def card_all(f):
+    return card(f).replace(' data-tags="', ' data-id="' + f + '" data-tags="', 1)
 
 
-shown, more = [], []
-for key, lab in FACETS:
+# --- the sidebar: booru-style groups, one option per line, fixed order (most used first) so nothing moves on click
+GROUPS = [('settings', 'Universe'), ('franchise', 'Franchise'), ('characters', 'Character'), ('themes', 'Tags')]
+side = []
+for key, lab in GROUPS:
     counts = collections.Counter()
     for f in items:
         counts.update(tags.get(f, {}).get(key, []))
     if not counts:
         continue
-    ordered = sorted(counts, key=lambda t: (-counts[t], t.lower()))
-    big = [t for t in ordered if counts[t] >= MIN_SHOWN]
-    small = [t for t in ordered if counts[t] < MIN_SHOWN]
-    if big:
-        shown.append('        <div class="facet"><h3>' + html.escape(lab) + '</h3><div class="chips">' +
-                     "".join(tchip(t, counts[t]) for t in big) + '</div></div>')
-    if small:
-        more.append('          <div class="facet"><h3>' + html.escape(lab) + '</h3><div class="chips">' +
-                    "".join(tchip(t, counts[t]) for t in small) + '</div></div>')
-TAGBAR = ('      <div id="tagbar">\n' + "\n".join(shown) + '\n' +
-          '        <div class="more-wrap"><button type="button" class="more-btn" aria-expanded="false" aria-controls="more-panel">'
-          'More tags</button>\n        <div id="more-panel" class="more-panel" hidden>\n' + "\n".join(more) +
-          '\n        </div></div>\n      </div>')
+    rows = ''.join('<li><label class="opt"><input type="checkbox" data-k="' + key + '" value="' + html.escape(v, True) +
+                   '"><span class="opt-t">' + html.escape(v) + '</span><span class="opt-n">' + str(counts[v]) +
+                   '</span></label></li>' for v in sorted(counts, key=lambda v: (-counts[v], v.lower())))
+    side.append('        <section class="grp"><h3>' + lab + '</h3><ul>' + rows + '</ul></section>')
+SIDE = ('      <aside class="side"><button type="button" class="done-btn">Done</button>\n' + "\n".join(side) +
+        '\n      </aside>')
 ACTIVE = ('      <div id="active" aria-live="polite"><div class="chips"></div>'
           '<button type="button" class="clear-btn" hidden>Clear all</button></div>')
+WORKS = json.dumps([dict(id=f, title=items[f][0], **{k: tags.get(f, {}).get(k, []) for k, _ in GROUPS}) for f in allf],
+                   ensure_ascii=False).replace('</', '<\\/')
 
-ALLSEC = ('    <section id="all">\n    <h2>All comics</h2>\n' + TAGBAR + '\n' + ACTIVE +
-          '\n    <div class="grid" id="all-grid">\n' + "\n".join(card_all(f) for f in allf) + '\n    </div>\n    </section>')
+ALLSEC = ('    <section id="all">\n    <h2>All comics</h2>\n    <div class="browse">\n' + SIDE +
+          '\n      <div class="results">\n      <button type="button" class="filters-btn">Filters</button>\n' + ACTIVE +
+          '\n    <div class="grid" id="all-grid">\n' + "\n".join(card_all(f) for f in allf) +
+          '\n    </div>\n      </div>\n    </div>\n    </section>')
 
-BODY = '<!--body-->\n' + COLLS + '\n' + ALLSEC + '\n' + GAMESEC + '\n    <!--endbody-->'
+BODY = ('<!--body-->\n' + COLLS + '\n' + ALLSEC + '\n' + GAMESEC +
+        '\n    <script src="vendor/itemsjs-2.4.4.umd.js"></script>\n    <script>var WORKS=' + WORKS + ';</script>\n    <!--endbody-->')
 
 CSS = ('/*cards*/'
-       '.grid{align-items:start}'
+       '.wrap{max-width:1280px}'
+       '.grid{align-items:start;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}'
        '.card{display:flex;flex-direction:column;gap:0;padding:0}'
        '.card[hidden]{display:none}'
        '.thumbwrap{display:block;line-height:0;overflow:hidden;border-radius:11px 11px 0 0}'
@@ -186,74 +173,90 @@ CSS = ('/*cards*/'
        'text-align:left;cursor:pointer}'
        '.coll-img{display:block;width:100%;height:220px;object-fit:cover;border-radius:4px}'
        '.coll-name{font-size:20px;line-height:1.25;overflow-wrap:anywhere}'
+       '#games{margin-top:48px}'
+       '.browse{display:grid;grid-template-columns:300px 1fr;gap:40px;align-items:start}'
+       '.side{position:sticky;top:16px;max-height:calc(100vh - 32px);overflow-y:auto;padding:4px 12px 24px 2px}'
+       '.grp{margin:0 0 28px}'
+       '.grp h3{font-family:var(--snz-sans);font-weight:700;font-size:15px;line-height:1.2;text-transform:uppercase;margin:0 0 10px}'
+       '.grp ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}'
+       '.opt{display:flex;align-items:center;gap:10px;padding:6px 8px;border-radius:6px;cursor:pointer;font-size:18px;line-height:1.3}'
+       '.opt:hover{background:rgba(60,24,21,.08)}'
+       '.opt input{width:20px;height:20px;margin:0;flex:none;accent-color:var(--snz-deep-crimson)}'
+       '.opt-t{flex:1;overflow-wrap:anywhere}'
+       '.opt-n{font-variant-numeric:tabular-nums;font-weight:600}'
+       '.opt.zero{cursor:not-allowed}.opt.zero:hover{background:none}'
+       '#active{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:52px;margin:0 0 16px}'
+       '#active .chips{display:flex;flex-wrap:wrap;gap:6px}'
        '.chip{font:inherit;cursor:pointer;display:inline-flex;align-items:baseline;gap:.45em;white-space:normal;text-align:left}'
-       '.chip-n{font-variant-numeric:tabular-nums}'
-       '#games{margin-top:48px}#tagbar{display:flex;flex-direction:column;gap:14px;margin:0 0 18px}'
-       '#tagbar .facet{display:flex;flex-direction:column;gap:7px}'
-       '#tagbar h3{margin:0}'
-       '#tagbar .chips,#active .chips{display:flex;flex-wrap:wrap;gap:6px}'
-       '.more-wrap{position:relative}'
-       '.more-btn{font:inherit;cursor:pointer}'
-       '.more-panel{position:absolute;left:0;top:calc(100% + 10px);z-index:20;width:min(760px,calc(100vw - 32px));'
-       'max-height:min(70vh,560px);overflow-y:auto;display:flex;flex-direction:column;gap:14px;padding:20px}'
-       '.more-panel[hidden]{display:none}'
-       '#active{display:flex;flex-wrap:wrap;align-items:center;gap:8px;min-height:52px;margin:0 0 20px}'
        '.clear-btn{font:inherit;cursor:pointer}'
+       '.filters-btn,.done-btn{display:none}'
+       '@media (max-width:800px){'
+       '.browse{grid-template-columns:1fr}'
+       '.filters-btn{display:inline-block;font:600 18px var(--snz-sans);padding:.6em 1.2em;border-radius:100px;'
+       'border:2px solid var(--snz-deep-crimson);background:var(--snz-ivory);color:var(--snz-deep-crimson);margin:0 0 12px;cursor:pointer}'
+       '.side{position:fixed;inset:0 0 0 auto;width:min(360px,88vw);max-height:none;height:100vh;z-index:30;'
+       'background:var(--snz-ivory);border-left:2px solid var(--snz-deep-crimson);padding:20px 16px;transform:translateX(105%);'
+       'transition:transform .2s}'
+       '.side.open{transform:none}'
+       '.done-btn{display:block;margin:0 0 20px auto;font:600 18px var(--snz-sans);padding:.6em 1.2em;border-radius:100px;'
+       'border:2px solid var(--snz-deep-crimson);background:var(--snz-deep-crimson);color:var(--snz-ivory);cursor:pointer}'
+       '}'
        '/*endcards*/')
 
 JS = r"""/*tagjs*/
 (function(){
-  var grid=document.getElementById("all-grid"), bar=document.getElementById("tagbar"),
-      act=document.getElementById("active"), actChips=act.querySelector(".chips"), clear=act.querySelector(".clear-btn"),
-      moreBtn=bar.querySelector(".more-btn"), panel=document.getElementById("more-panel"),
-      cards=[].slice.call(grid.querySelectorAll(".card")), tags=[], coll=null;
-  function list(c,a){ return (c.getAttribute(a)||"").split("|").filter(Boolean); }
-  function match(c,extraTag){
-    var t=list(c,"data-tags"), k=list(c,"data-colls"), want=tags.concat(extraTag?[extraTag]:[]);
-    if(coll&&k.indexOf(coll)<0) return false;
-    return want.every(function(x){ return t.indexOf(x)>=0; });
-  }
-  function mini(label,kind,val){
-    var b=document.createElement("button"); b.type="button"; b.className="chip on";
-    b.dataset.kind=kind; b.dataset.val=val; b.setAttribute("aria-label","Remove "+label);
-    var s=document.createElement("span"); s.className="chip-t"; s.textContent=label;
-    var x=document.createElement("span"); x.className="chip-x"; x.setAttribute("aria-hidden","true"); x.textContent="×";
-    b.appendChild(s); b.appendChild(x); return b;
-  }
+  // ItemsJS (vendor/itemsjs-2.4.4.umd.js, Apache-2.0) decides what matches and every count; this only draws them
+  var KEYS=['settings','franchise','characters','themes'], aggs={};
+  KEYS.forEach(function(k){ aggs[k]={size:1000, conjunction:true, chosen_filters_on_top:false}; });
+  var engine=itemsjs(WORKS,{aggregations:aggs, native_search_enabled:false});
+  var cards={}; [].forEach.call(document.querySelectorAll('#all-grid .card'),function(c){ cards[c.dataset.id]=c; });
+  var boxes=[].slice.call(document.querySelectorAll('.opt input')),
+      act=document.querySelector('#active .chips'), clear=document.querySelector('#active .clear-btn'),
+      side=document.querySelector('.side'), fbtn=document.querySelector('.filters-btn');
+  function box(k,v){ return boxes.filter(function(b){ return (!k||b.dataset.k===k)&&b.value===v; })[0]; }
+  function sel(){ return boxes.filter(function(b){ return b.checked; }); }
+  function chosen(){ var f={}; sel().forEach(function(b){ (f[b.dataset.k]=f[b.dataset.k]||[]).push(b.value); }); return f; }
   function sync(){
-    cards.forEach(function(c){ c.hidden=!match(c); });
-    [].forEach.call(document.querySelectorAll(".chip.filt"),function(b){
-      var t=b.dataset.tag, on=tags.indexOf(t)>=0;
-      b.setAttribute("aria-pressed",on?"true":"false");
-      var n=cards.filter(function(c){ return match(c,on?null:t); }).length;
-      b.querySelector(".chip-n").textContent=n;
-      if(!on&&n===0) b.setAttribute("aria-disabled","true"); else b.removeAttribute("aria-disabled");
+    var r=engine.search({per_page:1000, filters:chosen()}).data, shown={}, n={};
+    r.items.forEach(function(it){ shown[it.id]=1; });
+    Object.keys(cards).forEach(function(id){ cards[id].hidden=!shown[id]; });
+    KEYS.forEach(function(k){ n[k]={}; r.aggregations[k].buckets.forEach(function(b){ n[k][b.key]=b.doc_count; }); });
+    boxes.forEach(function(b){
+      var c=n[b.dataset.k][b.value]||0; b.parentNode.querySelector('.opt-n').textContent=c;
+      var z=!b.checked&&c===0; b.disabled=z; b.parentNode.classList.toggle('zero',z);
     });
-    [].forEach.call(document.querySelectorAll(".coll"),function(b){ b.setAttribute("aria-pressed",b.dataset.coll===coll?"true":"false"); });
-    actChips.replaceChildren();
-    if(coll) actChips.appendChild(mini(coll,"coll",coll));
-    tags.forEach(function(t){ actChips.appendChild(mini(t,"tag",t)); });
-    clear.hidden=!(coll||tags.length);
-    var q=[]; if(coll) q.push("c="+encodeURIComponent(coll)); if(tags.length) q.push("tag="+tags.map(encodeURIComponent).join("+"));
-    history.replaceState(null,"",q.length?"?"+q.join("&"):location.pathname);
+    [].forEach.call(document.querySelectorAll('.coll'),function(c){
+      var b=box(c.dataset.k,c.dataset.v); c.setAttribute('aria-pressed',b&&b.checked?'true':'false');
+    });
+    act.replaceChildren();
+    sel().forEach(function(b){
+      var x=document.createElement('button'); x.type='button'; x.className='chip on';
+      x.innerHTML='<span class="chip-t"></span><span class="chip-x" aria-hidden="true">×</span>';
+      x.querySelector('.chip-t').textContent=b.value; x.setAttribute('aria-label','Remove '+b.value);
+      x.onclick=function(){ b.checked=false; sync(); }; act.appendChild(x);
+    });
+    clear.hidden=!sel().length;
+    var q=sel().map(function(b){ return encodeURIComponent(b.dataset.k+':'+b.value); });
+    history.replaceState(null,'',q.length?'?f='+q.join(','):location.pathname);
   }
-  function openPanel(o){ panel.hidden=!o; moreBtn.setAttribute("aria-expanded",o?"true":"false"); }
-  document.addEventListener("click",function(e){
-    var el=e.target; if(!el||!el.closest) return;
-    var f=el.closest(".chip.filt"), c=el.closest(".coll"), m=el.closest("#active .chip.on");
-    if(f){ e.preventDefault(); if(f.getAttribute("aria-disabled")==="true") return;
-      var t=f.dataset.tag, i=tags.indexOf(t); if(i>=0) tags.splice(i,1); else tags.push(t); sync(); return; }
-    if(c){ coll=(coll===c.dataset.coll)?null:c.dataset.coll; sync();
-      document.getElementById("all").scrollIntoView({block:"start",behavior:"smooth"}); return; }
-    if(m){ if(m.dataset.kind==="coll") coll=null; else tags.splice(tags.indexOf(m.dataset.val),1); sync(); return; }
-    if(el.closest(".clear-btn")){ tags=[]; coll=null; sync(); return; }
-    if(el.closest(".more-btn")){ openPanel(panel.hidden); return; }
-    if(!panel.hidden&&!el.closest("#more-panel")) openPanel(false);
+  boxes.forEach(function(b){ b.addEventListener('change',sync); });
+  clear.onclick=function(){ boxes.forEach(function(b){ b.checked=false; }); sync(); };
+  [].forEach.call(document.querySelectorAll('.coll'),function(c){
+    c.addEventListener('click',function(){
+      var b=box(c.dataset.k,c.dataset.v); if(!b) return;
+      b.checked=!b.checked; sync();
+      document.getElementById('all').scrollIntoView({block:'start',behavior:'smooth'});
+    });
   });
-  document.addEventListener("keydown",function(e){ if(e.key==="Escape"&&!panel.hidden){ openPanel(false); moreBtn.focus(); } });
+  fbtn.onclick=function(){ side.classList.toggle('open'); };
+  side.querySelector('.done-btn').onclick=function(){ side.classList.remove('open'); };
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape') side.classList.remove('open'); });
+  // links: ?f=settings:Boundborne,characters:Jane ; older ?c= and ?tag= links still work
   var p=new URLSearchParams(location.search);
-  if(p.get("tag")) tags=p.get("tag").split("+").map(decodeURIComponent).filter(Boolean);
-  if(p.get("c")) coll=p.get("c");
+  (p.get('f')||'').split(',').filter(Boolean).forEach(function(s){
+    var i=s.indexOf(':'), b=box(s.slice(0,i),s.slice(i+1)); if(b) b.checked=true; });
+  if(p.get('c')){ var b=box(null,p.get('c')); if(b) b.checked=true; }
+  (p.get('tag')||'').split('+').filter(Boolean).forEach(function(t){ var b=box(null,t); if(b) b.checked=true; });
   sync();
 })();
 /*endtagjs*/"""
