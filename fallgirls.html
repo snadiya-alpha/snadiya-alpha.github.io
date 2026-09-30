@@ -121,8 +121,8 @@
   .shell[data-mode="scroll"] #cardview{display:none}
   #vp{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none} #vp::-webkit-scrollbar{display:none}
   #layer{transform-origin:0 0}
-  .panel{display:block;position:relative;background:var(--surface);margin:0 auto 18px;width:100%;max-width:var(--measure)}
-  #stage.pz{overflow:hidden}
+  .panel{display:block;position:relative;background:var(--surface);margin:0 auto 28px;width:100%;max-width:var(--measure)}
+  #stage.pz{overflow:hidden} #stage.pz img{margin:auto}
   .panel img{display:block;width:100%;height:auto}
   .panel.pending::after{content:"";position:absolute;left:50%;top:50%;width:26px;height:26px;margin:-13px 0 0 -13px;
     border:2px solid var(--sep);border-top-color:var(--tint);border-radius:50%;animation:spin .8s linear infinite}
@@ -874,14 +874,22 @@ window.CONFIG = { title:"Fall Girls", artist:"Snadiya", artistSite:"https://link
     var z0=SPOT[page]?Math.max(1.5,userZoom):userZoom;
     pz=window.Panzoom(im,{maxScale:6,minScale:1,step:0.25,panOnlyWhenZoomed:true,cursor:"auto",noBind:true,animate:false,
       startScale:z0,startX:(z0>1.001?userPan.x:0),startY:(z0>1.001?userPan.y:0),
-      handleStartEvent:function(e){ if(pz&&pz.getScale()>1.01){ e.preventDefault(); e.stopPropagation(); } }});
+      handleStartEvent:function(e){ if(e.pointerType==="touch"||(pz&&pz.getScale()>1.01)){ e.preventDefault(); e.stopPropagation(); } }});
     im.addEventListener("panzoomchange",function(e){ if(!pz||pz.getScale===undefined){return;} userZoom=e.detail.scale; userPan={x:e.detail.x,y:e.detail.y}; im.style.cursor=userZoom>1.01?"grab":"auto"; });
     im.addEventListener("panzoomend",function(){ if(pz&&pz.getScale()<1.03){ pzHome(); } });
   }
-  stage.addEventListener("pointerdown",function(e){ if(pz){ pz.handleDown(e); } });
-  document.addEventListener("pointermove",function(e){ if(pz){ pz.handleMove(e); } });
-  document.addEventListener("pointerup",function(e){ if(pz){ pz.handleUp(e); } });
-  document.addEventListener("pointercancel",function(e){ if(pz){ pz.handleUp(e); } });
+  // Panzoom's own pinch is linear in finger distance; setting step from the start spread makes it
+  // proportional (fingers twice as far apart = twice the zoom), which is how phones behave
+  var touches={};
+  function nTouch(){ return Object.keys(touches).length; }
+  stage.addEventListener("pointerdown",function(e){ if(!pz){ return; }
+    if(e.pointerType==="touch"){ touches[e.pointerId]={x:e.clientX,y:e.clientY};
+      if(nTouch()===2){ var k=Object.keys(touches),a=touches[k[0]],b=touches[k[1]],d=Math.hypot(a.x-b.x,a.y-b.y)||1; pz.setOptions({step:80*pz.getScale()/d}); } }
+    pz.handleDown(e); });
+  document.addEventListener("pointermove",function(e){ if(touches[e.pointerId]){ touches[e.pointerId]={x:e.clientX,y:e.clientY}; } if(pz){ pz.handleMove(e); } });
+  function upTouch(e){ if(touches[e.pointerId]){ delete touches[e.pointerId]; if(nTouch()<2&&pz){ pz.setOptions({step:0.25}); } } if(pz){ pz.handleUp(e); } }
+  document.addEventListener("pointerup",upTouch);
+  document.addEventListener("pointercancel",upTouch);
   // fallback pinch for full-width pages (no Panzoom)
   var pinch=null;
   function tdist(t){ return Math.hypot(t[0].clientX-t[1].clientX,t[0].clientY-t[1].clientY)||1; }
@@ -1010,7 +1018,7 @@ window.CONFIG = { title:"Fall Girls", artist:"Snadiya", artistSite:"https://link
   paintIcons(document);
   buildScroll();buildChapMenu();buildChapBar();buildThumbs();buildTags();placeTicks();
   var savedPos=rd(K_POS,null); if(savedPos&&typeof savedPos.i==="number"){ page=Math.min(TOTAL-1,Math.max(0,savedPos.i)); }
-  var savedMode=rd(K_MODE,"pages"); var s0=savedMode==="pages"?sPages:sScroll;
+  var savedMode=rd(K_MODE,(window.matchMedia&&matchMedia("(max-width:620px)").matches)?"scroll":"pages"); var s0=savedMode==="pages"?sPages:sScroll;
   fit=s0.fit!==false;
   document.getElementById("oFit").setAttribute("aria-pressed",String(fit));
   renderMarks();renderHelp();
