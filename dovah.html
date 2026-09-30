@@ -12,8 +12,11 @@
 <meta property="og:url" content="https://directrixphantom.github.io/comic-reader/dovah.html">
 <meta property="og:site_name" content="Snadiya">
 <meta name="author" content="Snadiya">
-<meta name="themes" content="Rope Bondage, Cloth Gag, Hood, Blindfold, Gag Variants, Camera Variants">
+<meta name="characters" content="Dovah">
+<meta name="themes" content="Rope Bondage, Cloth Gag, Hood, Blindfold, Gag Variants, Camera Variants, Fantasy">
 <meta name="settings" content="Studio Void">
+<meta name="franchise" content="Skyrim">
+<meta name="credit:character" content="Dovah belongs to CedarWoodCane">
 <meta name="source" content="https://drive.google.com/drive/folders/1p2yics80q3LNB9H3J_iNXUitMdEwQrWV">
 
 
@@ -163,6 +166,7 @@
   .endcap .by{font-size:17px;color:var(--text-2);margin:0 0 4px}
   .endcap .who{font-size:34px;font-weight:700;letter-spacing:-.03em;margin:0 0 2px;line-height:1.1}
   .endcap .who a{color:var(--amber);text-decoration:none} .endcap .who a:hover{text-decoration:underline}
+  .endcap .owns{font-size:18px;margin:14px 0 0} .endcap .owns a{color:var(--amber);font-weight:700;text-decoration:none} .endcap .owns a:hover{text-decoration:underline}
   .endcap .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0 0}
   .endcap .links a{display:inline-flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-.01em;
     padding:14px 20px;border:1px solid var(--sep);color:var(--text);text-decoration:none}
@@ -285,7 +289,7 @@
 
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
-window.CONFIG = { title:"Dovah", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"comics.html", base:"./", endText:"The End", driveUrl:"https://drive.google.com/drive/folders/1p2yics80q3LNB9H3J_iNXUitMdEwQrWV",
+window.CONFIG = { title:"Dovah", artist:"Snadiya", owns:[{name:"Dovah", owner:"CedarWoodCane", url:""}], artistSite:"https://linktr.ee/snadiya", gallery:"comics.html", base:"./", endText:"The End", driveUrl:"https://drive.google.com/drive/folders/1p2yics80q3LNB9H3J_iNXUitMdEwQrWV",
  chapters:[{ title:"Pack 01", folder:"dovah/", prefix:"p1_", pad:3, ext:"webp", from:0, to:10 },{ title:"Pack 02", folder:"dovah/", prefix:"p2_", pad:3, ext:"webp", from:0, to:10 },
   { title:"Pack 03", folder:"dovah/", prefix:"p3_", pad:3, ext:"webp", from:0, to:10 },{ title:"Pack 04", folder:"dovah/", prefix:"p4_", pad:3, ext:"webp", from:0, to:10 }], dims:[[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920]] };
 </script>
@@ -475,6 +479,7 @@ window.CONFIG = { title:"Dovah", artist:"Snadiya", artistSite:"https://linktr.ee
     var e=document.createElement("div");e.className="endcap";
     e.innerHTML='<p class="fin">'+(C.endText||"The End")+'</p><p class="by">A comic by</p>'+
       '<p class="who"><a href="'+C.artistSite+'" target="_blank" rel="noopener">'+C.artist+'</a></p>'+
+      (C.owns||[]).map(function(o){return '<p class="owns">'+o.name+' belongs to '+(o.url?'<a href="'+o.url+'" target="_blank" rel="noopener">'+o.owner+'</a>':o.owner)+'</p>';}).join("")+
       '<div class="links"><a class="acc" href="'+C.gallery+'"><span class="ico" data-i="list"></span>All comics</a>'+
       '<a href="'+C.artistSite+'" target="_blank" rel="noopener"><span class="ico" data-i="view-grid"></span>More by '+C.artist+'</a></div>';
     paintIcons(e);return e;

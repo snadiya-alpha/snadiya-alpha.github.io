@@ -15,6 +15,7 @@
 <meta name="characters" content="Kyra">
 <meta name="themes" content="Chain Bondage, Ball Gag, Group Captivity, Camera Variants">
 <meta name="settings" content="Desert">
+<meta name="credit:character" content="Kyra belongs to SirKaiju">
 <meta name="source" content="https://drive.google.com/drive/folders/1q1Pmh3P7EoWYd8Lo2E8_5xsyJFdP9SQ8">
 
 
@@ -164,6 +165,7 @@
   .endcap .by{font-size:17px;color:var(--text-2);margin:0 0 4px}
   .endcap .who{font-size:34px;font-weight:700;letter-spacing:-.03em;margin:0 0 2px;line-height:1.1}
   .endcap .who a{color:var(--amber);text-decoration:none} .endcap .who a:hover{text-decoration:underline}
+  .endcap .owns{font-size:18px;margin:14px 0 0} .endcap .owns a{color:var(--amber);font-weight:700;text-decoration:none} .endcap .owns a:hover{text-decoration:underline}
   .endcap .links{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:28px 0 0}
   .endcap .links a{display:inline-flex;align-items:center;gap:8px;font-size:17px;font-weight:600;letter-spacing:-.01em;
     padding:14px 20px;border:1px solid var(--sep);color:var(--text);text-decoration:none}
@@ -286,7 +288,7 @@
 
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
-window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"index.html", base:"./", endText:"The End", ogImage:"kyra1/panel_001.webp", driveUrl:"https://drive.google.com/drive/folders/1q1Pmh3P7EoWYd8Lo2E8_5xsyJFdP9SQ8",
+window.CONFIG = { title:"Kyra", artist:"Snadiya", owns:[{name:"Kyra", owner:"SirKaiju", url:"https://www.deviantart.com/sirkaiju"}], artistSite:"https://linktr.ee/snadiya", gallery:"index.html", base:"./", endText:"The End", ogImage:"kyra1/panel_001.webp", driveUrl:"https://drive.google.com/drive/folders/1q1Pmh3P7EoWYd8Lo2E8_5xsyJFdP9SQ8",
  chapters:[{ title:"Kyra", folder:"kyra1/", prefix:"panel_", pad:3, ext:"webp", from:1, to:41 }], dims:[[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1920,1080],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920]] };
 </script>
 <!-- ================================================================== -->
@@ -475,6 +477,7 @@ window.CONFIG = { title:"Kyra", artist:"Snadiya", artistSite:"https://linktr.ee/
     var e=document.createElement("div");e.className="endcap";
     e.innerHTML='<p class="fin">'+(C.endText||"The End")+'</p><p class="by">A comic by</p>'+
       '<p class="who"><a href="'+C.artistSite+'" target="_blank" rel="noopener">'+C.artist+'</a></p>'+
+      (C.owns||[]).map(function(o){return '<p class="owns">'+o.name+' belongs to '+(o.url?'<a href="'+o.url+'" target="_blank" rel="noopener">'+o.owner+'</a>':o.owner)+'</p>';}).join("")+
       '<div class="links"><a class="acc" href="'+C.gallery+'"><span class="ico" data-i="list"></span>All comics</a>'+
       '<a href="'+C.artistSite+'" target="_blank" rel="noopener"><span class="ico" data-i="view-grid"></span>More by '+C.artist+'</a></div>';
     paintIcons(e);return e;
