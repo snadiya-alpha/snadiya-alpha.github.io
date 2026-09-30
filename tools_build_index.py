@@ -37,7 +37,8 @@ if os.path.exists(_dj):
 items, raws, tags = {}, {}, {}
 for f in sorted(glob.glob(os.path.join(BASE, '*.html'))):
     fn = os.path.basename(f)
-    if fn in SKIP:
+    # unlisted test copies (-cf = Cloudflare image tests) and the collection pages this script writes
+    if fn in SKIP or fn.endswith('-cf.html') or fn.startswith('c-'):
         continue
     s = io.open(f, encoding='utf-8', errors='replace').read()
     raws[fn] = s
@@ -76,16 +77,17 @@ def card(f):
     t = items[f][0]
     slug = f[:-5]
     img = ''
+    w, h = DIMS.get(slug, (520, 768))
     if os.path.exists(os.path.join(THUMBDIR, slug + '.webp')):
-        w, h = DIMS.get(slug, (520, 768))
         img = ('        <a class="thumbwrap" href="' + f + '" tabindex="-1" aria-hidden="true">'
                '<img class="thumb" src="thumbs/' + slug + '.webp" width="' + str(w) +
                '" height="' + str(h) + '" loading="lazy" decoding="async" alt=""></a>\n')
-    # tags stay in data-tags so filtering still works, but are not drawn on the
-    # card -- a variable-length chip block made every card a different height
+    # tags stay in data-tags so filtering still works, but are not drawn on the card.
+    # data-w/data-h give justify.js each picture's real shape for the justified rows.
     mine = all_tags(f)
     cls = 'card featured' if f in FEATURED else 'card'
-    return ('      <div class="' + cls + '" data-tags="' + html.escape("|".join(mine), True) + '">\n' + img +
+    return ('      <div class="' + cls + '" data-w="' + str(w) + '" data-h="' + str(h) + '" data-tags="' +
+            html.escape("|".join(mine), True) + '">\n' + img +
             '        <span class="cardtext"><a class="name" href="' + f + '">' + html.escape(t) +
             '</a></span>\n      </div>')
 
@@ -93,9 +95,13 @@ def card(f):
 USED_COVERS = set()
 
 
+def coll_slug(name):
+    return 'c-' + re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-') + '.html'
+
+
 def coll_button(name, files, key):
     # each collection gets its own cover: the first of its comics not already used by an earlier collection.
-    # A collection button simply ticks the matching sidebar box (Universe or Franchise).
+    # A one-work collection opens that comic; a bigger one opens its own collection page.
     f0 = next((f for f in files if f not in USED_COVERS and os.path.exists(os.path.join(THUMBDIR, f[:-5] + '.webp'))), files[0])
     USED_COVERS.add(f0)
     slug = f0[:-5]
@@ -104,8 +110,9 @@ def coll_button(name, files, key):
         w, h = DIMS.get(slug, (520, 768))
         img = ('<img class="coll-img" src="thumbs/' + slug + '.webp" width="' + str(w) + '" height="' + str(h) +
                '" loading="lazy" decoding="async" alt="">')
-    return ('      <button type="button" class="coll" data-k="' + key + '" data-v="' + html.escape(name, True) +
-            '" aria-pressed="false">' + img + '<span class="coll-name">' + html.escape(name) + '</span></button>')
+    href = files[0] if len(files) == 1 else coll_slug(name)
+    return ('      <a class="coll" href="' + href + '">' + img + '<span class="coll-name">' + html.escape(name) +
+            '</span></a>')
 
 
 colls, gcolls = {}, {}
@@ -152,11 +159,16 @@ WORKS = json.dumps([dict(id=f, title=items[f][0], **{k: tags.get(f, {}).get(k, [
 
 ALLSEC = ('    <section id="all">\n    <h2>All comics</h2>\n    <div class="browse">\n' + SIDE +
           '\n      <div class="results">\n      <button type="button" class="filters-btn">Filters</button>\n' + ACTIVE +
-          '\n    <div class="grid" id="all-grid">\n' + "\n".join(card_all(f) for f in allf) +
+          '\n    <div class="grid jgrid" id="all-grid">\n' + "\n".join(card_all(f) for f in allf) +
           '\n    </div>\n      </div>\n    </div>\n    </section>')
 
+# Flickr's justified-layout (vendored, MIT) sizes the picture rows; justify.js only places the cards it returns
+JUSTIFY_TAGS = ('    <script src="vendor/justified-layout-4.1.0.min.js"></script>\n'
+                '    <script src="justify.js"></script>\n')
+
 BODY = ('<!--body-->\n' + COLLS + '\n' + ALLSEC + '\n' + GAMESEC +
-        '\n    <script src="vendor/itemsjs-2.4.4.umd.js"></script>\n    <script>var WORKS=' + WORKS + ';</script>\n    <!--endbody-->')
+        '\n    <script src="vendor/itemsjs-2.4.4.umd.js"></script>\n' + JUSTIFY_TAGS +
+        '    <script>var WORKS=' + WORKS + ';</script>\n    <!--endbody-->')
 
 CSS = ('/*cards*/'
        '.wrap{max-width:1280px}'
@@ -170,7 +182,10 @@ CSS = ('/*cards*/'
        '.card.featured{border-color:var(--orange);box-shadow:0 0 0 2px var(--orange)}'
        '.coll-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}'
        '.coll{display:flex;flex-direction:column;gap:10px;padding:0;border:0;background:none;color:inherit;font:inherit;'
-       'text-align:left;cursor:pointer}'
+       'text-align:left;cursor:pointer;text-decoration:none}'
+       '.jgrid.ready{display:block;position:relative}'
+       '.jgrid.ready > .card{position:absolute;top:0;left:0}'
+       '.jgrid.ready .thumb{height:100%;object-fit:cover}'
        '.coll-img{display:block;width:100%;height:220px;object-fit:cover;border-radius:4px}'
        '.coll-name{font-size:20px;line-height:1.25;overflow-wrap:anywhere}'
        '#games{margin-top:48px}'
@@ -225,9 +240,7 @@ JS = r"""/*tagjs*/
       var c=n[b.dataset.k][b.value]||0; b.parentNode.querySelector('.opt-n').textContent=c;
       var z=!b.checked&&c===0; b.disabled=z; b.parentNode.classList.toggle('zero',z);
     });
-    [].forEach.call(document.querySelectorAll('.coll'),function(c){
-      var b=box(c.dataset.k,c.dataset.v); c.setAttribute('aria-pressed',b&&b.checked?'true':'false');
-    });
+    if(window.justify) justify(document.getElementById('all-grid'));
     act.replaceChildren();
     sel().forEach(function(b){
       var x=document.createElement('button'); x.type='button'; x.className='chip on';
@@ -241,13 +254,6 @@ JS = r"""/*tagjs*/
   }
   boxes.forEach(function(b){ b.addEventListener('change',sync); });
   clear.onclick=function(){ boxes.forEach(function(b){ b.checked=false; }); sync(); };
-  [].forEach.call(document.querySelectorAll('.coll'),function(c){
-    c.addEventListener('click',function(){
-      var b=box(c.dataset.k,c.dataset.v); if(!b) return;
-      b.checked=!b.checked; sync();
-      document.getElementById('all').scrollIntoView({block:'start',behavior:'smooth'});
-    });
-  });
   fbtn.onclick=function(){ side.classList.toggle('open'); };
   side.querySelector('.done-btn').onclick=function(){ side.classList.remove('open'); };
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') side.classList.remove('open'); });
@@ -280,6 +286,21 @@ if '/*tagjs*/' in new:
 else:
     new = new.replace('</body>', '<script>\n' + JS + '\n</script>\n</body>', 1)
 io.open(OUT, 'w', encoding='utf-8', newline='\n').write(new)
+
+# --- one page per collection with more than one work: its name, then its pictures in justified rows
+HEAD = new[:new.index('</head>')]
+made = []
+for name, files in list(colls.items()) + list(gcolls.items()):
+    if len(files) < 2:
+        continue
+    page = (HEAD.replace('<title>Comics</title>', '<title>' + html.escape(name) + '</title>', 1) + '</head>\n<body>\n'
+            '<div class="wrap">\n<h1>' + html.escape(name) + '</h1>\n'
+            '<p class="crumb"><a class="plain" href="index.html">All comics</a></p>\n'
+            '<div class="grid jgrid">\n' + "\n".join(card(f) for f in files) + '\n</div>\n</div>\n' +
+            JUSTIFY_TAGS + '</body>\n</html>\n')
+    io.open(os.path.join(BASE, coll_slug(name)), 'w', encoding='utf-8', newline='\n').write(page)
+    made.append(coll_slug(name))
+print("  collection pages: " + ", ".join(made))
 
 used = collections.Counter()
 for f in items:
