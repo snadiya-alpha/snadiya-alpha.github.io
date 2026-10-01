@@ -285,76 +285,68 @@
     .seg button{min-width:44px}
     #backBtn{min-width:44px}
   }
-  /* Ant Design look for the reader (prototype v2, dark). Every colour is from the SNZweig brand kit
-     (jetwong.neocities.org/snzweig-brand-kit#palette): Deep Sea ground, Deep Crimson bars and menus, Ivory type,
-     the Orange to Light Orange gradient for the main action and the slider, Lagoon for the chosen state and focus,
-     Lilac for hover. Ant shapes: 6/8px corners, hairline borders, lift shadow on floating menus. Text is full ink. */
+  /* Ant Design shapes on the reader's own colours (prototype D, picked by Jet 2026-09-30).
+     Colours are the reader's existing palette: ink #1e1b2c ground, plum #393047 bars and menus, rose #ecc1c2 type,
+     peach-orange #f49c58 for the main action and the slider. Ant shapes: 6/8px corners, hairline outlines,
+     lift shadow on floating menus, segmented Scroll / Pages, thin slider with a round handle. Text is full ink. */
   :root{
-    --snz-orange:#FF4818; --snz-light-orange:#FF7515; --snz-deep-crimson:#3C1815; --snz-lagoon:#7BD8C9;
-    --snz-deep-sea:#2A4551; --snz-lilac:#AEA8D8; --snz-ivory:#FFFFF0; --snz-black:#181818;
-    --snz-gradient:linear-gradient(90deg,#FF4818 0%,#FF7515 100%);
-    --ant-line:rgba(255,255,240,.18); --ant-line-strong:rgba(255,255,240,.55);
-    --ant-hover:rgba(174,168,216,.18); --ant-r-sm:4px; --ant-r:6px; --ant-r-lg:8px;
+    --ant-line:rgba(236,193,194,.22); --ant-line-strong:rgba(236,193,194,.6);
+    --ant-hover:rgba(236,193,194,.12); --ant-r-sm:4px; --ant-r:6px; --ant-r-lg:8px;
     --ant-lift:0 6px 16px 0 rgba(0,0,0,.32),0 3px 6px -4px rgba(0,0,0,.4),0 9px 28px 8px rgba(0,0,0,.2);
     --ant-t:.2s cubic-bezier(.645,.045,.355,1);
-    --bg:var(--snz-deep-sea); --surface:var(--snz-deep-crimson); --surface-2:var(--ant-hover); --sep:var(--ant-line);
-    --text:var(--snz-ivory); --text-2:var(--snz-ivory); --tint:var(--snz-lagoon);
-    --amber:var(--snz-lagoon); --amber-dk:var(--snz-deep-crimson); --plum:rgba(255,255,240,.16);
-    --rose:var(--snz-ivory); --orange:var(--snz-orange); --ink:var(--snz-deep-sea);
+    --text-2:var(--text);
     --font:"Instrument Sans",Helvetica,Arial,sans-serif; --font-head:"Newsreader",Georgia,serif;
   }
-  html,body,.shell{background:var(--snz-deep-sea);color:var(--snz-ivory)}
-  #stage,#vp{background:var(--snz-deep-sea)}
+  html,body,.shell,#stage,#vp,.sheet{background:var(--bg);color:var(--text)}
 
-  /* buttons: Ant default = hairline outline, 6px corners. Main action (Next) = the kit's orange gradient, Deep Crimson label */
-  .btn{border-radius:var(--ant-r);font-weight:600;letter-spacing:0;color:var(--snz-ivory);
+  /* buttons: hairline outline, 6px corners; main action (Next) = filled orange with ink label */
+  .btn{border-radius:var(--ant-r);font-weight:600;letter-spacing:0;color:var(--text);
     transition:background-color var(--ant-t),border-color var(--ant-t),color var(--ant-t)}
   .btn:hover{background:var(--ant-hover)}
-  .btn.bordered{background:transparent;border-color:var(--ant-line-strong)} .btn.bordered:hover{border-color:var(--snz-lilac);background:var(--ant-hover)}
-  .btn.filled{background:var(--snz-gradient);color:var(--snz-deep-crimson);border-color:transparent}
-  .btn.filled:hover{background:var(--snz-light-orange)}
-  .btn:focus-visible,#titleBtn:focus-visible,#backBtn:focus-visible{outline:2px solid var(--snz-lagoon);outline-offset:1px}
-  #backBtn,#titleBtn{border-radius:var(--ant-r);letter-spacing:0;color:var(--snz-ivory)}
+  .btn.bordered{background:transparent;border-color:var(--ant-line-strong)} .btn.bordered:hover{border-color:var(--orange);background:var(--ant-hover)}
+  .btn.filled{background:var(--orange);color:var(--ink);border-color:transparent}
+  .btn.filled:hover{background:#f7b07a}
+  .btn:focus-visible,#titleBtn:focus-visible,#backBtn:focus-visible{outline:2px solid var(--orange);outline-offset:1px}
+  #backBtn,#titleBtn{border-radius:var(--ant-r);letter-spacing:0;color:var(--text)}
   #backBtn:hover,#titleBtn:hover{background:var(--ant-hover)}
-  #titleBtn .caret{color:var(--snz-ivory)}
+  #titleBtn .caret{color:var(--text)}
 
-  /* top and bottom bars: Deep Crimson */
-  #topnav{background:var(--snz-deep-crimson);border-bottom:0}
-  #botnav{background:var(--snz-deep-crimson);border-top:0}
+  /* bars */
+  #topnav{background:var(--surface);border-bottom:0}
+  #botnav{background:var(--surface);border-top:0}
 
-  /* Scroll / Pages = Ant segmented control; chosen side is Lagoon */
+  /* Scroll / Pages = Ant segmented control; chosen side is rose with ink */
   .seg{border:0;border-radius:var(--ant-r-lg);background:rgba(0,0,0,.28);padding:2px;gap:2px}
-  .seg button{border-radius:var(--ant-r);color:var(--snz-ivory);letter-spacing:0;transition:background-color var(--ant-t)}
+  .seg button{border-radius:var(--ant-r);color:var(--text);letter-spacing:0;transition:background-color var(--ant-t)}
   .seg button:hover{background:var(--ant-hover)}
-  .seg button[aria-pressed="true"]{background:var(--snz-lagoon);color:var(--snz-deep-crimson)}
+  .seg button[aria-pressed="true"]{background:var(--rose);color:var(--ink)}
 
   /* chapter tabs */
-  #chapBar button{border-radius:var(--ant-r);color:var(--snz-ivory);font-size:15px}
+  #chapBar button{border-radius:var(--ant-r);color:var(--text);font-size:15px}
   #chapBar button:hover{background:var(--ant-hover)}
-  #chapBar button[aria-current="true"]{background:transparent;border-color:var(--snz-lagoon);color:var(--snz-lagoon);font-weight:700}
+  #chapBar button[aria-current="true"]{background:transparent;border-color:var(--orange);color:var(--orange);font-weight:700}
 
-  /* page slider = Ant slider: ivory rail, orange gradient track, round handle with a Light Orange ring */
-  #track{height:4px;border-radius:2px;background:rgba(255,255,240,.22)}
+  /* page slider = Ant slider: thin rail, orange track, round rose handle with an orange ring */
+  #track{height:4px;border-radius:2px;background:rgba(236,193,194,.22)}
   #scrubZone.live #track{height:6px}
-  #fill{border-radius:2px;background:var(--snz-gradient)}
-  #knob{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--snz-ivory);box-shadow:0 0 0 3px var(--snz-light-orange)}
+  #fill{border-radius:2px;background:var(--orange)}
+  #knob{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--rose);box-shadow:0 0 0 3px var(--orange)}
   #scrubZone.live #knob{width:20px;height:20px;margin:-10px 0 0 -10px}
-  #countTxt{color:var(--snz-ivory)}
-  #peek{background:var(--snz-deep-crimson);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:6px}
-  #peek img{border-radius:var(--ant-r-sm)} #peek .cap,#peek .chap{color:var(--snz-ivory)}
+  #countTxt{color:var(--text)}
+  #peek{background:var(--surface);border:1px solid var(--ant-line);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:6px}
+  #peek img{border-radius:var(--ant-r-sm)} #peek .cap,#peek .chap{color:var(--text)}
 
-  /* floating menus = Ant dropdown on Deep Crimson; hover Lilac tint */
-  .pop{background:var(--snz-deep-crimson);border:0;border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:4px}
+  /* floating menus = Ant dropdown */
+  .pop{background:var(--surface);border:1px solid var(--ant-line);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:4px}
   .pop .btn{border-radius:var(--ant-r-sm)}
   .pop .btn:hover{background:var(--ant-hover)}
-  .pop .lbl{color:var(--snz-ivory)}
-  .pop .sliderrow input{accent-color:var(--snz-light-orange)}
-  .pop input[type=number],.pop input[type=text]{background:rgba(0,0,0,.25);color:var(--snz-ivory);border:1px solid var(--ant-line-strong);border-radius:var(--ant-r-sm)}
-  .sheet{background:var(--snz-deep-sea);color:var(--snz-ivory)}
-  #toast{background:var(--snz-deep-crimson);color:var(--snz-ivory);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift)}
+  .pop .lbl{color:var(--text)}
+  .pop .sliderrow input{accent-color:var(--orange)}
+  .pop input[type=number],.pop input[type=text]{background:rgba(0,0,0,.25);color:var(--text);border:1px solid var(--ant-line-strong);border-radius:var(--ant-r-sm)}
+  #toast{background:var(--surface);color:var(--text);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift)}
   .thumb{border-radius:var(--ant-r);border-color:var(--ant-line);background:rgba(0,0,0,.2)}
-  .thumb .n{border-radius:0 var(--ant-r-sm) 0 0;background:var(--snz-deep-crimson);color:var(--snz-ivory)}
-  .thumb[aria-current="true"]{outline-color:var(--snz-lagoon)} .thumb.marked .n{color:var(--snz-lagoon)}
+  .thumb .n{border-radius:0 var(--ant-r-sm) 0 0;background:var(--surface);color:var(--text)}
+  .thumb[aria-current="true"]{outline-color:var(--orange)} .thumb.marked .n{color:var(--orange)}
   .panel{background:transparent}
 </style>
 </head>
