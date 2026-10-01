@@ -411,9 +411,9 @@ window.CONFIG = { title:"Kyra II", artist:"Snadiya", owns:[{name:"Kyra", owner:"
   (C.chapters||[]).forEach(function(ch,ci){
     var start=PAGES.length;
     for(var n=ch.from;n<=ch.to;n++){
-      var idx=PAGES.length, BIG=!!(C.srcs&&C.srcs[idx]&&window.innerWidth>=1024), d=(BIG&&C.bigDims&&C.bigDims[idx])?C.bigDims[idx]:(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
+      var idx=PAGES.length, BIG=!!(C.srcs&&C.srcs[idx]&&(C.cfOnly===true||C.cfOnly&&C.cfOnly[idx]||window.innerWidth>=1024)), d=(BIG&&C.bigDims&&C.bigDims[idx])?C.bigDims[idx]:(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
       var small=(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext;
-      PAGES.push({ src:BIG?C.cf+C.srcs[idx]:small, thumb:small, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
+      PAGES.push({ src:BIG?C.cf+C.srcs[idx]:small, thumb:(C.cfOnly===true||C.cfOnly&&C.cfOnly[idx])?C.cf+C.srcs[idx]:small, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
     }
     CHAPTERS.push({ title:ch.title, from:start, to:PAGES.length-1, afterNote:ch.afterNote||null, grid:ch.grid||null });
   });
