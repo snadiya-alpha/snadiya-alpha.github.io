@@ -7,7 +7,8 @@ THUMBDIR = os.path.join(BASE, 'thumbs')
 SKIP = {'index.html','reader-template.html','gallery-template.html','measure-dims.html','collator.html',
         'comics.html','reader-ui-recreations.html','strip-reader-prototype.html','vault-7f3a91.html',
         'boundborne-full.html','boundborne-sample.html','downloads.html','corp-generator.html',
-        'sitemap.html','not_found.html','spermwhale.html','aislinne.html','peril.html'}
+        'sitemap.html','not_found.html','spermwhale.html','aislinne.html','peril.html',
+        'whale-ant.html','speedtest.html','avif-test.html'}
 FEATURED = {'silentwhale.html'}
 MANUAL = {'jjp.html': ("Jessica & Judy's Peril", 0, 0), 'animation.html': ("Sperm Whale: Animation", 0, 16)}
 CATS = [
@@ -24,7 +25,7 @@ GAMES = [
     ("Control", ["corridor.html","fbfc-comic.html","fbfc-art.html","fbfc-files.html","pack1.html"]),
     ("Silent Hill", ["disgust.html","traveler.html"]),
     ("Marathon", ["pantied.html"]),
-    ("Fallout", ["silentwhale.html"]),
+    ("Fallout", ["silentwhale.html","boundcorp.html"]),
     ("Fall Guys", ["fallgirls.html"]),
 ]
 FACETS = [('format', 'Format'), ('characters', 'Characters'), ('themes', 'Themes'),
