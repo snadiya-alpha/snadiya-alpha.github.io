@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
 <title>Sperm Whale</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;600;700&family=Newsreader:opsz,wght@6..72,420;6..72,600&display=swap">
 
 <meta name="author" content="Snadiya">
 <meta name="format" content="Comic">
@@ -285,68 +285,76 @@
     .seg button{min-width:44px}
     #backBtn{min-width:44px}
   }
-  /* Ant Design look for the reader (prototype). Same SNZweig colours and fonts as the home page:
-     Deep Crimson ink on Ivory, Instrument Sans. Ant shapes: 6/8px corners, hairline borders, lift shadow on
-     floating menus, primary button = filled Deep Crimson, slider = thin rail with a round handle. Text is full ink. */
+  /* Ant Design look for the reader (prototype v2, dark). Every colour is from the SNZweig brand kit
+     (jetwong.neocities.org/snzweig-brand-kit#palette): Deep Sea ground, Deep Crimson bars and menus, Ivory type,
+     the Orange to Light Orange gradient for the main action and the slider, Lagoon for the chosen state and focus,
+     Lilac for hover. Ant shapes: 6/8px corners, hairline borders, lift shadow on floating menus. Text is full ink. */
   :root{
-    --snz-deep-crimson:#3C1815; --snz-ivory:#FFFFF0; --snz-orange:#FF4818;
-    --ant-line:rgba(60,24,21,.16); --ant-line-strong:rgba(60,24,21,.45);
-    --ant-fill:rgba(60,24,21,.05); --ant-fill-2:rgba(60,24,21,.09);
-    --ant-r-sm:4px; --ant-r:6px; --ant-r-lg:8px;
-    --ant-lift:0 6px 16px 0 rgba(60,24,21,.08),0 3px 6px -4px rgba(60,24,21,.12),0 9px 28px 8px rgba(60,24,21,.05);
+    --snz-orange:#FF4818; --snz-light-orange:#FF7515; --snz-deep-crimson:#3C1815; --snz-lagoon:#7BD8C9;
+    --snz-deep-sea:#2A4551; --snz-lilac:#AEA8D8; --snz-ivory:#FFFFF0; --snz-black:#181818;
+    --snz-gradient:linear-gradient(90deg,#FF4818 0%,#FF7515 100%);
+    --ant-line:rgba(255,255,240,.18); --ant-line-strong:rgba(255,255,240,.55);
+    --ant-hover:rgba(174,168,216,.18); --ant-r-sm:4px; --ant-r:6px; --ant-r-lg:8px;
+    --ant-lift:0 6px 16px 0 rgba(0,0,0,.32),0 3px 6px -4px rgba(0,0,0,.4),0 9px 28px 8px rgba(0,0,0,.2);
     --ant-t:.2s cubic-bezier(.645,.045,.355,1);
-    --bg:var(--snz-ivory); --surface:var(--snz-ivory); --surface-2:var(--ant-fill-2); --sep:var(--ant-line);
-    --text:var(--snz-deep-crimson); --text-2:var(--snz-deep-crimson); --tint:var(--snz-deep-crimson);
-    --amber:var(--snz-deep-crimson); --amber-dk:var(--snz-ivory); --plum:var(--ant-fill-2);
-    --rose:var(--snz-deep-crimson); --orange:var(--snz-orange); --ink:var(--snz-deep-crimson);
-    --font:"Instrument Sans",Helvetica,Arial,sans-serif;
+    --bg:var(--snz-deep-sea); --surface:var(--snz-deep-crimson); --surface-2:var(--ant-hover); --sep:var(--ant-line);
+    --text:var(--snz-ivory); --text-2:var(--snz-ivory); --tint:var(--snz-lagoon);
+    --amber:var(--snz-lagoon); --amber-dk:var(--snz-deep-crimson); --plum:rgba(255,255,240,.16);
+    --rose:var(--snz-ivory); --orange:var(--snz-orange); --ink:var(--snz-deep-sea);
+    --font:"Instrument Sans",Helvetica,Arial,sans-serif; --font-head:"Newsreader",Georgia,serif;
   }
-  html,body,.shell{background:var(--snz-ivory)}
-  #stage,#vp{background:var(--ant-fill)}
+  html,body,.shell{background:var(--snz-deep-sea);color:var(--snz-ivory)}
+  #stage,#vp{background:var(--snz-deep-sea)}
 
-  /* buttons: Ant default = hairline outline, 6px corners; primary = filled ink */
-  .btn{border-radius:var(--ant-r);font-weight:600;letter-spacing:0;transition:background-color var(--ant-t),border-color var(--ant-t),color var(--ant-t)}
-  .btn:hover{background:var(--ant-fill)}
-  .btn.bordered{background:#fff;border-color:var(--ant-line-strong)} .btn.bordered:hover{border-color:var(--snz-deep-crimson);background:#fff}
-  .btn.filled{background:var(--snz-deep-crimson);color:var(--snz-ivory);border-color:var(--snz-deep-crimson)}
-  .btn.filled:hover{background:#5a2a25;border-color:#5a2a25}
-  .btn:focus-visible,#titleBtn:focus-visible,#backBtn:focus-visible{outline:2px solid var(--snz-orange);outline-offset:1px}
-  #backBtn,#titleBtn{border-radius:var(--ant-r);letter-spacing:0}
-  #backBtn:hover,#titleBtn:hover{background:var(--ant-fill)}
+  /* buttons: Ant default = hairline outline, 6px corners. Main action (Next) = the kit's orange gradient, Deep Crimson label */
+  .btn{border-radius:var(--ant-r);font-weight:600;letter-spacing:0;color:var(--snz-ivory);
+    transition:background-color var(--ant-t),border-color var(--ant-t),color var(--ant-t)}
+  .btn:hover{background:var(--ant-hover)}
+  .btn.bordered{background:transparent;border-color:var(--ant-line-strong)} .btn.bordered:hover{border-color:var(--snz-lilac);background:var(--ant-hover)}
+  .btn.filled{background:var(--snz-gradient);color:var(--snz-deep-crimson);border-color:transparent}
+  .btn.filled:hover{background:var(--snz-light-orange)}
+  .btn:focus-visible,#titleBtn:focus-visible,#backBtn:focus-visible{outline:2px solid var(--snz-lagoon);outline-offset:1px}
+  #backBtn,#titleBtn{border-radius:var(--ant-r);letter-spacing:0;color:var(--snz-ivory)}
+  #backBtn:hover,#titleBtn:hover{background:var(--ant-hover)}
+  #titleBtn .caret{color:var(--snz-ivory)}
 
-  /* top and bottom bars: ivory with a hairline */
-  #topnav{background:var(--snz-ivory);border-bottom:1px solid var(--ant-line)}
-  #botnav{background:var(--snz-ivory);border-top:1px solid var(--ant-line)}
+  /* top and bottom bars: Deep Crimson */
+  #topnav{background:var(--snz-deep-crimson);border-bottom:0}
+  #botnav{background:var(--snz-deep-crimson);border-top:0}
 
-  /* Scroll / Pages = Ant segmented control */
-  .seg{border:0;border-radius:var(--ant-r-lg);background:var(--ant-fill-2);padding:2px;gap:2px}
-  .seg button{border-radius:var(--ant-r);color:var(--snz-deep-crimson);letter-spacing:0;transition:background-color var(--ant-t)}
-  .seg button:hover{background:rgba(60,24,21,.06)}
-  .seg button[aria-pressed="true"]{background:#fff;color:var(--snz-deep-crimson);box-shadow:0 1px 2px rgba(60,24,21,.12),0 1px 4px rgba(60,24,21,.08)}
+  /* Scroll / Pages = Ant segmented control; chosen side is Lagoon */
+  .seg{border:0;border-radius:var(--ant-r-lg);background:rgba(0,0,0,.28);padding:2px;gap:2px}
+  .seg button{border-radius:var(--ant-r);color:var(--snz-ivory);letter-spacing:0;transition:background-color var(--ant-t)}
+  .seg button:hover{background:var(--ant-hover)}
+  .seg button[aria-pressed="true"]{background:var(--snz-lagoon);color:var(--snz-deep-crimson)}
 
   /* chapter tabs */
-  #chapBar button{border-radius:var(--ant-r);color:var(--snz-deep-crimson);font-size:15px}
-  #chapBar button:hover{background:var(--ant-fill)}
-  #chapBar button[aria-current="true"]{background:var(--ant-fill-2);border-color:transparent;color:var(--snz-deep-crimson);font-weight:700}
+  #chapBar button{border-radius:var(--ant-r);color:var(--snz-ivory);font-size:15px}
+  #chapBar button:hover{background:var(--ant-hover)}
+  #chapBar button[aria-current="true"]{background:transparent;border-color:var(--snz-lagoon);color:var(--snz-lagoon);font-weight:700}
 
-  /* page slider = Ant slider */
-  #track{height:4px;border-radius:2px;background:var(--ant-fill-2)}
+  /* page slider = Ant slider: ivory rail, orange gradient track, round handle with a Light Orange ring */
+  #track{height:4px;border-radius:2px;background:rgba(255,255,240,.22)}
   #scrubZone.live #track{height:6px}
-  #fill{border-radius:2px;background:var(--snz-deep-crimson)}
-  #knob{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:#fff;box-shadow:0 0 0 2px var(--snz-deep-crimson)}
+  #fill{border-radius:2px;background:var(--snz-gradient)}
+  #knob{width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--snz-ivory);box-shadow:0 0 0 3px var(--snz-light-orange)}
   #scrubZone.live #knob{width:20px;height:20px;margin:-10px 0 0 -10px}
-  #peek{background:#fff;border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:6px}
-  #peek img{border-radius:var(--ant-r-sm)}
+  #countTxt{color:var(--snz-ivory)}
+  #peek{background:var(--snz-deep-crimson);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:6px}
+  #peek img{border-radius:var(--ant-r-sm)} #peek .cap,#peek .chap{color:var(--snz-ivory)}
 
-  /* floating menus = Ant dropdown */
-  .pop{background:#fff;border:0;border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:4px}
+  /* floating menus = Ant dropdown on Deep Crimson; hover Lilac tint */
+  .pop{background:var(--snz-deep-crimson);border:0;border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift);padding:4px}
   .pop .btn{border-radius:var(--ant-r-sm)}
-  .pop .btn:hover{background:var(--ant-fill)}
-  .pop .sep{border-top-color:var(--ant-line)}
-  .sheet{background:var(--snz-ivory)}
-  #toast{border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift)}
-  .thumb{border-radius:var(--ant-r);border-color:var(--ant-line);background:var(--ant-fill)}
-  .thumb .n{border-radius:0 var(--ant-r-sm) 0 0;background:#fff;color:var(--snz-deep-crimson)}
+  .pop .btn:hover{background:var(--ant-hover)}
+  .pop .lbl{color:var(--snz-ivory)}
+  .pop .sliderrow input{accent-color:var(--snz-light-orange)}
+  .pop input[type=number],.pop input[type=text]{background:rgba(0,0,0,.25);color:var(--snz-ivory);border:1px solid var(--ant-line-strong);border-radius:var(--ant-r-sm)}
+  .sheet{background:var(--snz-deep-sea);color:var(--snz-ivory)}
+  #toast{background:var(--snz-deep-crimson);color:var(--snz-ivory);border-radius:var(--ant-r-lg);box-shadow:var(--ant-lift)}
+  .thumb{border-radius:var(--ant-r);border-color:var(--ant-line);background:rgba(0,0,0,.2)}
+  .thumb .n{border-radius:0 var(--ant-r-sm) 0 0;background:var(--snz-deep-crimson);color:var(--snz-ivory)}
+  .thumb[aria-current="true"]{outline-color:var(--snz-lagoon)} .thumb.marked .n{color:var(--snz-lagoon)}
   .panel{background:transparent}
 </style>
 </head>
