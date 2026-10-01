@@ -12,6 +12,7 @@
 <meta property="og:url" content="dc1.html">
 <meta property="og:site_name" content="Snadiya">
 <meta name="author" content="Snadiya">
+<meta name="format" content="Render Set">
 <meta name="characters" content="Harley Quinn">
 <meta name="themes" content="Tape Gag, Cloth Gag, Gag Variants, Camera Variants, Superheroine, Character Design">
 <meta name="franchise" content="DC">
@@ -288,7 +289,13 @@
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
 window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"index.html", base:"./", endText:"The End", ogImage:"dc1/pics/panel_001.webp", driveUrl:"https://drive.google.com/drive/folders/193pw_ZeuBqYMuvS458tkg5VLwpWzWCcr",
- chapters:[{ title:"Splice", folder:"dc1/splice/", prefix:"panel_", pad:3, ext:"webp", from:1, to:1 },{ title:"Gallery", folder:"dc1/pics/", prefix:"panel_", pad:3, ext:"webp", from:1, to:15 }], dims:[[1800,4800],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920]] };
+ chapters:[{ title:"Splice", folder:"dc1/splice/", prefix:"panel_", pad:3, ext:"webp", from:1, to:1 },{ title:"Gallery", folder:"dc1/pics/", prefix:"panel_", pad:3, ext:"webp", from:1, to:15 }], dims:[[1800,4800],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920]],
+ cf:"https://snadiya.cfimg.workers.dev/",
+ srcs:[null,"o/dc1/1.jpg","o/dc1/2.jpg","o/dc1/3.jpg","o/dc1/4.jpg","o/dc1/5.jpg","o/dc1/6.jpg","o/dc1/7.jpg","o/dc1/8.jpg","o/dc1/9.jpg","o/dc1/10.jpg","o/dc1/11.jpg","o/dc1/12.jpg","o/dc1/13.jpg","o/dc1/14.jpg","o/dc1/15.jpg"],
+ bigDims:[[1800,4800],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920],[1200,1920]],
+ sources:[null,{"drive_id":"1DUY6km6L5ZBuF0umhC19IiOMHjQIoPe9","path":"1.jpg"},{"drive_id":"1PHQdgjZixeLJB_9fJxM96zTl9w0JSmZz","path":"2.jpg"},{"drive_id":"17sZKf23f6ubjKJyW-udsZtFc_J0-dap8","path":"3.jpg"},{"drive_id":"13ZASx1Kklw50jl6ebC5QS0JI2k5DSegT","path":"4.jpg"},{"drive_id":"1Edw6trke7NhUYWgvoMMvVTfvtUvtnRJf","path":"5.jpg"},{"drive_id":"1CKisA-VCk-YLxH_Tf5661DdxPFNK-BGD","path":"6.jpg"},{"drive_id":"1CvRsIT4q7HsuWl09oNO400XlAO_aS74d","path":"7.jpg"},{"drive_id":"1B4xLBKptDXc7w1ID4SMDrzc6y5NBpJ2B","path":"8.jpg"},{"drive_id":"1fOUsBlF4nbWxzyNKAYdMYk5GJQ7YVnaC","path":"9.jpg"},{"drive_id":"1tAdR9tu3efkf5qX1WRd7e9d22nyrC9Ou","path":"10.jpg"},{"drive_id":"1OtGUELar5-yUZymccm8Ff8O-5iYvXN94","path":"11.jpg"},{"drive_id":"1IYp2PO8z0BaW-Gx9Gp23hMnkFB80j4l8","path":"12.jpg"},{"drive_id":"1nTs47_2_nuiZMN6mtnyVb2kP5K09j7V4","path":"13.jpg"},{"drive_id":"1dhUaIeVJlAlWZks0nOMZJWbx257K9NmH","path":"14.jpg"},{"drive_id":"1XUWJmWalgwgzGyo-sXp_dV1ggUpiWnMB","path":"15.jpg"}],
+ pv:1
+};
 </script>
 <!-- ================================================================== -->
 
@@ -310,7 +317,7 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
         <button class="btn" id="oThumbs"><span class="ico" data-i="view-grid"></span>All pages</button>
         <button class="btn" id="oMark"><span class="ico" data-i="bookmark"></span><span class="mtxt">Bookmark this page</span></button>
         <button class="btn" id="oMarks"><span class="ico" data-i="list"></span>Bookmarks</button>
-        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>See Full Uploads</a>
+        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>Snadiya's Drive Link</a>
         <div class="gap"></div>
         <div class="sliderrow"><label for="bright">Brightness</label><input id="bright" type="range" min="30" max="100" value="100"><span id="brightVal">100%</span></div>
         <div class="sliderrow"><label for="autoSecs">Auto-forward</label><input id="autoSecs" type="number" min="0" step="0.5" value="0" inputmode="decimal"><span class="unit">s</span></div>
@@ -404,12 +411,25 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
   (C.chapters||[]).forEach(function(ch,ci){
     var start=PAGES.length;
     for(var n=ch.from;n<=ch.to;n++){
-      var idx=PAGES.length, d=(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
-      PAGES.push({ src:(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext, chapter:ci, w:d[0], h:d[1] });
+      var idx=PAGES.length, BIG=!!(C.srcs&&C.srcs[idx]&&window.innerWidth>=1024), d=(BIG&&C.bigDims&&C.bigDims[idx])?C.bigDims[idx]:(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
+      var small=(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext;
+      PAGES.push({ src:BIG?C.cf+C.srcs[idx]:small, thumb:small, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
     }
     CHAPTERS.push({ title:ch.title, from:start, to:PAGES.length-1, afterNote:ch.afterNote||null, grid:ch.grid||null });
   });
   var TOTAL=PAGES.length, MULTI=CHAPTERS.length>1;
+  // big screens try the Cloudflare originals; if the first one stalls or fails (Russia throttles Cloudflare), fall back to the WebPs
+  (function(){
+    var first=null; PAGES.forEach(function(p){ if(!first&&p.src!==p.thumb){ first=p; } });
+    if(!first){ return; }
+    var back={}; PAGES.forEach(function(p){ back[p.src]=p.thumb; });
+    function useWebp(){ if(!back){ return; } var m=back; back=null;
+      PAGES.forEach(function(p){ p.src=p.thumb; });
+      Array.prototype.forEach.call(document.images,function(im){ if(m[im.src]){ im.src=m[im.src]; } }); }
+    var probe=new Image(), t=setTimeout(useWebp,5000);
+    probe.onload=function(){ clearTimeout(t); }; probe.onerror=function(){ clearTimeout(t); useWebp(); };
+    probe.src=first.src;
+  })();
   var SPOT={}; (C.spotlight||[]).forEach(function(n){ SPOT[n-1]=true; });   // 0-indexed spotlight pages
   var RELATED=C.related||[];
   var HASMENU = MULTI || RELATED.length>0;
@@ -524,7 +544,7 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
     var p=PAGES[ch.from]; if(!p){ return; }
     var pre=new Image();
     pre.onload=function(){ b.style.setProperty("--pv","url("+JSON.stringify(pre.src)+")"); b.classList.add("haspv"); };
-    pre.src=p.src;
+    pre.src=p.thumb;
   }
   function buildThumbs(){
     var g=document.getElementById("thumbGrid");g.textContent="";thumbs=[];
@@ -532,7 +552,7 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
       if(MULTI){ var h=document.createElement("div");h.className="thumbchap";h.textContent=ch.title;g.appendChild(h); }
       for(var i=ch.from;i<=ch.to;i++){(function(idx){
         var b=document.createElement("button");b.className="thumb";b.type="button";
-        var im=document.createElement("img");im.src=PAGES[idx].src;im.loading="lazy";im.alt="";
+        var im=document.createElement("img");im.src=PAGES[idx].pv||PAGES[idx].thumb||PAGES[idx].src;im.loading="lazy";im.alt="";
         var n=document.createElement("span");n.className="n";n.textContent=idx+1;
         b.appendChild(im);b.appendChild(n);b.addEventListener("click",function(){ go(idx);closeSheets(); });
         g.appendChild(b);thumbs[idx]=b;
@@ -635,8 +655,8 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
     syncNav();
     if(autoSecs>0){ if(c.isEnd){ setAuto(0); } else { scheduleAuto(); } }
   }
-  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
-    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:"smooth"}); } } }
+  function go(i){ if(i<0||i>=TOTAL){return;} var jumpFar=Math.abs(i-currentIndex())>2; if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
+    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:jumpFar?"auto":"smooth"}); } } }
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
     if(d>0){
@@ -674,7 +694,7 @@ window.CONFIG = { title:"Harley Quinn Bust", artist:"Snadiya", artistSite:"https
   function idxFromX(x){ var r=track.getBoundingClientRect(); return Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)); }
   function showPeek(i,x){
     var r=zone.getBoundingClientRect();
-    document.getElementById("peekImg").src=PAGES[i].src;
+    document.getElementById("peekImg").src=PAGES[i].pv||PAGES[i].thumb||PAGES[i].src;
     document.getElementById("peekNum").textContent=(i+1)+" of "+TOTAL;
     document.getElementById("peekChap").textContent=MULTI?CHAPTERS[PAGES[i].chapter].title:"";
     var half=72,px=Math.max(r.left+half,Math.min(x,r.right-half));peek.style.left=(px-r.left)+"px";peek.classList.add("on");

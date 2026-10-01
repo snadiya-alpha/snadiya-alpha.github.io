@@ -12,6 +12,7 @@
 <meta property="og:url" content="https://directrixphantom.github.io/comic-reader/sid.html">
 <meta property="og:site_name" content="Snadiya">
 <meta name="author" content="Snadiya">
+<meta name="format" content="Render Set">
 <meta name="characters" content="Sid">
 <meta name="themes" content="Latex, Hood, Ball Gag, Encasement, Gag Variants, Prison">
 <meta name="source" content="https://drive.google.com/drive/folders/1G8o0Pxn2blyhU_dWBcSuK5pvWRC3vLwB">
@@ -287,7 +288,13 @@
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
 window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"comics.html", base:"./", endText:"The End", driveUrl:"https://drive.google.com/drive/folders/1G8o0Pxn2blyhU_dWBcSuK5pvWRC3vLwB",
- chapters:[{ title:"Sid", folder:"sid/", prefix:"", pad:3, ext:"webp", from:1, to:12 }], dims:[[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572]] };
+ chapters:[{ title:"Sid", folder:"sid/", prefix:"", pad:3, ext:"webp", from:1, to:12 }], dims:[[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572]],
+ cf:"https://snadiya.cfimg.workers.dev/",
+ srcs:["o/sid/1.jpg","o/sid/2.jpg","o/sid/3.jpg","o/sid/4.jpg","o/sid/5.jpg","o/sid/6.jpg","o/sid/7.jpg","o/sid/8.jpg","o/sid/9.jpg","o/sid/10.jpg","o/sid/11.jpg","o/sid/12.jpg"],
+ bigDims:[[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572],[1536,2572]],
+ sources:[{"drive_id":"1WmJPMY5BWCDhd5Uidzwj9YA92fs2BtaL","path":"1.jpg"},{"drive_id":"1gORMD6dIWjXgBKbP4swLPWPz1D8pzglq","path":"2.jpg"},{"drive_id":"1bPXrSt8AFdRtNdbIUSRYXKHd76pqxmpT","path":"3.jpg"},{"drive_id":"1-LixlpmxV9yqeurhyMDfwtvKYRjkWLdP","path":"4.jpg"},{"drive_id":"1UmTDmCZ-g3eaJIkMRCfDpiCt4rjg6lpj","path":"5.jpg"},{"drive_id":"1Z6u6wbdYygk8gSkVA0Hq-UTmdGNTvRPd","path":"6.jpg"},{"drive_id":"1a3UlIHiVx1KDiIx4gHHmGFiO_Mh8MkRO","path":"7.jpg"},{"drive_id":"1V-FApyddJe2poYLOhTGAoWXpfsS3GUoW","path":"8.jpg"},{"drive_id":"1_6Va1Vl45dtY4jX5QOTB1geekewrk2A4","path":"9.jpg"},{"drive_id":"1-NVrN-LR4p_AcjaU_3MJx0x9lqwkphg3","path":"10.jpg"},{"drive_id":"1365YIsEfUo0u4S3G4AnBUkBleTbuah0j","path":"11.jpg"},{"drive_id":"1I9JuIxJaH8k3NHm78ueC9t55_4OujFYJ","path":"12.jpg"}],
+ pv:1
+};
 </script>
 <!-- ================================================================== -->
 
@@ -309,7 +316,7 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
         <button class="btn" id="oThumbs"><span class="ico" data-i="view-grid"></span>All pages</button>
         <button class="btn" id="oMark"><span class="ico" data-i="bookmark"></span><span class="mtxt">Bookmark this page</span></button>
         <button class="btn" id="oMarks"><span class="ico" data-i="list"></span>Bookmarks</button>
-        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>See Full Uploads</a>
+        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>Snadiya's Drive Link</a>
         <div class="gap"></div>
         <div class="sliderrow"><label for="bright">Brightness</label><input id="bright" type="range" min="30" max="100" value="100"><span id="brightVal">100%</span></div>
         <div class="sliderrow"><label for="autoSecs">Auto-forward</label><input id="autoSecs" type="number" min="0" step="0.5" value="0" inputmode="decimal"><span class="unit">s</span></div>
@@ -403,12 +410,25 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
   (C.chapters||[]).forEach(function(ch,ci){
     var start=PAGES.length;
     for(var n=ch.from;n<=ch.to;n++){
-      var idx=PAGES.length, d=(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
-      PAGES.push({ src:(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext, chapter:ci, w:d[0], h:d[1] });
+      var idx=PAGES.length, BIG=!!(C.srcs&&C.srcs[idx]&&window.innerWidth>=1024), d=(BIG&&C.bigDims&&C.bigDims[idx])?C.bigDims[idx]:(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
+      var small=(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext;
+      PAGES.push({ src:BIG?C.cf+C.srcs[idx]:small, thumb:small, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
     }
     CHAPTERS.push({ title:ch.title, from:start, to:PAGES.length-1, afterNote:ch.afterNote||null, grid:ch.grid||null });
   });
   var TOTAL=PAGES.length, MULTI=CHAPTERS.length>1;
+  // big screens try the Cloudflare originals; if the first one stalls or fails (Russia throttles Cloudflare), fall back to the WebPs
+  (function(){
+    var first=null; PAGES.forEach(function(p){ if(!first&&p.src!==p.thumb){ first=p; } });
+    if(!first){ return; }
+    var back={}; PAGES.forEach(function(p){ back[p.src]=p.thumb; });
+    function useWebp(){ if(!back){ return; } var m=back; back=null;
+      PAGES.forEach(function(p){ p.src=p.thumb; });
+      Array.prototype.forEach.call(document.images,function(im){ if(m[im.src]){ im.src=m[im.src]; } }); }
+    var probe=new Image(), t=setTimeout(useWebp,5000);
+    probe.onload=function(){ clearTimeout(t); }; probe.onerror=function(){ clearTimeout(t); useWebp(); };
+    probe.src=first.src;
+  })();
   var SPOT={}; (C.spotlight||[]).forEach(function(n){ SPOT[n-1]=true; });   // 0-indexed spotlight pages
   var RELATED=C.related||[];
   var HASMENU = MULTI || RELATED.length>0;
@@ -523,7 +543,7 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
     var p=PAGES[ch.from]; if(!p){ return; }
     var pre=new Image();
     pre.onload=function(){ b.style.setProperty("--pv","url("+JSON.stringify(pre.src)+")"); b.classList.add("haspv"); };
-    pre.src=p.src;
+    pre.src=p.thumb;
   }
   function buildThumbs(){
     var g=document.getElementById("thumbGrid");g.textContent="";thumbs=[];
@@ -531,7 +551,7 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
       if(MULTI){ var h=document.createElement("div");h.className="thumbchap";h.textContent=ch.title;g.appendChild(h); }
       for(var i=ch.from;i<=ch.to;i++){(function(idx){
         var b=document.createElement("button");b.className="thumb";b.type="button";
-        var im=document.createElement("img");im.src=PAGES[idx].src;im.loading="lazy";im.alt="";
+        var im=document.createElement("img");im.src=PAGES[idx].pv||PAGES[idx].thumb||PAGES[idx].src;im.loading="lazy";im.alt="";
         var n=document.createElement("span");n.className="n";n.textContent=idx+1;
         b.appendChild(im);b.appendChild(n);b.addEventListener("click",function(){ go(idx);closeSheets(); });
         g.appendChild(b);thumbs[idx]=b;
@@ -634,8 +654,8 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
     syncNav();
     if(autoSecs>0){ if(c.isEnd){ setAuto(0); } else { scheduleAuto(); } }
   }
-  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
-    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:"smooth"}); } } }
+  function go(i){ if(i<0||i>=TOTAL){return;} var jumpFar=Math.abs(i-currentIndex())>2; if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
+    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:jumpFar?"auto":"smooth"}); } } }
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
     if(d>0){
@@ -673,7 +693,7 @@ window.CONFIG = { title:"Sid", artist:"Snadiya", artistSite:"https://linktr.ee/s
   function idxFromX(x){ var r=track.getBoundingClientRect(); return Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)); }
   function showPeek(i,x){
     var r=zone.getBoundingClientRect();
-    document.getElementById("peekImg").src=PAGES[i].src;
+    document.getElementById("peekImg").src=PAGES[i].pv||PAGES[i].thumb||PAGES[i].src;
     document.getElementById("peekNum").textContent=(i+1)+" of "+TOTAL;
     document.getElementById("peekChap").textContent=MULTI?CHAPTERS[PAGES[i].chapter].title:"";
     var half=72,px=Math.max(r.left+half,Math.min(x,r.right-half));peek.style.left=(px-r.left)+"px";peek.classList.add("on");

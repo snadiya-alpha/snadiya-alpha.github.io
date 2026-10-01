@@ -12,6 +12,7 @@
 <meta property="og:url" content="blackgold.html">
 <meta property="og:site_name" content="Snadiya">
 <meta name="author" content="Snadiya">
+<meta name="format" content="Render Set">
 <meta name="themes" content="Latex, Encasement, Hood, Ball Gag, Explicit, Gag Variants">
 <meta name="source" content="https://drive.google.com/drive/folders/1TYDw77Rf6NZZw2azZnaSgYVB1HRmWYWW">
 
@@ -286,7 +287,9 @@
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
 window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZw2azZnaSgYVB1HRmWYWW", title:"Black + Gold", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"index.html", base:"./", endText:"The End", ogImage:"panelgag/panel_001.webp",
- chapters:[{ title:"Panel Gag", folder:"panelgag/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 },{ title:"Harness Gag", folder:"harnessgag/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 },{ title:"Gwen Hood", folder:"gwenhood/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 }], dims:[[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920]] };
+ chapters:[{ title:"Panel Gag", folder:"panelgag/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 },{ title:"Harness Gag", folder:"harnessgag/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 },{ title:"Gwen Hood", folder:"gwenhood/", prefix:"panel_", pad:3, ext:"webp", from:1, to:10 }], dims:[[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920],[1300,1920]],
+ pv:1
+};
 </script>
 <!-- ================================================================== -->
 
@@ -308,7 +311,7 @@ window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZ
         <button class="btn" id="oThumbs"><span class="ico" data-i="view-grid"></span>All pages</button>
         <button class="btn" id="oMark"><span class="ico" data-i="bookmark"></span><span class="mtxt">Bookmark this page</span></button>
         <button class="btn" id="oMarks"><span class="ico" data-i="list"></span>Bookmarks</button>
-        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>See Full Uploads</a>
+        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>Snadiya's Drive Link</a>
         <div class="gap"></div>
         <div class="sliderrow"><label for="bright">Brightness</label><input id="bright" type="range" min="30" max="100" value="100"><span id="brightVal">100%</span></div>
         <div class="sliderrow"><label for="autoSecs">Auto-forward</label><input id="autoSecs" type="number" min="0" step="0.5" value="0" inputmode="decimal"><span class="unit">s</span></div>
@@ -403,7 +406,7 @@ window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZ
     var start=PAGES.length;
     for(var n=ch.from;n<=ch.to;n++){
       var idx=PAGES.length, d=(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
-      PAGES.push({ src:(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext, chapter:ci, w:d[0], h:d[1] });
+      PAGES.push({ src:(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
     }
     CHAPTERS.push({ title:ch.title, from:start, to:PAGES.length-1, afterNote:ch.afterNote||null, grid:ch.grid||null });
   });
@@ -530,7 +533,7 @@ window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZ
       if(MULTI){ var h=document.createElement("div");h.className="thumbchap";h.textContent=ch.title;g.appendChild(h); }
       for(var i=ch.from;i<=ch.to;i++){(function(idx){
         var b=document.createElement("button");b.className="thumb";b.type="button";
-        var im=document.createElement("img");im.src=PAGES[idx].src;im.loading="lazy";im.alt="";
+        var im=document.createElement("img");im.src=PAGES[idx].pv||PAGES[idx].thumb||PAGES[idx].src;im.loading="lazy";im.alt="";
         var n=document.createElement("span");n.className="n";n.textContent=idx+1;
         b.appendChild(im);b.appendChild(n);b.addEventListener("click",function(){ go(idx);closeSheets(); });
         g.appendChild(b);thumbs[idx]=b;
@@ -633,8 +636,8 @@ window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZ
     syncNav();
     if(autoSecs>0){ if(c.isEnd){ setAuto(0); } else { scheduleAuto(); } }
   }
-  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
-    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:"smooth"}); } } }
+  function go(i){ if(i<0||i>=TOTAL){return;} var jumpFar=Math.abs(i-currentIndex())>2; if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
+    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:jumpFar?"auto":"smooth"}); } } }
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
     if(d>0){
@@ -672,7 +675,7 @@ window.CONFIG = { driveUrl:"https://drive.google.com/drive/folders/1TYDw77Rf6NZZ
   function idxFromX(x){ var r=track.getBoundingClientRect(); return Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)); }
   function showPeek(i,x){
     var r=zone.getBoundingClientRect();
-    document.getElementById("peekImg").src=PAGES[i].src;
+    document.getElementById("peekImg").src=PAGES[i].pv||PAGES[i].thumb||PAGES[i].src;
     document.getElementById("peekNum").textContent=(i+1)+" of "+TOTAL;
     document.getElementById("peekChap").textContent=MULTI?CHAPTERS[PAGES[i].chapter].title:"";
     var half=72,px=Math.max(r.left+half,Math.min(x,r.right-half));peek.style.left=(px-r.left)+"px";peek.classList.add("on");

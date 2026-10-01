@@ -12,6 +12,7 @@
 <meta property="og:url" content="harleyraven.html">
 <meta property="og:site_name" content="Snadiya">
 <meta name="author" content="Snadiya">
+<meta name="format" content="Render Set">
 <meta name="characters" content="Harley Quinn, Raven">
 <meta name="themes" content="Machine Bondage, Cloth Gag, Tape Gag, Hood, Explicit, Superheroine, Camera Variants">
 <meta name="franchise" content="DC">
@@ -288,7 +289,13 @@
 <!-- ====================== EDIT ONLY THIS BLOCK ====================== -->
 <script>
 window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://linktr.ee/snadiya", gallery:"index.html", base:"./", endText:"The End", ogImage:"harleyraven/panel_001.webp", driveUrl:"https://drive.google.com/drive/folders/1fcrc5uJDcvjXtoYwK7vxS9Ywo-W68eMc",
- chapters:[{ title:"Harley & Raven", folder:"harleyraven/", prefix:"panel_", pad:3, ext:"webp", from:1, to:15 }], dims:[[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705]] };
+ chapters:[{ title:"Harley & Raven", folder:"harleyraven/", prefix:"panel_", pad:3, ext:"webp", from:1, to:15 }], dims:[[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705]],
+ cf:"https://snadiya.cfimg.workers.dev/",
+ srcs:["o/harleyraven/1%20%281%29.jpg","o/harleyraven/1%20%282%29.jpg","o/harleyraven/2.jpg","o/harleyraven/3.jpg","o/harleyraven/4.jpg","o/harleyraven/5.jpg","o/harleyraven/6.jpg","o/harleyraven/7%20%281%29.jpg","o/harleyraven/7%20%282%29.jpg","o/harleyraven/7%20%283%29.jpg","o/harleyraven/7%20%284%29.jpg","o/harleyraven/7%20%285%29.jpg","o/harleyraven/7%20%286%29.jpg","o/harleyraven/7%20%287%29.jpg","o/harleyraven/7%20%288%29.jpg"],
+ bigDims:[[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1517],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705],[1920,1705]],
+ sources:[{"drive_id":"1VfRc7PWZnjs9PU75AUsj1tckD9LfgVHr","path":"1 (1).jpg"},{"drive_id":"11ZNdw8FjDfmvjQyr_iUNknPLmVECbsz4","path":"1 (2).jpg"},{"drive_id":"1PyaZWapiozZZ0dyNTA2JHSnCn_7kFTuy","path":"2.jpg"},{"drive_id":"13nNSZcMHdogvGKRHSK3wwIIUvr7q7lmp","path":"3.jpg"},{"drive_id":"1r_bSKJGPck81udUN-0br8hj7wU4-sOjm","path":"4.jpg"},{"drive_id":"1YqWu8mBdCRr-GJbt0_TCyAgcW6hUm9xf","path":"5.jpg"},{"drive_id":"1KsFSyrRvtkLUoguny0U-Ta70xFEfC72d","path":"6.jpg"},{"drive_id":"1e1CoUxFx9rqlDkw0Fi11mWibLMjuWKUD","path":"7 (1).jpg"},{"drive_id":"1zPAmmxBudI3DWb6-3Ccy1_sN7ziGrSH1","path":"7 (2).jpg"},{"drive_id":"1pK1Qf7fWzglvq7wdYkONybR8TL7_tGPd","path":"7 (3).jpg"},{"drive_id":"1WoFxdf89qd9TBJkd5I8LpsQleO6p3HL_","path":"7 (4).jpg"},{"drive_id":"1zMDxoHQEj6s13MQP9PoRyZvhO8khS_0u","path":"7 (5).jpg"},{"drive_id":"1j8kDeZAGSFRpnUbQFfzC0wsp4tEqBRAl","path":"7 (6).jpg"},{"drive_id":"1I87NuChUOnrPcYepQkwls0UNksJsztvA","path":"7 (7).jpg"},{"drive_id":"15sQ9eKjLg7zwukPgh7rRL6fRXQBj2j-Z","path":"7 (8).jpg"}],
+ pv:1
+};
 </script>
 <!-- ================================================================== -->
 
@@ -310,7 +317,7 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
         <button class="btn" id="oThumbs"><span class="ico" data-i="view-grid"></span>All pages</button>
         <button class="btn" id="oMark"><span class="ico" data-i="bookmark"></span><span class="mtxt">Bookmark this page</span></button>
         <button class="btn" id="oMarks"><span class="ico" data-i="list"></span>Bookmarks</button>
-        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>See Full Uploads</a>
+        <a class="btn" id="oDrive" target="_blank" rel="noopener" hidden><span class="ico" data-i="drive"></span>Snadiya's Drive Link</a>
         <div class="gap"></div>
         <div class="sliderrow"><label for="bright">Brightness</label><input id="bright" type="range" min="30" max="100" value="100"><span id="brightVal">100%</span></div>
         <div class="sliderrow"><label for="autoSecs">Auto-forward</label><input id="autoSecs" type="number" min="0" step="0.5" value="0" inputmode="decimal"><span class="unit">s</span></div>
@@ -404,12 +411,25 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
   (C.chapters||[]).forEach(function(ch,ci){
     var start=PAGES.length;
     for(var n=ch.from;n<=ch.to;n++){
-      var idx=PAGES.length, d=(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
-      PAGES.push({ src:(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext, chapter:ci, w:d[0], h:d[1] });
+      var idx=PAGES.length, BIG=!!(C.srcs&&C.srcs[idx]&&window.innerWidth>=1024), d=(BIG&&C.bigDims&&C.bigDims[idx])?C.bigDims[idx]:(C.dims&&C.dims[idx])?C.dims[idx]:[1600,2400];
+      var small=(C.base||"")+ch.folder+ch.prefix+pad(n,ch.pad)+"."+ch.ext;
+      PAGES.push({ src:BIG?C.cf+C.srcs[idx]:small, thumb:small, chapter:ci, pv:C.pv?(C.base||"")+"pv/"+ch.folder+ch.prefix+pad(n,ch.pad)+".webp":null, w:d[0], h:d[1] });
     }
     CHAPTERS.push({ title:ch.title, from:start, to:PAGES.length-1, afterNote:ch.afterNote||null, grid:ch.grid||null });
   });
   var TOTAL=PAGES.length, MULTI=CHAPTERS.length>1;
+  // big screens try the Cloudflare originals; if the first one stalls or fails (Russia throttles Cloudflare), fall back to the WebPs
+  (function(){
+    var first=null; PAGES.forEach(function(p){ if(!first&&p.src!==p.thumb){ first=p; } });
+    if(!first){ return; }
+    var back={}; PAGES.forEach(function(p){ back[p.src]=p.thumb; });
+    function useWebp(){ if(!back){ return; } var m=back; back=null;
+      PAGES.forEach(function(p){ p.src=p.thumb; });
+      Array.prototype.forEach.call(document.images,function(im){ if(m[im.src]){ im.src=m[im.src]; } }); }
+    var probe=new Image(), t=setTimeout(useWebp,5000);
+    probe.onload=function(){ clearTimeout(t); }; probe.onerror=function(){ clearTimeout(t); useWebp(); };
+    probe.src=first.src;
+  })();
   var SPOT={}; (C.spotlight||[]).forEach(function(n){ SPOT[n-1]=true; });   // 0-indexed spotlight pages
   var RELATED=C.related||[];
   var HASMENU = MULTI || RELATED.length>0;
@@ -524,7 +544,7 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
     var p=PAGES[ch.from]; if(!p){ return; }
     var pre=new Image();
     pre.onload=function(){ b.style.setProperty("--pv","url("+JSON.stringify(pre.src)+")"); b.classList.add("haspv"); };
-    pre.src=p.src;
+    pre.src=p.thumb;
   }
   function buildThumbs(){
     var g=document.getElementById("thumbGrid");g.textContent="";thumbs=[];
@@ -532,7 +552,7 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
       if(MULTI){ var h=document.createElement("div");h.className="thumbchap";h.textContent=ch.title;g.appendChild(h); }
       for(var i=ch.from;i<=ch.to;i++){(function(idx){
         var b=document.createElement("button");b.className="thumb";b.type="button";
-        var im=document.createElement("img");im.src=PAGES[idx].src;im.loading="lazy";im.alt="";
+        var im=document.createElement("img");im.src=PAGES[idx].pv||PAGES[idx].thumb||PAGES[idx].src;im.loading="lazy";im.alt="";
         var n=document.createElement("span");n.className="n";n.textContent=idx+1;
         b.appendChild(im);b.appendChild(n);b.addEventListener("click",function(){ go(idx);closeSheets(); });
         g.appendChild(b);thumbs[idx]=b;
@@ -635,8 +655,8 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
     syncNav();
     if(autoSecs>0){ if(c.isEnd){ setAuto(0); } else { scheduleAuto(); } }
   }
-  function go(i){ if(i<0||i>=TOTAL){return;} if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
-    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:"smooth"}); } } }
+  function go(i){ if(i<0||i>=TOTAL){return;} var jumpFar=Math.abs(i-currentIndex())>2; if(i>page&&navDir!=="down"&&navDir!=="up"){navDir="right";} else if(i<page&&navDir!=="down"&&navDir!=="up"){navDir="left";} if(mode==="pages"&&!onCard&&stageZoom>1.001){ var sc=stageCenter(); carryPt=imgPoint(sc.x,sc.y); } else { carryPt=null; } page=i;
+    if(mode==="pages"){ renderPage(); } else { onCard=null; var n=nodes[i]; if(n){ vp.scrollTo({top:n.offsetTop,behavior:jumpFar?"auto":"smooth"}); } } }
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
     if(d>0){
@@ -674,7 +694,7 @@ window.CONFIG = { title:"Harley & Raven", artist:"Snadiya", artistSite:"https://
   function idxFromX(x){ var r=track.getBoundingClientRect(); return Math.round(Math.max(0,Math.min(1,(x-r.left)/r.width))*(TOTAL-1)); }
   function showPeek(i,x){
     var r=zone.getBoundingClientRect();
-    document.getElementById("peekImg").src=PAGES[i].src;
+    document.getElementById("peekImg").src=PAGES[i].pv||PAGES[i].thumb||PAGES[i].src;
     document.getElementById("peekNum").textContent=(i+1)+" of "+TOTAL;
     document.getElementById("peekChap").textContent=MULTI?CHAPTERS[PAGES[i].chapter].title:"";
     var half=72,px=Math.max(r.left+half,Math.min(x,r.right-half));peek.style.left=(px-r.left)+"px";peek.classList.add("on");

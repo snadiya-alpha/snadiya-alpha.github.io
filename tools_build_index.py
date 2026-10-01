@@ -11,12 +11,13 @@ SKIP = {'index.html','reader-template.html','gallery-template.html','measure-dim
 FEATURED = {'silentwhale.html'}
 MANUAL = {'jjp.html': ("Jessica & Judy's Peril", 0, 0), 'animation.html': ("Sperm Whale: Animation", 0, 16)}
 CATS = [
-    ("Boundborne", ["boundborne.html","jjp.html","pack00.html","pack01.html","gag.html","extra01.html","ff.html"]),
+    ("Boundborne", ["boundborne.html","jjp.html","pack00.html","pack01.html","gag.html","extra01.html","extra02.html","ff.html"]),
     ("FBFC", ["fbfc-comic.html","corridor.html","fbfc-art.html","fbfc-files.html","pack1.html"]),
     ("Sperm Whale", ["whale.html","renders.html","animation.html"]),
     ("Afflatus", ["afflatus.html"]),
     ("PanTied", ["pantied.html"]),
     ("Silent Whale", ["silentwhale.html"]),
+    ("Bound Corp", ["boundcorp.html"]),
 ]
 # lower on the page: works that parody a game, one button per game
 GAMES = [
@@ -26,7 +27,7 @@ GAMES = [
     ("Fallout", ["silentwhale.html"]),
     ("Fall Guys", ["fallgirls.html"]),
 ]
-FACETS = [('characters', 'Characters'), ('themes', 'Themes'),
+FACETS = [('format', 'Format'), ('characters', 'Characters'), ('themes', 'Themes'),
           ('settings', 'Settings'), ('franchise', 'Games')]
 
 DIMS = {}
@@ -85,11 +86,14 @@ def card(f):
     # tags stay in data-tags so filtering still works, but are not drawn on the card.
     # data-w/data-h give justify.js each picture's real shape for the justified rows.
     mine = all_tags(f)
+    # Comic / Render Set always shows on the card (Jet 2026-09-30)
+    fv = tags.get(f, {}).get('format', [])
+    fmt = ('<span class="fmt">' + html.escape(' + '.join(fv)) + '</span>') if fv else ''
     cls = 'card featured' if f in FEATURED else 'card'
     return ('      <div class="' + cls + '" data-w="' + str(w) + '" data-h="' + str(h) + '" data-tags="' +
             html.escape("|".join(mine), True) + '">\n' + img +
             '        <span class="cardtext"><a class="name" href="' + f + '">' + html.escape(t) +
-            '</a></span>\n      </div>')
+            '</a>' + fmt + '</span>\n      </div>')
 
 
 USED_COVERS = set()
@@ -138,7 +142,7 @@ def card_all(f):
 
 
 # --- the sidebar: booru-style groups, one option per line, fixed order (most used first) so nothing moves on click
-GROUPS = [('settings', 'Universe'), ('franchise', 'Franchise'), ('characters', 'Character'), ('themes', 'Tags')]
+GROUPS = [('format', 'Format'), ('settings', 'Universe'), ('franchise', 'Franchise'), ('characters', 'Character'), ('themes', 'Tags')]
 side = []
 for key, lab in GROUPS:
     counts = collections.Counter()
@@ -178,6 +182,8 @@ CSS = ('/*cards*/'
        '.thumbwrap{display:block;line-height:0;overflow:hidden;border-radius:11px 11px 0 0}'
        '.thumb{display:block;width:100%;height:230px;object-fit:contain;background:#15121b}'
        '.cardtext{display:flex;align-items:center;padding:14px 16px}'
+       '.cardtext{flex-direction:column;align-items:flex-start;gap:4px}'
+       '.fmt{font-size:15px;font-weight:600;line-height:1.2;color:var(--text)}'
        '.name{font-weight:700;font-size:17px;line-height:1.3;overflow-wrap:anywhere;color:var(--text)}'
        '.card.featured{border-color:var(--orange);box-shadow:0 0 0 2px var(--orange)}'
        '.coll-grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}'
@@ -221,7 +227,7 @@ CSS = ('/*cards*/'
 JS = r"""/*tagjs*/
 (function(){
   // ItemsJS (vendor/itemsjs-2.4.4.umd.js, Apache-2.0) decides what matches and every count; this only draws them
-  var KEYS=['settings','franchise','characters','themes'], aggs={};
+  var KEYS=['format','settings','franchise','characters','themes'], aggs={};
   KEYS.forEach(function(k){ aggs[k]={size:1000, conjunction:true, chosen_filters_on_top:false}; });
   var engine=itemsjs(WORKS,{aggregations:aggs, native_search_enabled:false});
   var cards={}; [].forEach.call(document.querySelectorAll('#all-grid .card'),function(c){ cards[c.dataset.id]=c; });
