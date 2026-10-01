@@ -1,0 +1,11 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex"><title>AVIF test</title>
+<style>body{font:20px/1.4 system-ui,sans-serif;margin:16px;background:#fff;color:#000}td{padding:4px 14px 4px 0}</style></head><body>
+<table id="t"><tr><td></td><td>R</td><td>G</td><td>B</td><td>off by 3+</td></tr></table>
+<script>
+function px(u){return new Promise(function(ok){var i=new Image();i.onload=function(){var c=document.createElement('canvas');c.width=i.naturalWidth;c.height=i.naturalHeight;var x=c.getContext('2d');x.drawImage(i,0,0);ok(x.getImageData(0,0,c.width,c.height).data);};i.onerror=function(){ok(null)};i.src=u+'?'+Date.now();});}
+(async function(){var s=await px('avif-test/src.png');
+ for(var f of ['pillow','rgb']){var d=await px('avif-test/'+f+'.avif'),r=document.getElementById('t').insertRow();
+  if(!d){r.innerHTML='<td>'+f+'</td><td colspan=4>failed</td>';continue;}
+  var m=[0,0,0],big=0,n=s.length/4;for(var k=0;k<s.length;k+=4){for(var c=0;c<3;c++){var e=d[k+c]-s[k+c];m[c]+=e;if(Math.abs(e)>=3)big++;}}
+  r.innerHTML='<td>'+f+'</td>'+m.map(function(v){return '<td>'+(v/n).toFixed(2)+'</td>'}).join('')+'<td>'+(100*big/(3*n)).toFixed(2)+'%</td>';}})();
+</script></body></html>
