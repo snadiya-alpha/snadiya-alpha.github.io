@@ -1,6 +1,6 @@
-import { $ as e, A as t, At as n, B as r, E as i, Et as a, Ft as o, G as s, I as c, J as l, K as u, L as d, Mt as f, N as p, Nt as m, O as h, P as g, R as _, S as v, Tt as y, U as b, V as x, W as S, X as C, Y as w, _ as T, _t as E, a as D, at as O, b as k, bt as A, d as j, dt as M, ht as N, i as P, it as F, j as ee, kt as I, lt as L, mt as R, q as z, r as te, t as B, ut as ne, v as re, vt as ie, y as ae, yt as oe, z as se } from "./source-B-BxpsX7.js";
+import { $ as e, A as t, B as n, Bt as r, Ct as i, D as a, Dt as o, Et as s, G as c, Ht as l, I as u, J as d, L as f, Lt as p, N as m, Nt as h, O as g, Ot as _, P as v, Pt as y, Q as b, Rt as x, St as S, T as C, V as w, Vt as T, X as E, Y as D, Z as O, a as ee, bt as k, ct as A, dt as j, gt as M, ht as te, i as N, j as P, lt as ne, mt as F, nt as I, r as L, st as re, t as ie, u as ae, ut as oe, wt as se, x as ce, yt as R, z as le } from "./source-CXVsiJkf.js";
 //#region node_modules/@astryxdesign/core/dist/utils/isApplePlatform.js
-function V() {
+function z() {
 	if (typeof navigator > "u") return !1;
 	let e = "userAgentData" in navigator ? navigator.userAgentData : null;
 	if (e && typeof e == "object" && "platform" in e) {
@@ -11,13 +11,13 @@ function V() {
 }
 //#endregion
 //#region node_modules/@astryxdesign/core/dist/Kbd/Kbd.js
-var H = /* @__PURE__ */ o(m(), 1), U = A(), ce = { wrapper: {
+var B = /* @__PURE__ */ l(T(), 1), V = _(), ue = { wrapper: {
 	k1xSpc: "x3nfvp2",
 	kGNEyG: "x6s0dn4",
 	kOIVth: "xzye2dw",
 	kmuXW: "x2lah0s",
 	$$css: !0
-} }, le = /* @__PURE__ */ new Map([
+} }, de = /* @__PURE__ */ new Map([
 	["ctrl", "⌃"],
 	["alt", "⌥"],
 	["shift", "⇧"],
@@ -30,11 +30,11 @@ var H = /* @__PURE__ */ o(m(), 1), U = A(), ce = { wrapper: {
 	["left", "←"],
 	["right", "→"],
 	["plus", "+"]
-]), ue = /* @__PURE__ */ new Map([["esc", "escape"], ["return", "enter"]]);
-function W(e, t) {
-	return e === "mod" ? t ? "⌘" : "Ctrl" : le.get(e) ?? e.toUpperCase();
+]), fe = /* @__PURE__ */ new Map([["esc", "escape"], ["return", "enter"]]);
+function H(e, t) {
+	return e === "mod" ? t ? "⌘" : "Ctrl" : de.get(e) ?? e.toUpperCase();
 }
-var de = /* @__PURE__ */ new Map([
+var pe = /* @__PURE__ */ new Map([
 	["ctrl", "Control"],
 	["alt", "Alt"],
 	["shift", "Shift"],
@@ -48,45 +48,45 @@ var de = /* @__PURE__ */ new Map([
 	["right", "Right arrow"],
 	["plus", "Plus"]
 ]);
-function fe(e, t) {
-	return e === "mod" ? t ? "Command" : "Control" : de.get(e) ?? e.toUpperCase();
+function me(e, t) {
+	return e === "mod" ? t ? "Command" : "Control" : pe.get(e) ?? e.toUpperCase();
 }
-function pe() {
+function U() {
 	return () => {};
 }
-function me() {
+function he() {
 	return !1;
 }
-function he({ keys: e, ref: t, xstyle: r, className: i, style: o, ...s }) {
-	let c = (0, H.useSyncExternalStore)(pe, V, me), l = /* @__PURE__ */ new Map(), u = e.split("+").map((e) => e.trim().toLowerCase()).map((e) => {
-		let t = l.get(e) ?? 0;
-		return l.set(e, t + 1), {
-			key: ue.get(e) ?? e,
+function ge({ keys: e, ref: t, xstyle: n, className: r, style: i, ...a }) {
+	let o = (0, B.useSyncExternalStore)(U, z, he), s = /* @__PURE__ */ new Map(), c = e.split("+").map((e) => e.trim().toLowerCase()).map((e) => {
+		let t = s.get(e) ?? 0;
+		return s.set(e, t + 1), {
+			key: fe.get(e) ?? e,
 			reactKey: `${e}:${t}`
 		};
-	}), d = u.map(({ key: e }) => fe(e, c)).join(" + ");
-	return /*#__PURE__*/ (0, U.jsx)("span", {
-		...s,
+	}), l = c.map(({ key: e }) => me(e, o)).join(" + ");
+	return /*#__PURE__*/ (0, V.jsx)("span", {
+		...a,
 		ref: t,
 		role: "img",
-		"aria-label": d,
-		...N(a("kbd"), n(ce.wrapper, r), i, o),
-		children: u.map(({ key: e, reactKey: t }) => /*#__PURE__*/ (0, U.jsx)("kbd", {
+		"aria-label": l,
+		...k(y("kbd"), x(ue.wrapper, n), r, i),
+		children: c.map(({ key: e, reactKey: t }) => /*#__PURE__*/ (0, V.jsx)("kbd", {
 			"aria-hidden": "true",
 			className: "x3nfvp2 x6s0dn4 xl56j7k x16asifk x1grt7ep x7a5moj xx3sua9 x17x4s8c xlxy82 x1q0q8m5 xib2hle xv1l7n4 x9ynric x141an7d x1e4wzip x1ltkj2j x87ps6o",
-			children: W(e, c)
+			children: H(e, o)
 		}, t))
 	});
 }
-he.displayName = "Kbd";
+ge.displayName = "Kbd";
 //#endregion
 //#region node_modules/@astryxdesign/core/dist/hooks/useKeyboardHint.js
-var G = /* @__PURE__ */ new Set([
+var W = /* @__PURE__ */ new Set([
 	"ArrowLeft",
 	"ArrowRight",
 	"ArrowUp",
 	"ArrowDown"
-]), ge = {
+]), _e = {
 	horizontal: ["left", "right"],
 	vertical: ["up", "down"],
 	both: [
@@ -95,7 +95,7 @@ var G = /* @__PURE__ */ new Set([
 		"up",
 		"down"
 	]
-}, K = { hint: {
+}, G = { hint: {
 	kVAEAm: "xixxii4",
 	kpwlN0: "x1anvkwx",
 	kogj98: "x1ghz6dp",
@@ -119,76 +119,76 @@ var G = /* @__PURE__ */ new Set([
 	kfzvcC: "x47corl",
 	$$css: !0
 } };
-function _e(e = {}) {
-	let { orientation: t = "horizontal", dismissAfterMs: n = 3e3, isEnabled: r = !0 } = e, i = c(), a = (0, H.useRef)(null), o = (0, H.useRef)(!1), l = (0, H.useRef)(!1), u = (0, H.useRef)(() => {}), d = (0, H.useCallback)(() => {
+function ve(e = {}) {
+	let { orientation: t = "horizontal", dismissAfterMs: n = 3e3, isEnabled: r = !0 } = e, i = D(), a = (0, B.useRef)(null), o = (0, B.useRef)(!1), s = (0, B.useRef)(!1), c = (0, B.useRef)(() => {}), l = (0, B.useCallback)(() => {
 		a.current &&= (clearTimeout(a.current), null);
-	}, []), f = (0, H.useCallback)(() => {
-		l.current = !0;
-	}, []), p = (0, H.useCallback)(() => {
-		l.current = !1, d(), u.current(null);
-	}, [d]), m = s({
+	}, []), u = (0, B.useCallback)(() => {
+		s.current = !0;
+	}, []), d = (0, B.useCallback)(() => {
+		s.current = !1, l(), c.current(null);
+	}, [l]), f = E({
 		mode: "context",
-		onShow: f,
-		onHide: p
+		onShow: u,
+		onHide: d
 	});
-	u.current = m.ref;
-	let h = (0, H.useCallback)(() => {
-		o.current = !0, d(), m.hide(), l.current = !1, u.current(null);
-	}, [d, m]), g = (0, H.useCallback)((e) => {
-		!o.current && r && (u.current(e), m.show(), d(), a.current = setTimeout(() => {
-			h();
+	c.current = f.ref;
+	let m = (0, B.useCallback)(() => {
+		o.current = !0, l(), f.hide(), s.current = !1, c.current(null);
+	}, [l, f]), h = (0, B.useCallback)((e) => {
+		!o.current && r && (c.current(e), f.show(), l(), a.current = setTimeout(() => {
+			m();
 		}, n));
 	}, [
-		d,
-		h,
+		l,
+		m,
 		n,
 		r,
-		m
+		f
 	]);
-	(0, H.useEffect)(() => () => {
-		d(), u.current(null);
-	}, [d]);
-	let _ = (0, H.useCallback)((e) => {
+	(0, B.useEffect)(() => () => {
+		l(), c.current(null);
+	}, [l]);
+	let g = (0, B.useCallback)((e) => {
 		if (o.current || !r) return;
 		let t = e.target;
 		if (!t.matches(":focus-visible")) return;
 		let n = e.currentTarget;
-		e.relatedTarget instanceof Node && n.contains(e.relatedTarget) || g(t);
-	}, [g, r]), v = (0, H.useCallback)((e) => {
-		if (!l.current) return;
+		e.relatedTarget instanceof Node && n.contains(e.relatedTarget) || h(t);
+	}, [h, r]), _ = (0, B.useCallback)((e) => {
+		if (!s.current) return;
 		let t = e.currentTarget;
 		if (e.relatedTarget instanceof Node && t.contains(e.relatedTarget)) {
-			!o.current && e.relatedTarget instanceof HTMLElement && u.current(e.relatedTarget);
+			!o.current && e.relatedTarget instanceof HTMLElement && c.current(e.relatedTarget);
 			return;
 		}
-		h();
-	}, [h]), y = (0, H.useCallback)((e) => {
-		l.current && G.has(e.key) && h();
-	}, [h]), b = /*#__PURE__*/ (0, U.jsx)("span", {
+		m();
+	}, [m]), v = (0, B.useCallback)((e) => {
+		s.current && W.has(e.key) && m();
+	}, [m]), y = /*#__PURE__*/ (0, V.jsx)("span", {
 		className: "x3nfvp2 x6s0dn4 xzye2dw",
-		children: ge[t].map((e) => /*#__PURE__*/ (0, U.jsx)(he, { keys: e }, e))
+		children: _e[t].map((e) => /*#__PURE__*/ (0, V.jsx)(ge, { keys: e }, e))
 	});
 	return {
-		hintElement: m.render(/*#__PURE__*/ (0, U.jsxs)("span", {
+		hintElement: f.render(/*#__PURE__*/ (0, V.jsxs)("span", {
 			"aria-hidden": "true",
-			children: [b, /*#__PURE__*/ (0, U.jsx)("span", {
+			children: [y, /*#__PURE__*/ (0, V.jsx)("span", {
 				className: "x11g1kdw",
 				children: i("@astryx.keyboardHint.toNavigate")
 			})]
 		}), {
 			placement: "below",
 			alignment: "start",
-			xstyle: K.hint,
-			style: { marginBlockStart: I["--spacing-2"] }
+			xstyle: G.hint,
+			style: { marginBlockStart: p["--spacing-2"] }
 		}),
-		onFocus: _,
-		onBlur: v,
-		onKeyDown: y
+		onFocus: g,
+		onBlur: _,
+		onKeyDown: v
 	};
 }
 //#endregion
 //#region node_modules/lucide-react/dist/esm/icons/book-open.mjs
-var ve = {
+var K = {
 	name: "book-open",
 	size: 24,
 	node: [["path", {
@@ -199,8 +199,8 @@ var ve = {
 		key: "1fyvmf"
 	}]]
 };
-ve.node;
-var ye = P(ve), q = {
+K.node;
+var ye = N(K), q = {
 	name: "bookmark-check",
 	size: 24,
 	node: [["path", {
@@ -212,7 +212,7 @@ var ye = P(ve), q = {
 	}]]
 };
 q.node;
-var be = P(q), J = {
+var be = N(q), J = {
 	name: "bookmark",
 	size: 24,
 	node: [["path", {
@@ -221,7 +221,7 @@ var be = P(q), J = {
 	}]]
 };
 J.node;
-var xe = P(J), Se = {
+var xe = N(J), Se = {
 	name: "hard-drive",
 	size: 24,
 	node: [
@@ -244,7 +244,7 @@ var xe = P(J), Se = {
 	]
 };
 Se.node;
-var Ce = P(Se), we = {
+var Ce = N(Se), we = {
 	name: "keyboard",
 	size: 24,
 	node: [
@@ -291,7 +291,7 @@ var Ce = P(Se), we = {
 	]
 };
 we.node;
-var Te = P(we), Ee = {
+var Te = N(we), Ee = {
 	name: "layout-grid",
 	size: 24,
 	node: [
@@ -330,7 +330,7 @@ var Te = P(we), Ee = {
 	]
 };
 Ee.node;
-var De = P(Ee), Oe = {
+var De = N(Ee), Oe = {
 	name: "library",
 	size: 24,
 	node: [
@@ -353,7 +353,7 @@ var De = P(Ee), Oe = {
 	]
 };
 Oe.node;
-var ke = P(Oe), Ae = {
+var ke = N(Oe), Ae = {
 	name: "scroll-text",
 	size: 24,
 	node: [
@@ -376,10 +376,10 @@ var ke = P(Oe), Ae = {
 	]
 };
 Ae.node;
-var je = P(Ae), Me = ie(null);
+var je = N(Ae), Me = j(null);
 Me.displayName = "SegmentedControlContext";
 function Ne() {
-	let e = (0, H.use)(Me);
+	let e = (0, B.use)(Me);
 	if (e == null) throw Error("useSegmentedControlContext must be used within SegmentedControl. Wrap your SegmentedControlItem in <SegmentedControl>.");
 	return e;
 }
@@ -427,68 +427,68 @@ var Pe = {
 		$$css: !0
 	}
 };
-function Ie({ ref: e, value: t, onChange: r, label: i, size: o, layout: s = "hug", isDisabled: c = !1, disabledMessage: l, children: u, xstyle: d, className: f, style: m, onKeyDown: h, onFocus: g, onBlur: v, ...y }) {
-	let b = p(o, "md"), x = c && !!l, S = se({
+function Ie({ ref: e, value: n, onChange: r, label: i, size: a, layout: o = "hug", isDisabled: s = !1, disabledMessage: c, children: l, xstyle: u, className: p, style: m, onKeyDown: h, onFocus: g, onBlur: _, ...v }) {
+	let b = t(a, "md"), C = s && !!c, w = f({
 		placement: "above",
 		focusTrigger: "always",
-		isEnabled: x
-	}), { listRef: C, handleKeyDown: w, handleFocus: T } = ae({
+		isEnabled: C
+	}), { listRef: T, handleKeyDown: E, handleFocus: D } = S({
 		itemSelector: "[role=\"radio\"]:not([aria-disabled=\"true\"])",
 		hasRovingTabIndex: !0,
 		wrap: !0,
 		orientation: "horizontal"
-	}), E = _e({
+	}), O = ve({
 		orientation: "horizontal",
-		isEnabled: !c
-	}), D = (0, H.useCallback)((e) => {
-		h?.(e), !e.defaultPrevented && (E.onKeyDown(e), w(e));
+		isEnabled: !s
+	}), ee = (0, B.useCallback)((e) => {
+		h?.(e), !e.defaultPrevented && (O.onKeyDown(e), E(e));
 	}, [
 		h,
-		E,
-		w
-	]), O = (0, H.useCallback)((e) => {
-		if (g?.(e), e.defaultPrevented || (E.onFocus(e), T(e), c) || !e.currentTarget.contains(e.relatedTarget)) return;
-		let n = e.target?.closest("[role=\"radio\"][data-value]");
-		if (!n || n.getAttribute("aria-disabled") === "true") return;
-		let i = n.dataset.value;
-		i != null && i !== t && r(i);
+		O,
+		E
+	]), A = (0, B.useCallback)((e) => {
+		if (g?.(e), e.defaultPrevented || (O.onFocus(e), D(e), s) || !e.currentTarget.contains(e.relatedTarget)) return;
+		let t = e.target?.closest("[role=\"radio\"][data-value]");
+		if (!t || t.getAttribute("aria-disabled") === "true") return;
+		let i = t.dataset.value;
+		i != null && i !== n && r(i);
 	}, [
 		g,
-		E,
-		T,
-		c,
+		O,
+		D,
+		s,
 		r,
-		t
-	]), k = (0, H.useMemo)(() => ({
-		value: t,
+		n
+	]), j = (0, B.useMemo)(() => ({
+		value: n,
 		onChange: r,
 		size: b,
-		layout: s,
-		isDisabled: c,
-		hasDisabledMessage: x
+		layout: o,
+		isDisabled: s,
+		hasDisabledMessage: C
 	}), [
-		t,
+		n,
 		r,
 		b,
+		o,
 		s,
-		c,
-		x
+		C
 	]);
-	return /*#__PURE__*/ (0, U.jsxs)(Me, {
-		value: k,
-		children: [/*#__PURE__*/ (0, U.jsxs)("div", {
-			ref: _(e, C, S.ref),
-			...y,
+	return /*#__PURE__*/ (0, V.jsxs)(Me, {
+		value: j,
+		children: [/*#__PURE__*/ (0, V.jsxs)("div", {
+			ref: d(e, T, w.ref),
+			...v,
 			role: "radiogroup",
 			"aria-label": i,
-			"aria-disabled": c || void 0,
-			"aria-describedby": x ? S.describedBy : void 0,
-			onKeyDown: D,
-			onFocus: O,
-			onBlur: R(v, E.onBlur),
-			...N(a("segmented-control", { size: b }), n(Pe.container, Fe[b], s === "fill" && Pe.fill, c && (x ? Pe.disabledWithMessage : Pe.disabled), d), f, m),
-			children: [u, E.hintElement]
-		}), x && S.renderTooltip(l)]
+			"aria-disabled": s || void 0,
+			"aria-describedby": C ? w.describedBy : void 0,
+			onKeyDown: ee,
+			onFocus: A,
+			onBlur: R(_, O.onBlur),
+			...k(y("segmented-control", { size: b }), x(Pe.container, Fe[b], o === "fill" && Pe.fill, s && (C ? Pe.disabledWithMessage : Pe.disabled), u), p, m),
+			children: [l, O.hintElement]
+		}), C && w.renderTooltip(c)]
 	});
 }
 Ie.displayName = "SegmentedControl";
@@ -580,32 +580,32 @@ var Le = {
 		$$css: !0
 	}
 };
-function Be({ ref: e, value: t, label: r, isLabelHidden: i = !1, icon: o, isDisabled: s = !1, onClick: c, xstyle: l, ...u }) {
-	let d = Ne(), f = d.value === t, p = s || d.isDisabled, m = f && (d.hasDisabledMessage ?? !1) && !s, h = d.size, g = d.layout === "fill", _ = R(c, () => {
-		!p && !f && d.onChange(t);
-	}), v = o ? /*#__PURE__*/ (0, U.jsx)("span", {
-		...n(Le.icon, ze[h]),
-		children: o
+function Be({ ref: e, value: t, label: n, isLabelHidden: r = !1, icon: i, isDisabled: a = !1, onClick: o, xstyle: s, ...c }) {
+	let l = Ne(), u = l.value === t, d = a || l.isDisabled, f = u && (l.hasDisabledMessage ?? !1) && !a, p = l.size, m = l.layout === "fill", h = R(o, () => {
+		!d && !u && l.onChange(t);
+	}), _ = i ? /*#__PURE__*/ (0, V.jsx)("span", {
+		...x(Le.icon, ze[p]),
+		children: i
 	}) : null;
-	return /*#__PURE__*/ (0, U.jsxs)("button", {
+	return /*#__PURE__*/ (0, V.jsxs)("button", {
 		ref: e,
-		...u,
+		...c,
 		type: "button",
 		role: "radio",
-		"aria-checked": f,
-		"aria-disabled": p || void 0,
-		"aria-label": i ? r : void 0,
+		"aria-checked": u,
+		"aria-disabled": d || void 0,
+		"aria-label": r ? n : void 0,
 		"data-value": t,
-		tabIndex: f && !p || m ? 0 : -1,
-		onClick: _,
-		...N(a("segmented-control-item", {
-			size: h,
-			selected: f ? "selected" : null,
-			disabled: p ? "disabled" : null
-		}), L.focusVisible(Le.base, Re[h], g && Le.fill, f && Le.selected, !f && !p && ee.backgroundColor, p && Le.disabled, l)),
-		children: [v, !i && /*#__PURE__*/ (0, U.jsx)("span", {
+		tabIndex: u && !d || f ? 0 : -1,
+		onClick: h,
+		...k(y("segmented-control-item", {
+			size: p,
+			selected: u ? "selected" : null,
+			disabled: d ? "disabled" : null
+		}), F.focusVisible(Le.base, Re[p], m && Le.fill, u && Le.selected, !u && !d && g.backgroundColor, d && Le.disabled, s)),
+		children: [_, !r && /*#__PURE__*/ (0, V.jsx)("span", {
 			className: "xb3r6kr xlyipyv xeuugli",
-			children: r
+			children: n
 		})]
 	});
 }
@@ -719,164 +719,164 @@ function Je(e, t) {
 	return `calc(${n(e)}% ${t < 0 ? "-" : "+"} ${Math.abs(n(t))}px)`;
 }
 function Ye({ ref: e, ...t }) {
-	let { label: r, isLabelHidden: i = !1, description: o, isDisabled: s = !1, disabledMessage: c, isOptional: l = !1, isRequired: u = !1, status: d, labelTooltip: f, min: p = 0, max: m = 100, step: h = 1, orientation: y = "horizontal", formatValue: x, htmlName: C, valueDisplay: w = "tooltip", marks: T, width: E, xstyle: D, className: O, style: A, "data-testid": P, value: F, onChange: ee, onChangeEnd: I } = t, L = Array.isArray(F), R = L && "minStepsBetweenThumbs" in t ? t.minStepsBetweenThumbs ?? 0 : 0, z = y === "horizontal", te = (0, H.useId)(), B = (0, H.useId)(), re = (0, H.useId)(), ie = (0, H.useId)(), ae = (0, H.useId)(), oe = (0, H.useRef)(null), V = (0, H.useRef)(null), [ce, le] = (0, H.useState)(null), [ue, W] = (0, H.useState)(null);
-	S();
-	let de = (0, H.useCallback)((e, t) => {
-		W(!s && b() === "keyboard" ? e : null);
-	}, [s]), fe = (0, H.useCallback)((e) => {
-		W(null);
-	}, []), pe = s && !!c, me = se({
+	let { label: r, isLabelHidden: a = !1, description: o, isDisabled: s = !1, disabledMessage: c, isOptional: l = !1, isRequired: p = !1, status: m, labelTooltip: h, min: g = 0, max: _ = 100, step: v = 1, orientation: b = "horizontal", formatValue: S, htmlName: C, valueDisplay: w = "tooltip", marks: T, width: E, xstyle: D, className: O, style: ee, "data-testid": A, value: j, onChange: N, onChangeEnd: ne } = t, F = Array.isArray(j), I = F && "minStepsBetweenThumbs" in t ? t.minStepsBetweenThumbs ?? 0 : 0, L = b === "horizontal", re = (0, B.useId)(), ie = (0, B.useId)(), oe = (0, B.useId)(), se = (0, B.useId)(), ce = (0, B.useId)(), R = (0, B.useRef)(null), z = (0, B.useRef)(null), [ue, de] = (0, B.useState)(null), [fe, H] = (0, B.useState)(null);
+	n();
+	let pe = (0, B.useCallback)((e, t) => {
+		H(!s && le() === "keyboard" ? e : null);
+	}, [s]), me = (0, B.useCallback)((e) => {
+		H(null);
+	}, []), U = s && !!c, he = f({
 		placement: "above",
 		focusTrigger: "always",
-		isEnabled: pe
-	}), he = u && !l, G = [];
-	o && G.push(re), d?.message && G.push(ie), he && G.push(ae), pe && G.push(me.describedBy);
-	let ge = G.length > 0 ? G.join(" ") : void 0, K = (0, H.useMemo)(() => (Array.isArray(F) ? F : [F ?? p]).map((e) => X(e, p, m)), [
-		F,
-		p,
-		m
-	]), _e = (0, H.useRef)(K);
-	_e.current = K;
-	let ve = (0, H.useCallback)((e, t) => {
-		let n = oe.current;
-		if (!n) return p;
-		let r = n.getBoundingClientRect(), i;
-		return i = z ? qe(k(n) ? r.right - e : e - r.left, r.width) : 1 - qe(t - r.top, r.height), i = X(i, 0, 1), X(Ue(p + i * (m - p), p, h), p, m);
+		isEnabled: U
+	}), ge = p && !l, W = [];
+	o && W.push(oe), m?.message && W.push(se), ge && W.push(ce), U && W.push(he.describedBy);
+	let _e = W.length > 0 ? W.join(" ") : void 0, G = (0, B.useMemo)(() => (Array.isArray(j) ? j : [j ?? g]).map((e) => X(e, g, _)), [
+		j,
+		g,
+		_
+	]), ve = (0, B.useRef)(G);
+	ve.current = G;
+	let K = (0, B.useCallback)((e, t) => {
+		let n = R.current;
+		if (!n) return g;
+		let r = n.getBoundingClientRect(), a;
+		return a = L ? qe(i(n) ? r.right - e : e - r.left, r.width) : 1 - qe(t - r.top, r.height), a = X(a, 0, 1), X(Ue(g + a * (_ - g), g, v), g, _);
 	}, [
-		p,
-		m,
-		h,
-		z
-	]), ye = (0, H.useCallback)((e) => {
-		if (!L) return 0;
-		let [t, n] = K;
+		g,
+		_,
+		v,
+		L
+	]), ye = (0, B.useCallback)((e) => {
+		if (!F) return 0;
+		let [t, n] = G;
 		return Math.abs(e - t) <= Math.abs(e - n) ? 0 : 1;
-	}, [L, K]), q = (0, H.useCallback)((e, t) => {
+	}, [F, G]), q = (0, B.useCallback)((e, t) => {
 		if (s) return;
-		let n = X(Ue(t, p, h), p, m);
-		if (L) {
-			let t = [...K];
+		let n = X(Ue(t, g, v), g, _);
+		if (F) {
+			let t = [...G];
 			t[e] = n;
-			let r = R * h;
-			e === 0 ? t[0] = Math.min(t[0], t[1] - r) : t[1] = Math.max(t[1], t[0] + r), t[0] = X(t[0], p, m), t[1] = X(t[1], p, m), ee?.(t);
-		} else ee?.(n);
+			let r = I * v;
+			e === 0 ? t[0] = Math.min(t[0], t[1] - r) : t[1] = Math.max(t[1], t[0] + r), t[0] = X(t[0], g, _), t[1] = X(t[1], g, _), N?.(t);
+		} else N?.(n);
 	}, [
 		s,
-		L,
-		K,
-		p,
-		m,
-		h,
-		R,
-		ee
-	]), be = (0, H.useRef)(I);
-	be.current = I;
-	let J = (0, H.useCallback)((e) => {
-		let t = e ?? _e.current, n = be.current;
-		L ? n?.(t) : n?.(t[0]);
-	}, [L]), xe = (0, H.useCallback)((e) => {
+		F,
+		G,
+		g,
+		_,
+		v,
+		I,
+		N
+	]), be = (0, B.useRef)(ne);
+	be.current = ne;
+	let J = (0, B.useCallback)((e) => {
+		let t = e ?? ve.current, n = be.current;
+		F ? n?.(t) : n?.(t[0]);
+	}, [F]), xe = (0, B.useCallback)((e) => {
 		if (s) return;
 		e.preventDefault();
-		let t = e.target.closest("[data-mark-value]"), n = t ? Number(t.dataset.markValue) : ve(e.clientX, e.clientY), r = oe.current?.querySelectorAll("[role=\"slider\"]"), i = e.target.closest("[role=\"slider\"]"), a = i == null || r == null ? -1 : Array.from(r).indexOf(i), o = a >= 0 ? a : ye(n);
-		V.current = o, le(o), q(o, n), r?.[o]?.focus(), W(null), typeof e.currentTarget.setPointerCapture == "function" && e.currentTarget.setPointerCapture(e.pointerId);
+		let t = e.target.closest("[data-mark-value]"), n = t ? Number(t.dataset.markValue) : K(e.clientX, e.clientY), r = R.current?.querySelectorAll("[role=\"slider\"]"), i = e.target.closest("[role=\"slider\"]"), a = i == null || r == null ? -1 : Array.from(r).indexOf(i), o = a >= 0 ? a : ye(n);
+		z.current = o, de(o), q(o, n), r?.[o]?.focus(), H(null), typeof e.currentTarget.setPointerCapture == "function" && e.currentTarget.setPointerCapture(e.pointerId);
 	}, [
 		s,
-		ve,
+		K,
 		ye,
 		q
-	]), Se = (0, H.useCallback)((e) => {
-		if (V.current === null || s) return;
-		let t = ve(e.clientX, e.clientY);
-		q(V.current, t);
+	]), Se = (0, B.useCallback)((e) => {
+		if (z.current === null || s) return;
+		let t = K(e.clientX, e.clientY);
+		q(z.current, t);
 	}, [
 		s,
-		ve,
+		K,
 		q
-	]), Ce = (0, H.useCallback)((e) => {
-		V.current !== null && (V.current = null, le(null), J());
-	}, [J]), we = (0, H.useCallback)((e, t) => {
+	]), Ce = (0, B.useCallback)((e) => {
+		z.current !== null && (z.current = null, de(null), J());
+	}, [J]), we = (0, B.useCallback)((e, t) => {
 		if (s) return;
-		t.key !== "Shift" && !t.metaKey && !t.altKey && !t.ctrlKey && b() === "keyboard" && W(e);
-		let n = K[e], r;
+		t.key !== "Shift" && !t.metaKey && !t.altKey && !t.ctrlKey && le() === "keyboard" && H(e);
+		let n = G[e], r;
 		switch (t.key) {
 			case "ArrowRight":
 			case "ArrowUp":
-				r = n + h;
+				r = n + v;
 				break;
 			case "ArrowLeft":
 			case "ArrowDown":
-				r = n - h;
+				r = n - v;
 				break;
 			case "PageUp":
-				r = n + h * 10;
+				r = n + v * 10;
 				break;
 			case "PageDown":
-				r = n - h * 10;
+				r = n - v * 10;
 				break;
 			case "Home":
-				r = p;
+				r = g;
 				break;
 			case "End":
-				r = m;
+				r = _;
 				break;
 			default: return;
 		}
 		t.preventDefault();
-		let i = X(Ue(r, p, h), p, m);
-		if (q(e, r), L) {
-			let t = [...K];
+		let i = X(Ue(r, g, v), g, _);
+		if (q(e, r), F) {
+			let t = [...G];
 			t[e] = i;
-			let n = R * h;
-			e === 0 ? t[0] = Math.min(t[0], t[1] - n) : t[1] = Math.max(t[1], t[0] + n), t[0] = X(t[0], p, m), t[1] = X(t[1], p, m), J(t);
+			let n = I * v;
+			e === 0 ? t[0] = Math.min(t[0], t[1] - n) : t[1] = Math.max(t[1], t[0] + n), t[0] = X(t[0], g, _), t[1] = X(t[1], g, _), J(t);
 		} else J([i]);
 	}, [
 		s,
-		L,
-		K,
-		h,
-		p,
-		m,
-		R,
+		F,
+		G,
+		v,
+		g,
+		_,
+		I,
 		q,
 		J
-	]), Te = (e) => x ? x(e) : String(e), Ee = (e) => {
-		let t = K[e], r = We(t, p, m), i = z ? { insetInlineStart: Z(r) } : {
-			bottom: Z(r),
+	]), Te = (e) => S ? S(e) : String(e), Ee = (e) => {
+		let t = G[e], n = We(t, g, _), r = L ? { insetInlineStart: Z(n) } : {
+			bottom: Z(n),
 			left: "50%"
-		}, o = L ? e === 0 ? "Minimum value" : "Maximum value" : void 0, c = R * h, l = L && e === 1 ? X(K[0] + c, p, m) : p, u = L && e === 0 ? X(K[1] - c, p, m) : m, f = w === "tooltip" && !pe, g = z ? "above" : "start", _ = /*#__PURE__*/ (0, U.jsx)("div", {
-			id: L ? void 0 : te,
+		}, i = F ? e === 0 ? "Minimum value" : "Maximum value" : void 0, a = I * v, o = F && e === 1 ? X(G[0] + a, g, _) : g, c = F && e === 0 ? X(G[1] - a, g, _) : _, l = w === "tooltip" && !U, d = L ? "above" : "start", f = /*#__PURE__*/ (0, V.jsx)("div", {
+			id: F ? void 0 : re,
 			role: "slider",
-			tabIndex: s && !pe ? -1 : 0,
-			"aria-valuemin": l,
-			"aria-valuemax": u,
+			tabIndex: s && !U ? -1 : 0,
+			"aria-valuemin": o,
+			"aria-valuemax": c,
 			"aria-valuenow": t,
-			"aria-valuetext": x ? x(t) : void 0,
-			"aria-orientation": y,
+			"aria-valuetext": S ? S(t) : void 0,
+			"aria-orientation": b,
 			"aria-disabled": s || void 0,
-			"aria-invalid": d?.type === "error" || void 0,
-			"aria-label": o,
-			"aria-labelledby": L ? void 0 : B,
-			"aria-describedby": ge,
+			"aria-invalid": m?.type === "error" || void 0,
+			"aria-label": i,
+			"aria-labelledby": F ? void 0 : ie,
+			"aria-describedby": _e,
 			onKeyDown: (t) => we(e, t),
-			onFocus: (t) => de(e, t),
-			onBlur: fe,
-			...N(a("slider-thumb", {
-				orientation: y,
+			onFocus: (t) => pe(e, t),
+			onBlur: me,
+			...k(y("slider-thumb", {
+				orientation: b,
 				disabled: s ? "disabled" : null
-			}), n(Y.thumb, z ? Y.thumbHorizontal : M.centerInline("50%"), !s && Y.thumbHover, !s && ce === e && Y.thumbPressed, !s && ue === e && ne.focusVisible, s && Y.thumbDisabled), void 0, i)
+			}), x(Y.thumb, L ? Y.thumbHorizontal : M.centerInline("50%"), !s && Y.thumbHover, !s && ue === e && Y.thumbPressed, !s && fe === e && te.focusVisible, s && Y.thumbDisabled), void 0, r)
 		}, e);
-		return f ? /*#__PURE__*/ (0, U.jsx)(v, {
+		return l ? /*#__PURE__*/ (0, V.jsx)(u, {
 			content: Te(t),
-			placement: g,
+			placement: d,
 			delay: 0,
 			focusTrigger: "always",
-			isOpen: ce === e || void 0,
-			children: _
-		}, e) : _;
+			isOpen: ue === e || void 0,
+			children: f
+		}, e) : f;
 	}, De = (() => {
-		if (L) {
-			let [e, t] = K, n = We(e, p, m), r = We(t, p, m);
-			return z ? {
+		if (F) {
+			let [e, t] = G, n = We(e, g, _), r = We(t, g, _);
+			return L ? {
 				insetInlineStart: Z(n),
 				width: Ke(n, r)
 			} : {
@@ -884,131 +884,131 @@ function Ye({ ref: e, ...t }) {
 				height: Ke(n, r)
 			};
 		}
-		let e = We(K[0], p, m);
-		return z ? {
+		let e = We(G[0], g, _);
+		return L ? {
 			insetInlineStart: "0%",
 			width: Z(e)
 		} : {
 			bottom: "0%",
 			height: Z(e)
 		};
-	})(), Oe = w === "text" ? /*#__PURE__*/ (0, U.jsx)("span", {
+	})(), Oe = w === "text" ? /*#__PURE__*/ (0, V.jsx)("span", {
 		className: "x9ynric xcr08ib x1tgivj0 xuxw1ft x2lah0s",
-		children: L ? `${Te(K[0])} – ${Te(K[1])}` : Te(K[0])
+		children: F ? `${Te(G[0])} – ${Te(G[1])}` : Te(G[0])
 	}) : null;
-	return /*#__PURE__*/ (0, U.jsxs)(j, {
-		"data-testid": P,
+	return /*#__PURE__*/ (0, V.jsxs)(ae, {
+		"data-testid": A,
 		label: r,
-		isLabelHidden: i,
+		isLabelHidden: a,
 		description: o,
-		inputID: te,
-		labelID: B,
+		inputID: re,
+		labelID: ie,
 		isGroupLabel: !0,
-		descriptionID: o ? re : void 0,
+		descriptionID: o ? oe : void 0,
 		isOptional: l,
-		isRequired: u,
+		isRequired: p,
 		isDisabled: s,
-		status: d ? {
-			type: d.type,
-			message: d.message,
-			messageID: d.message ? ie : void 0
+		status: m ? {
+			type: m.type,
+			message: m.message,
+			messageID: m.message ? se : void 0
 		} : void 0,
-		labelTooltip: f,
+		labelTooltip: h,
 		statusVariant: "detached",
 		width: E,
 		xstyle: D,
 		className: O,
-		style: A,
+		style: ee,
 		children: [
-			/*#__PURE__*/ (0, U.jsxs)("div", {
-				...N(a("slider", {
-					orientation: y,
+			/*#__PURE__*/ (0, V.jsxs)("div", {
+				...k(y("slider", {
+					orientation: b,
 					disabled: s ? "disabled" : null
 				}), { className: "x78zum5 x6s0dn4 x1txdalj" }),
 				children: [
-					C != null && K.map((e, t) => /*#__PURE__*/ (0, U.jsx)("input", {
+					C != null && G.map((e, t) => /*#__PURE__*/ (0, V.jsx)("input", {
 						type: "hidden",
 						name: C,
 						value: String(e),
 						disabled: s
 					}, t === 0 ? "start" : "end")),
-					/*#__PURE__*/ (0, U.jsxs)("div", {
-						ref: _(e, oe, me.ref),
-						...L ? {
+					/*#__PURE__*/ (0, V.jsxs)("div", {
+						ref: d(e, R, he.ref),
+						...F ? {
 							role: "group",
-							"aria-labelledby": B
+							"aria-labelledby": ie
 						} : void 0,
 						onPointerDown: xe,
 						onPointerMove: Se,
 						onPointerUp: Ce,
 						onPointerCancel: Ce,
-						...N(a("slider-control", {
-							orientation: y,
+						...k(y("slider-control", {
+							orientation: b,
 							disabled: s ? "disabled" : null
 						}), {
 							0: { className: "x1n2onr6 x78zum5 x6s0dn4 x1iyjqo2 x5ve5x3 x87ps6o xc8icb0 xw4jnvo x1ymw6g xkagaj0 xdt5ytf xl56j7k x1ypdohk x16khyan" },
 							2: { className: "x1n2onr6 x78zum5 x6s0dn4 x1iyjqo2 x5ve5x3 x87ps6o xc8icb0 x1qx5ct2 x80b3aj xh8yej3 x1ypdohk x16khyan" },
 							1: { className: "x1n2onr6 x78zum5 x6s0dn4 x1iyjqo2 x5ve5x3 x87ps6o xc8icb0 xw4jnvo x1ymw6g xkagaj0 xdt5ytf xl56j7k xbyyjgo xt0e3qv" },
 							3: { className: "x1n2onr6 x78zum5 x6s0dn4 x1iyjqo2 x5ve5x3 x87ps6o xc8icb0 x1qx5ct2 x80b3aj xh8yej3 xbyyjgo xt0e3qv" }
-						}[!!z << 1 | !!s << 0]),
+						}[!!L << 1 | !!s << 0]),
 						children: [
-							/*#__PURE__*/ (0, U.jsx)("div", {
+							/*#__PURE__*/ (0, V.jsx)("div", {
 								"aria-hidden": "true",
-								...N(a("slider-track", { orientation: y }), n(Y.track, z ? Y.trackHorizontal : [Y.trackVertical, M.centerInline("0px")]))
+								...k(y("slider-track", { orientation: b }), x(Y.track, L ? Y.trackHorizontal : [Y.trackVertical, M.centerInline("0px")]))
 							}),
-							/*#__PURE__*/ (0, U.jsx)("div", {
+							/*#__PURE__*/ (0, V.jsx)("div", {
 								"aria-hidden": "true",
-								...N(n(Y.filledTrack, z ? Y.filledTrackHorizontal : [Y.filledTrackVertical, M.centerInline("0px")]), { style: De })
+								...k(x(Y.filledTrack, L ? Y.filledTrackHorizontal : [Y.filledTrackVertical, M.centerInline("0px")]), { style: De })
 							}),
-							T && /*#__PURE__*/ (0, U.jsx)("div", {
+							T && /*#__PURE__*/ (0, V.jsx)("div", {
 								"aria-hidden": "true",
 								...{
 									0: { className: "x10l6tqk x13vifvy x1ey2m1c xbudbmw" },
 									1: { className: "x10l6tqk x1o0tod xtijo5x xwa60dl" }
-								}[!!z << 0],
+								}[!!L << 0],
 								children: T.map((e) => {
-									let t = We(e.value, p, m), n = z ? { insetInlineStart: Z(t) } : { bottom: Z(t) }, r = L ? e.value >= K[0] && e.value <= K[1] : e.value <= K[0];
-									return /*#__PURE__*/ (0, U.jsxs)("div", { children: [/*#__PURE__*/ (0, U.jsx)("div", {
+									let t = We(e.value, g, _), n = L ? { insetInlineStart: Z(t) } : { bottom: Z(t) }, r = F ? e.value >= G[0] && e.value <= G[1] : e.value <= G[0];
+									return /*#__PURE__*/ (0, V.jsxs)("div", { children: [/*#__PURE__*/ (0, V.jsx)("div", {
 										"data-testid": "slider-mark",
 										"data-mark-value": e.value,
-										...N({
+										...k({
 											0: { className: "x10l6tqk xdsb6cv xjspbzw x36qwtl x1xc55vz x1m9mm8y" },
 											2: { className: "x10l6tqk xdsb6cv xjspbzw xfo62xy xdk7pt x11lhmoz xoffwj3" },
 											1: { className: "x10l6tqk xjspbzw x36qwtl x1xc55vz x1m9mm8y x1ewilqj" },
 											3: { className: "x10l6tqk xjspbzw xfo62xy xdk7pt x11lhmoz xoffwj3 x1ewilqj" }
-										}[!!z << 1 | !!r << 0], { style: n })
-									}), e.label && /*#__PURE__*/ (0, U.jsx)("span", {
+										}[!!L << 1 | !!r << 0], { style: n })
+									}), e.label && /*#__PURE__*/ (0, V.jsx)("span", {
 										"data-testid": "slider-mark-label",
 										"data-mark-value": e.value,
-										...N({
+										...k({
 											0: { className: "x10l6tqk x9ynric x141an7d xv1l7n4 xuxw1ft x131p8rn x9p6ekw" },
 											1: { className: "x10l6tqk x9ynric x141an7d xv1l7n4 xuxw1ft xuuh30 x1nyx83j xuivejd" }
-										}[!!z << 0], { style: n }),
+										}[!!L << 0], { style: n }),
 										children: e.label
 									})] }, e.value);
 								})
 							}),
-							K.map((e, t) => Ee(t))
+							G.map((e, t) => Ee(t))
 						]
 					}),
 					Oe
 				]
 			}),
-			he && /*#__PURE__*/ (0, U.jsx)(g, {
-				id: ae,
+			ge && /*#__PURE__*/ (0, V.jsx)(P, {
+				id: ce,
 				children: "Required"
 			}),
-			pe && me.renderTooltip(c)
+			U && he.renderTooltip(c)
 		]
 	});
 }
 Ye.displayName = "Slider";
 //#endregion
 //#region node_modules/@astryxdesign/core/dist/Dialog/DialogContext.js
-var Xe = /*#__PURE__*/ (0, H.createContext)(null);
+var Xe = /*#__PURE__*/ (0, B.createContext)(null);
 Xe.displayName = "DialogContext";
 function Ze() {
-	return (0, H.use)(Xe);
+	return (0, B.use)(Xe);
 }
 //#endregion
 //#region node_modules/@astryxdesign/core/dist/Dialog/Dialog.js
@@ -1019,7 +1019,7 @@ function Qe(e, t = 16) {
 		y: Math.round(i / a * t)
 	};
 }
-`${I["--spacing-4"]}`, `${I["--spacing-4"]}`, `${I["--spacing-4"]}`, `${I["--spacing-4"]}`, `${I["--spacing-4"]}`, `${I["--spacing-4"]}`;
+`${p["--spacing-4"]}`, `${p["--spacing-4"]}`, `${p["--spacing-4"]}`, `${p["--spacing-4"]}`, `${p["--spacing-4"]}`, `${p["--spacing-4"]}`;
 var Q = {
 	dialog: {
 		kVAEAm: "xixxii4",
@@ -1096,7 +1096,7 @@ var Q = {
 		kZeWKH: "xish69e",
 		$$css: !0
 	}
-}, $e = I["--spacing-4"], et = `min(100%, ${`calc(100dvw - ${$e} - ${$e})`})`;
+}, $e = p["--spacing-4"], et = `min(100%, ${`calc(100dvw - ${$e} - ${$e})`})`;
 function tt(e) {
 	return typeof e == "number" ? `${e}px` : e;
 }
@@ -1150,20 +1150,20 @@ function ot(e) {
 		insetInlineEnd: i === void 0 ? "auto" : at(i)
 	};
 }
-function st({ isOpen: t, isInline: i = !1, onOpenChange: o, width: s = 400, maxHeight: c = "75dvh", position: d, variant: f = "standard", purpose: p = "info", padding: m, children: h, xstyle: g, className: v, style: y, ref: b, ...S }) {
-	let D = m == null, k = m ?? 4, A = O[k], j = f === "fullscreen", M = j ? null : nt(s, c), P = (0, H.useId)(), ee = (0, H.useMemo)(() => ({
-		isInline: i,
-		titleId: P
-	}), [i, P]), I = S["aria-label"] != null || S["aria-labelledby"] != null, R = (0, H.useRef)(null), z = (0, H.useCallback)((e) => {
-		R.current = e, e && !I && (e.querySelector(`#${CSS.escape(P)}`) == null ? e.removeAttribute("aria-labelledby") : e.setAttribute("aria-labelledby", P));
-	}, [P, I]), te = _(b, z), B = (0, H.useRef)(null), ne = p !== "required", ie = p === "info";
-	(0, H.useEffect)(() => {
-		if (i) return;
-		let e = R.current;
+function st({ isOpen: t, isInline: n = !1, onOpenChange: r, width: i = 400, maxHeight: a = "75dvh", position: o, variant: l = "standard", purpose: u = "info", padding: f, children: p, xstyle: m, className: h, style: g, ref: _, ...v }) {
+	let S = f == null, C = f ?? 4, w = A[C], T = l === "fullscreen", E = T ? null : nt(i, a), D = (0, B.useId)(), ee = (0, B.useMemo)(() => ({
+		isInline: n,
+		titleId: D
+	}), [n, D]), j = v["aria-label"] != null || v["aria-labelledby"] != null, M = (0, B.useRef)(null), te = (0, B.useCallback)((e) => {
+		M.current = e, e && !j && (e.querySelector(`#${CSS.escape(D)}`) == null ? e.removeAttribute("aria-labelledby") : e.setAttribute("aria-labelledby", D));
+	}, [D, j]), N = d(_, te), P = (0, B.useRef)(null), L = u !== "required", ie = u === "info";
+	(0, B.useEffect)(() => {
+		if (n) return;
+		let e = M.current;
 		if (e) {
 			if (t) {
-				B.current = document.activeElement;
-				let t = B.current;
+				P.current = document.activeElement;
+				let t = P.current;
 				if (t && t !== document.body) {
 					let n = Qe(t);
 					e.style.setProperty("--dialog-dir-x", `${n.x}px`), e.style.setProperty("--dialog-dir-y", `${n.y}px`);
@@ -1173,63 +1173,63 @@ function st({ isOpen: t, isInline: i = !1, onOpenChange: o, width: s = 400, maxH
 					let t = e.querySelector("[data-autofocus]");
 					t && t.focus();
 				}
-			} else e.open && e.close(), B.current?.focus(), B.current = null;
+			} else e.open && e.close(), P.current?.focus(), P.current = null;
 		}
-	}, [t, i]), T(t && !i);
-	let { shouldDismissOnCloseRequest: ae } = r({
+	}, [t, n]), c(t && !n);
+	let { shouldDismissOnCloseRequest: ae } = se({
 		isActive: t,
-		isEnabled: !i,
-		escapeBehavior: ne ? "close" : "block",
+		isEnabled: !n,
+		escapeBehavior: L ? "close" : "block",
 		onDismiss: () => {
-			o(!1);
+			r(!1);
 		}
-	}), oe = (0, H.useRef)(!1);
-	(0, H.useEffect)(() => {
-		let e = R.current?.querySelector(`#${CSS.escape(P)}`) != null;
-		t && !i && !I && !e && !oe.current && (oe.current = !0);
+	}), R = (0, B.useRef)(!1);
+	(0, B.useEffect)(() => {
+		let e = M.current?.querySelector(`#${CSS.escape(D)}`) != null;
+		t && !n && !j && !e && !R.current && (R.current = !0);
 	}, [
 		t,
-		i,
-		I,
-		P
+		n,
+		j,
+		D
 	]);
-	let se = (e) => {
-		e.target === e.currentTarget && ie && o(!1);
-	}, V = (e) => {
-		e.preventDefault(), ae() && ne && o(!1);
-	}, ce = /*#__PURE__*/ (0, U.jsx)("div", {
-		...n(Q.inner, ...re(D ? {
+	let le = (e) => {
+		e.target === e.currentTarget && ie && r(!1);
+	}, z = (e) => {
+		e.preventDefault(), ae() && L && r(!1);
+	}, ue = /*#__PURE__*/ (0, V.jsx)("div", {
+		...x(Q.inner, ...ce(S ? {
 			useThemeDefault: "dialog",
-			maxHeight: M?.maxHeight
+			maxHeight: E?.maxHeight
 		} : {
-			paddingInnerX: A,
-			paddingInnerY: A,
-			paddingOuterX: A,
-			paddingOuterY: A,
-			maxHeight: M?.maxHeight
-		}), !D && k !== 4 && F[k], !D && k !== 4 && C[k], !D && k !== 4 && w[k], !D && k !== 4 && l[k], j && D && Q.fullscreenSafeArea),
-		children: /*#__PURE__*/ (0, U.jsx)(Xe, {
+			paddingInnerX: w,
+			paddingInnerY: w,
+			paddingOuterX: w,
+			paddingOuterY: w,
+			maxHeight: E?.maxHeight
+		}), !S && C !== 4 && re[C], !S && C !== 4 && e[C], !S && C !== 4 && b[C], !S && C !== 4 && O[C], T && S && Q.fullscreenSafeArea),
+		children: /*#__PURE__*/ (0, V.jsx)(Xe, {
 			value: ee,
-			children: h
+			children: p
 		})
-	}), le = d != null && !j, { open: ue, ...W } = S;
-	return i ? t ? /*#__PURE__*/ (0, U.jsx)("div", {
-		...W,
-		...N(a("dialog", { variant: f }), n(u.reset, Q.inlineWrapper, e.reset, M && it.sizing(M.width, M.maxWidth, M.maxHeight), j && Q.fullscreen, g), v, y),
-		"data-testid": S["data-testid"],
-		children: /*#__PURE__*/ (0, U.jsx)(x, { children: /*#__PURE__*/ (0, U.jsx)(E, { children: ce }) })
-	}) : null : /*#__PURE__*/ (0, U.jsx)("dialog", {
-		ref: te,
-		...W,
-		...N(a("dialog", { variant: f }), L.focusVisible(u.reset, Q.dialog, e.reset, t && Q.open, Q.backdrop, M && it.sizing(M.width, M.maxWidth, M.maxHeight), le && (() => {
-			let e = ot(d);
+	}), de = o != null && !T, { open: fe, ...H } = v;
+	return n ? t ? /*#__PURE__*/ (0, V.jsx)("div", {
+		...H,
+		...k(y("dialog", { variant: l }), x(ne.reset, Q.inlineWrapper, I.reset, E && it.sizing(E.width, E.maxWidth, E.maxHeight), T && Q.fullscreen, m), h, g),
+		"data-testid": v["data-testid"],
+		children: /*#__PURE__*/ (0, V.jsx)(s, { children: /*#__PURE__*/ (0, V.jsx)(oe, { children: ue }) })
+	}) : null : /*#__PURE__*/ (0, V.jsx)("dialog", {
+		ref: N,
+		...H,
+		...k(y("dialog", { variant: l }), F.focusVisible(ne.reset, Q.dialog, I.reset, t && Q.open, Q.backdrop, E && it.sizing(E.width, E.maxWidth, E.maxHeight), de && (() => {
+			let e = ot(o);
 			return it.position(e.top, e.insetInlineStart, e.insetInlineEnd, e.bottom);
-		})(), j && Q.fullscreen, j && t && Q.fullscreenOpen, g), v, y),
-		onClick: se,
-		onCancel: V,
+		})(), T && Q.fullscreen, T && t && Q.fullscreenOpen, m), h, g),
+		onClick: le,
+		onCancel: z,
 		"aria-modal": "true",
-		...p === "required" ? { role: "alertdialog" } : void 0,
-		children: /*#__PURE__*/ (0, U.jsx)(x, { children: /*#__PURE__*/ (0, U.jsx)(E, { children: ce }) })
+		...u === "required" ? { role: "alertdialog" } : void 0,
+		children: /*#__PURE__*/ (0, V.jsx)(s, { children: /*#__PURE__*/ (0, V.jsx)(oe, { children: ue }) })
 	});
 }
 st.displayName = "Dialog";
@@ -1239,58 +1239,58 @@ var ct = { titleFocusable: {
 	kI3sdo: "x1a2a7pz",
 	$$css: !0
 } };
-function lt({ title: e, subtitle: n, onOpenChange: r, startContent: o, endContent: s, endContentEdgeCompensation: l, hasDivider: u, xstyle: f, className: p, style: m, ref: g, ..._ }) {
-	let v = c(), y = (0, H.useRef)(null), b = Ze(), x = b?.isInline !== !0, S = b?.titleId, C = n != null && typeof n != "boolean" && n !== "", w = l == null ? r != null : l === "block" || l === "all", T = l == null ? r != null : l === "inline" || l === "all";
-	return (0, H.useEffect)(() => {
-		x && y.current && y.current.focus();
-	}, [x]), /*#__PURE__*/ (0, U.jsx)(z, {
-		ref: g,
-		hasDivider: u,
-		xstyle: f,
-		className: p,
-		style: m,
-		..._,
-		children: /*#__PURE__*/ (0, U.jsxs)("div", {
-			...N(a("dialog-header"), { className: "x78zum5 x1cy8zhl x1qughib xjcht0a" }),
+function lt({ title: e, subtitle: t, onOpenChange: n, startContent: r, endContent: i, endContentEdgeCompensation: o, hasDivider: s, xstyle: c, className: l, style: u, ref: d, ...f }) {
+	let p = D(), h = (0, B.useRef)(null), g = Ze(), _ = g?.isInline !== !0, b = g?.titleId, x = t != null && typeof t != "boolean" && t !== "", S = o == null ? n != null : o === "block" || o === "all", T = o == null ? n != null : o === "inline" || o === "all";
+	return (0, B.useEffect)(() => {
+		_ && h.current && h.current.focus();
+	}, [_]), /*#__PURE__*/ (0, V.jsx)(v, {
+		ref: d,
+		hasDivider: s,
+		xstyle: c,
+		className: l,
+		style: u,
+		...f,
+		children: /*#__PURE__*/ (0, V.jsxs)("div", {
+			...k(y("dialog-header"), { className: "x78zum5 x1cy8zhl x1qughib xjcht0a" }),
 			children: [
-				o && /*#__PURE__*/ (0, U.jsx)("div", {
-					...N(a("dialog-header-start-content"), { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s" }),
-					children: o
+				r && /*#__PURE__*/ (0, V.jsx)("div", {
+					...k(y("dialog-header-start-content"), { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s" }),
+					children: r
 				}),
-				/*#__PURE__*/ (0, U.jsxs)("div", {
-					...N(a("dialog-header-title-block"), { className: "x78zum5 xdt5ytf xsn7fz1 x98rzlu xeuugli xqixskq" }),
-					children: [/*#__PURE__*/ (0, U.jsx)(i, {
-						ref: y,
-						id: S,
+				/*#__PURE__*/ (0, V.jsxs)("div", {
+					...k(y("dialog-header-title-block"), { className: "x78zum5 xdt5ytf xsn7fz1 x98rzlu xeuugli xqixskq" }),
+					children: [/*#__PURE__*/ (0, V.jsx)(C, {
+						ref: h,
+						id: b,
 						level: 2,
 						tabIndex: -1,
 						xstyle: ct.titleFocusable,
 						children: e
-					}), C && /*#__PURE__*/ (0, U.jsx)(d, {
+					}), x && /*#__PURE__*/ (0, V.jsx)(m, {
 						type: "body",
 						size: "sm",
 						color: "secondary",
-						children: n
+						children: t
 					})]
 				}),
-				(s || r) && /*#__PURE__*/ (0, U.jsxs)("div", {
-					...N(a("dialog-header-end-content"), {
+				(i || n) && /*#__PURE__*/ (0, V.jsxs)("div", {
+					...k(y("dialog-header-end-content"), {
 						0: { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s" },
 						2: { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s xhzvc8f" },
 						1: { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s x3kzqx6" },
 						3: { className: "x78zum5 x6s0dn4 x1txdalj x2lah0s xhzvc8f x3kzqx6" }
-					}[!!w << 1 | !!T << 0]),
-					children: [s, r && /*#__PURE__*/ (0, U.jsx)(t, {
+					}[!!S << 1 | !!T << 0]),
+					children: [i, n && /*#__PURE__*/ (0, V.jsx)(a, {
 						variant: "ghost",
-						label: v("@astryx.dialog.close"),
-						tooltip: v("@astryx.dialog.close"),
-						icon: /*#__PURE__*/ (0, U.jsx)(h, {
+						label: p("@astryx.dialog.close"),
+						tooltip: p("@astryx.dialog.close"),
+						icon: /*#__PURE__*/ (0, V.jsx)(w, {
 							icon: "close",
 							color: "inherit",
-							...a("dialog-header-close-icon")
+							...y("dialog-header-close-icon")
 						}),
 						onClick: () => {
-							r?.(!1);
+							n?.(!1);
 						},
 						isIconOnly: !0
 					})]
@@ -1302,9 +1302,9 @@ function lt({ title: e, subtitle: n, onOpenChange: r, startContent: o, endConten
 lt.displayName = "DialogHeader";
 //#endregion
 //#region src/theme.js
-var ut = f(), dt = "#1e1b2c", ft = "#393047", pt = "#5a356a", mt = "#ecc1c2", ht = "#f49c58", gt = y({
+var ut = r(), dt = "#1e1b2c", ft = "#393047", pt = "#5a356a", mt = "#ecc1c2", ht = "#f49c58", gt = h({
 	name: "snadiya-reader",
-	extends: B,
+	extends: ie,
 	typography: {
 		scale: {
 			base: 18,
@@ -1380,7 +1380,7 @@ function xt() {
 	};
 }
 function St(e, t) {
-	(0, H.useEffect)(() => {
+	(0, B.useEffect)(() => {
 		let n = e.find((e) => e.src !== e.thumb);
 		if (!n) return;
 		let r = !1, i = () => {
@@ -1396,174 +1396,174 @@ function St(e, t) {
 	}, [e, t]);
 }
 function Ct() {
-	let e = "(max-width: 620px)", [t, n] = (0, H.useState)(() => window.matchMedia(e).matches);
-	return (0, H.useEffect)(() => {
+	let e = "(max-width: 620px)", [t, n] = (0, B.useState)(() => window.matchMedia(e).matches);
+	return (0, B.useEffect)(() => {
 		let t = window.matchMedia(e), r = () => n(t.matches);
 		return t.addEventListener("change", r), () => t.removeEventListener("change", r);
 	}, []), t;
 }
 function wt() {
-	let e = Ct(), { pages: n, chapters: r } = (0, H.useMemo)(xt, []), i = n.length, a = r.length > 1, [, o] = (0, H.useState)(0);
-	St(n, o);
-	let [s, c] = (0, H.useState)(() => vt("mode", window.matchMedia("(max-width:620px)").matches ? "scroll" : "pages")), [l, u] = (0, H.useState)(() => Math.min(i - 1, Math.max(0, vt("page", 0)))), [f, p] = (0, H.useState)(null), [m, g] = (0, H.useState)(!1), [_, v] = (0, H.useState)(!1), [y, b] = (0, H.useState)(!1), [x, S] = (0, H.useState)(() => vt("marks", [])), C = (0, H.useRef)(null), w = (0, H.useRef)([]), T = (0, H.useRef)(!1);
-	(0, H.useEffect)(() => yt("mode", s), [s]), (0, H.useEffect)(() => yt("page", l), [l]), (0, H.useEffect)(() => yt("marks", x), [x]);
-	let E = (0, H.useRef)(l);
+	let e = Ct(), { pages: t, chapters: n } = (0, B.useMemo)(xt, []), r = t.length, i = n.length > 1, [, o] = (0, B.useState)(0);
+	St(t, o);
+	let [s, c] = (0, B.useState)(() => vt("mode", window.matchMedia("(max-width:620px)").matches ? "scroll" : "pages")), [l, u] = (0, B.useState)(() => Math.min(r - 1, Math.max(0, vt("page", 0)))), [d, f] = (0, B.useState)(null), [p, h] = (0, B.useState)(!1), [g, _] = (0, B.useState)(!1), [v, y] = (0, B.useState)(!1), [b, x] = (0, B.useState)(() => vt("marks", [])), S = (0, B.useRef)(null), C = (0, B.useRef)([]), T = (0, B.useRef)(!1);
+	(0, B.useEffect)(() => yt("mode", s), [s]), (0, B.useEffect)(() => yt("page", l), [l]), (0, B.useEffect)(() => yt("marks", b), [b]);
+	let E = (0, B.useRef)(l);
 	E.current = l;
-	let O = (e) => k(E.current + e), k = (0, H.useCallback)((e, t = !1) => {
-		e = Math.max(0, Math.min(i - 1, e)), E.current = e, u(e), s === "scroll" && w.current[e] && C.current && (T.current = !0, C.current.scrollTo({
-			top: w.current[e].offsetTop,
+	let D = (e) => O(E.current + e), O = (0, B.useCallback)((e, t = !1) => {
+		e = Math.max(0, Math.min(r - 1, e)), E.current = e, u(e), s === "scroll" && C.current[e] && S.current && (T.current = !0, S.current.scrollTo({
+			top: C.current[e].offsetTop,
 			behavior: t ? "smooth" : "auto"
 		}), setTimeout(() => {
 			T.current = !1;
 		}, t ? 600 : 50));
-	}, [s, i]);
-	(0, H.useLayoutEffect)(() => {
-		s === "scroll" && C.current && w.current[E.current] && (C.current.scrollTop = w.current[E.current].offsetTop);
-	}, [s]), (0, H.useEffect)(() => {
-		if (s !== "scroll" || !C.current) return;
-		let e = C.current, t = () => {
+	}, [s, r]);
+	(0, B.useLayoutEffect)(() => {
+		s === "scroll" && S.current && C.current[E.current] && (S.current.scrollTop = C.current[E.current].offsetTop);
+	}, [s]), (0, B.useEffect)(() => {
+		if (s !== "scroll" || !S.current) return;
+		let e = S.current, t = () => {
 			if (T.current) return;
 			let t = e.scrollTop + 4, n = 0;
-			for (let e = 0; e < w.current.length; e++) {
-				let r = w.current[e];
+			for (let e = 0; e < C.current.length; e++) {
+				let r = C.current[e];
 				if (r && r.offsetTop <= t) n = e;
 				else break;
 			}
 			u(n);
 		};
 		return e.addEventListener("scroll", t, { passive: !0 }), () => e.removeEventListener("scroll", t);
-	}, [s]), (0, H.useEffect)(() => {
+	}, [s]), (0, B.useEffect)(() => {
 		if (s === "pages") for (let e = 1; e <= 5; e++) {
-			let t = n[l + e];
-			if (t) {
+			let n = t[l + e];
+			if (n) {
 				let e = new Image();
-				e.src = t.src;
+				e.src = n.src;
 			}
 		}
 	}, [
 		l,
 		s,
-		n
-	]), (0, H.useEffect)(() => {
+		t
+	]), (0, B.useEffect)(() => {
 		let e = (e) => {
-			e.metaKey || e.ctrlKey || e.altKey || /input|textarea/i.test(e.target.tagName) || (e.key === "ArrowRight" ? (e.preventDefault(), O(1)) : e.key === "ArrowLeft" ? (e.preventDefault(), O(-1)) : e.key === "Home" ? (e.preventDefault(), k(0)) : e.key === "End" ? (e.preventDefault(), k(i - 1)) : e.key === "?" ? v(!0) : e.key === "b" || e.key === "B" ? A() : e.key === "t" || e.key === "T" ? g(!0) : (e.key === "v" || e.key === "V") && c((e) => e === "pages" ? "scroll" : "pages"));
+			e.metaKey || e.ctrlKey || e.altKey || /input|textarea/i.test(e.target.tagName) || (e.key === "ArrowRight" ? (e.preventDefault(), D(1)) : e.key === "ArrowLeft" ? (e.preventDefault(), D(-1)) : e.key === "Home" ? (e.preventDefault(), O(0)) : e.key === "End" ? (e.preventDefault(), O(r - 1)) : e.key === "?" ? _(!0) : e.key === "b" || e.key === "B" ? k() : e.key === "t" || e.key === "T" ? h(!0) : (e.key === "v" || e.key === "V") && c((e) => e === "pages" ? "scroll" : "pages"));
 		};
 		return document.addEventListener("keydown", e), () => document.removeEventListener("keydown", e);
 	});
-	let A = () => S((e) => e.includes(l) ? e.filter((e) => e !== l) : [...e, l].sort((e, t) => e - t)), j = x.includes(l), M = f ?? l, N = (e) => r[n[e].chapter], P = [
+	let k = () => x((e) => e.includes(l) ? e.filter((e) => e !== l) : [...e, l].sort((e, t) => e - t)), A = b.includes(l), j = d ?? l, M = (e) => n[t[e].chapter], te = [
 		{
 			label: "All pages",
-			icon: /* @__PURE__ */ (0, U.jsx)(De, { size: 18 }),
-			onClick: () => g(!0)
+			icon: /* @__PURE__ */ (0, V.jsx)(De, { size: 18 }),
+			onClick: () => h(!0)
 		},
 		{
-			label: j ? "Remove bookmark" : "Bookmark this page",
-			icon: j ? /* @__PURE__ */ (0, U.jsx)(be, { size: 18 }) : /* @__PURE__ */ (0, U.jsx)(xe, { size: 18 }),
-			onClick: A
+			label: A ? "Remove bookmark" : "Bookmark this page",
+			icon: A ? /* @__PURE__ */ (0, V.jsx)(be, { size: 18 }) : /* @__PURE__ */ (0, V.jsx)(xe, { size: 18 }),
+			onClick: k
 		},
 		{
 			label: "Bookmarks",
-			icon: /* @__PURE__ */ (0, U.jsx)(xe, { size: 18 }),
-			onClick: () => b(!0),
-			isDisabled: !x.length
+			icon: /* @__PURE__ */ (0, V.jsx)(xe, { size: 18 }),
+			onClick: () => y(!0),
+			isDisabled: !b.length
 		},
 		...$.driveUrl ? [{
 			label: "Snadiya's Drive Link",
-			icon: /* @__PURE__ */ (0, U.jsx)(Ce, { size: 18 }),
+			icon: /* @__PURE__ */ (0, V.jsx)(Ce, { size: 18 }),
 			onClick: () => window.open($.driveUrl, "_blank", "noopener")
 		}] : [],
 		{
 			label: "Keyboard shortcuts",
-			icon: /* @__PURE__ */ (0, U.jsx)(Te, { size: 18 }),
-			onClick: () => v(!0)
+			icon: /* @__PURE__ */ (0, V.jsx)(Te, { size: 18 }),
+			onClick: () => _(!0)
 		}
 	];
-	return /* @__PURE__ */ (0, U.jsxs)("div", {
+	return /* @__PURE__ */ (0, V.jsxs)("div", {
 		className: "shell",
 		children: [
-			/* @__PURE__ */ (0, U.jsxs)("header", {
+			/* @__PURE__ */ (0, V.jsxs)("header", {
 				className: "bar top",
 				children: [
-					/* @__PURE__ */ (0, U.jsx)(t, {
+					/* @__PURE__ */ (0, V.jsx)(a, {
 						label: "All comics",
 						variant: "ghost",
 						href: $.gallery || "index.html",
-						icon: /* @__PURE__ */ (0, U.jsx)(h, { icon: "chevronLeft" }),
+						icon: /* @__PURE__ */ (0, V.jsx)(w, { icon: "chevronLeft" }),
 						isIconOnly: e
 					}),
-					/* @__PURE__ */ (0, U.jsx)("div", {
+					/* @__PURE__ */ (0, V.jsx)("div", {
 						className: "title",
-						children: a ? /* @__PURE__ */ (0, U.jsx)(D, {
+						children: i ? /* @__PURE__ */ (0, V.jsx)(ee, {
 							button: {
 								label: $.title,
 								variant: "ghost"
 							},
 							menuWidth: 280,
-							items: r.map((e) => ({
+							items: n.map((e) => ({
 								label: e.title,
 								description: `${e.from + 1} to ${e.to + 1}`,
-								onClick: () => k(e.from)
+								onClick: () => O(e.from)
 							}))
-						}) : /* @__PURE__ */ (0, U.jsx)(d, {
+						}) : /* @__PURE__ */ (0, V.jsx)(m, {
 							type: "large",
 							weight: "semibold",
 							children: $.title
 						})
 					}),
-					/* @__PURE__ */ (0, U.jsxs)(Ie, {
+					/* @__PURE__ */ (0, V.jsxs)(Ie, {
 						label: "Reading mode",
 						value: s,
 						onChange: c,
-						children: [/* @__PURE__ */ (0, U.jsx)(Be, {
+						children: [/* @__PURE__ */ (0, V.jsx)(Be, {
 							value: "scroll",
 							label: "Scroll",
-							icon: /* @__PURE__ */ (0, U.jsx)(je, { size: 18 }),
+							icon: /* @__PURE__ */ (0, V.jsx)(je, { size: 18 }),
 							isLabelHidden: e
-						}), /* @__PURE__ */ (0, U.jsx)(Be, {
+						}), /* @__PURE__ */ (0, V.jsx)(Be, {
 							value: "pages",
 							label: "Pages",
-							icon: /* @__PURE__ */ (0, U.jsx)(ye, { size: 18 }),
+							icon: /* @__PURE__ */ (0, V.jsx)(ye, { size: 18 }),
 							isLabelHidden: e
 						})]
 					}),
-					/* @__PURE__ */ (0, U.jsx)(D, {
+					/* @__PURE__ */ (0, V.jsx)(ee, {
 						button: {
 							label: "Options",
-							icon: /* @__PURE__ */ (0, U.jsx)(te, { size: 18 }),
+							icon: /* @__PURE__ */ (0, V.jsx)(L, { size: 18 }),
 							isIconOnly: e
 						},
 						hasChevron: !1,
 						alignment: "end",
 						menuWidth: 260,
 						presentation: "adaptive",
-						items: P
+						items: te
 					})
 				]
 			}),
-			/* @__PURE__ */ (0, U.jsx)("main", {
+			/* @__PURE__ */ (0, V.jsx)("main", {
 				className: "content",
-				children: s === "pages" ? /* @__PURE__ */ (0, U.jsx)("div", {
+				children: s === "pages" ? /* @__PURE__ */ (0, V.jsx)("div", {
 					className: "stage",
 					onClick: (e) => {
 						let t = e.currentTarget.getBoundingClientRect();
-						O(e.clientX - t.left > t.width / 2 ? 1 : -1);
+						D(e.clientX - t.left > t.width / 2 ? 1 : -1);
 					},
-					children: /* @__PURE__ */ (0, U.jsx)("img", {
-						src: n[l].src,
-						width: n[l].w,
-						height: n[l].h,
+					children: /* @__PURE__ */ (0, V.jsx)("img", {
+						src: t[l].src,
+						width: t[l].w,
+						height: t[l].h,
 						alt: ""
-					}, n[l].src)
-				}) : /* @__PURE__ */ (0, U.jsxs)("div", {
+					}, t[l].src)
+				}) : /* @__PURE__ */ (0, V.jsxs)("div", {
 					className: "scroll",
-					ref: C,
-					children: [n.map((e, t) => /* @__PURE__ */ (0, U.jsx)("div", {
+					ref: S,
+					children: [t.map((e, t) => /* @__PURE__ */ (0, V.jsx)("div", {
 						className: "panel",
 						ref: (e) => {
-							w.current[t] = e;
+							C.current[t] = e;
 						},
 						style: { aspectRatio: `${e.w} / ${e.h}` },
-						children: /* @__PURE__ */ (0, U.jsx)("img", {
+						children: /* @__PURE__ */ (0, V.jsx)("img", {
 							src: e.src,
 							width: e.w,
 							height: e.h,
@@ -1571,132 +1571,132 @@ function wt() {
 							decoding: "async",
 							alt: ""
 						})
-					}, t)), /* @__PURE__ */ (0, U.jsx)(Tt, {})]
+					}, t)), /* @__PURE__ */ (0, V.jsx)(Tt, {})]
 				})
 			}),
-			/* @__PURE__ */ (0, U.jsxs)("footer", {
+			/* @__PURE__ */ (0, V.jsxs)("footer", {
 				className: "bar bottom",
 				children: [
-					/* @__PURE__ */ (0, U.jsx)(t, {
+					/* @__PURE__ */ (0, V.jsx)(a, {
 						label: "Previous",
-						icon: /* @__PURE__ */ (0, U.jsx)(h, { icon: "chevronLeft" }),
-						onClick: () => O(-1),
+						icon: /* @__PURE__ */ (0, V.jsx)(w, { icon: "chevronLeft" }),
+						onClick: () => D(-1),
 						isDisabled: l === 0
 					}),
-					/* @__PURE__ */ (0, U.jsxs)("div", {
+					/* @__PURE__ */ (0, V.jsxs)("div", {
 						className: "scrub",
-						children: [f != null && /* @__PURE__ */ (0, U.jsxs)("div", {
+						children: [d != null && /* @__PURE__ */ (0, V.jsxs)("div", {
 							className: "peek",
-							style: { left: `${f / Math.max(1, i - 1) * 100}%` },
+							style: { left: `${d / Math.max(1, r - 1) * 100}%` },
 							children: [
-								n[f].pv && /* @__PURE__ */ (0, U.jsx)("img", {
-									src: n[f].pv,
+								t[d].pv && /* @__PURE__ */ (0, V.jsx)("img", {
+									src: t[d].pv,
 									alt: ""
 								}),
-								/* @__PURE__ */ (0, U.jsxs)(d, {
+								/* @__PURE__ */ (0, V.jsxs)(m, {
 									type: "label",
 									children: [
-										f + 1,
+										d + 1,
 										" of ",
-										i
+										r
 									]
 								}),
-								a && /* @__PURE__ */ (0, U.jsx)(d, {
+								i && /* @__PURE__ */ (0, V.jsx)(m, {
 									type: "supporting",
 									color: "primary",
-									children: N(f).title
+									children: M(d).title
 								})
 							]
-						}), /* @__PURE__ */ (0, U.jsx)(Ye, {
+						}), /* @__PURE__ */ (0, V.jsx)(Ye, {
 							label: "Page",
 							isLabelHidden: !0,
 							valueDisplay: "none",
 							min: 1,
-							max: i,
-							value: M + 1,
+							max: r,
+							value: j + 1,
 							width: "100%",
-							onChange: (e) => p(e - 1),
+							onChange: (e) => f(e - 1),
 							onChangeEnd: (e) => {
-								p(null), k(e - 1);
+								f(null), O(e - 1);
 							}
 						})]
 					}),
-					/* @__PURE__ */ (0, U.jsx)("span", {
+					/* @__PURE__ */ (0, V.jsx)("span", {
 						className: "count",
-						children: /* @__PURE__ */ (0, U.jsxs)(d, {
+						children: /* @__PURE__ */ (0, V.jsxs)(m, {
 							type: "label",
 							children: [
-								M + 1,
+								j + 1,
 								" / ",
-								i
+								r
 							]
 						})
 					}),
-					/* @__PURE__ */ (0, U.jsx)(t, {
+					/* @__PURE__ */ (0, V.jsx)(a, {
 						label: "Next",
 						variant: "primary",
-						endContent: /* @__PURE__ */ (0, U.jsx)(h, { icon: "chevronRight" }),
-						onClick: () => O(1),
-						isDisabled: l === i - 1
+						endContent: /* @__PURE__ */ (0, V.jsx)(w, { icon: "chevronRight" }),
+						onClick: () => D(1),
+						isDisabled: l === r - 1
 					})
 				]
 			}),
-			/* @__PURE__ */ (0, U.jsxs)(st, {
-				isOpen: m,
-				onOpenChange: g,
+			/* @__PURE__ */ (0, V.jsxs)(st, {
+				isOpen: p,
+				onOpenChange: h,
 				variant: "fullscreen",
 				padding: 4,
-				children: [/* @__PURE__ */ (0, U.jsx)(lt, {
+				children: [/* @__PURE__ */ (0, V.jsx)(lt, {
 					title: "All pages",
-					onOpenChange: g
-				}), r.map((e, t) => /* @__PURE__ */ (0, U.jsxs)("section", { children: [a && /* @__PURE__ */ (0, U.jsx)(d, {
+					onOpenChange: h
+				}), n.map((e, n) => /* @__PURE__ */ (0, V.jsxs)("section", { children: [i && /* @__PURE__ */ (0, V.jsx)(m, {
 					type: "large",
 					weight: "semibold",
 					as: "div",
 					children: e.title
-				}), /* @__PURE__ */ (0, U.jsx)("div", {
+				}), /* @__PURE__ */ (0, V.jsx)("div", {
 					className: "grid",
-					children: n.slice(e.from, e.to + 1).map((t, n) => {
+					children: t.slice(e.from, e.to + 1).map((t, n) => {
 						let r = e.from + n;
-						return /* @__PURE__ */ (0, U.jsxs)("button", {
+						return /* @__PURE__ */ (0, V.jsxs)("button", {
 							className: "thumb" + (r === l ? " on" : ""),
 							onClick: () => {
-								g(!1), k(r);
+								h(!1), O(r);
 							},
-							children: [/* @__PURE__ */ (0, U.jsx)("img", {
+							children: [/* @__PURE__ */ (0, V.jsx)("img", {
 								src: t.pv || t.thumb,
 								loading: "lazy",
 								alt: "",
 								style: { aspectRatio: `${t.w} / ${t.h}` }
-							}), /* @__PURE__ */ (0, U.jsx)("span", { children: r + 1 })]
+							}), /* @__PURE__ */ (0, V.jsx)("span", { children: r + 1 })]
 						}, r);
 					})
-				})] }, t))]
+				})] }, n))]
 			}),
-			/* @__PURE__ */ (0, U.jsxs)(st, {
-				isOpen: y,
-				onOpenChange: b,
-				children: [/* @__PURE__ */ (0, U.jsx)(lt, {
+			/* @__PURE__ */ (0, V.jsxs)(st, {
+				isOpen: v,
+				onOpenChange: y,
+				children: [/* @__PURE__ */ (0, V.jsx)(lt, {
 					title: "Bookmarks",
-					onOpenChange: b
-				}), /* @__PURE__ */ (0, U.jsx)("div", {
+					onOpenChange: y
+				}), /* @__PURE__ */ (0, V.jsx)("div", {
 					className: "marks",
-					children: x.map((e) => /* @__PURE__ */ (0, U.jsx)(t, {
+					children: b.map((e) => /* @__PURE__ */ (0, V.jsx)(a, {
 						label: `Page ${e + 1}`,
 						variant: "ghost",
 						onClick: () => {
-							b(!1), k(e);
+							y(!1), O(e);
 						}
 					}, e))
 				})]
 			}),
-			/* @__PURE__ */ (0, U.jsxs)(st, {
-				isOpen: _,
-				onOpenChange: v,
-				children: [/* @__PURE__ */ (0, U.jsx)(lt, {
+			/* @__PURE__ */ (0, V.jsxs)(st, {
+				isOpen: g,
+				onOpenChange: _,
+				children: [/* @__PURE__ */ (0, V.jsx)(lt, {
 					title: "Keyboard shortcuts",
-					onOpenChange: v
-				}), /* @__PURE__ */ (0, U.jsx)("dl", {
+					onOpenChange: _
+				}), /* @__PURE__ */ (0, V.jsx)("dl", {
 					className: "keys",
 					children: [
 						["left", "Previous picture"],
@@ -1707,26 +1707,26 @@ function wt() {
 						["t", "All pages"],
 						["b", "Bookmark this page"],
 						["?", "Keyboard shortcuts"]
-					].map(([e, t]) => /* @__PURE__ */ (0, U.jsxs)("div", { children: [/* @__PURE__ */ (0, U.jsx)("dt", { children: /* @__PURE__ */ (0, U.jsx)(he, { keys: e }) }), /* @__PURE__ */ (0, U.jsx)("dd", { children: /* @__PURE__ */ (0, U.jsx)(d, { children: t }) })] }, e))
+					].map(([e, t]) => /* @__PURE__ */ (0, V.jsxs)("div", { children: [/* @__PURE__ */ (0, V.jsx)("dt", { children: /* @__PURE__ */ (0, V.jsx)(ge, { keys: e }) }), /* @__PURE__ */ (0, V.jsx)("dd", { children: /* @__PURE__ */ (0, V.jsx)(m, { children: t }) })] }, e))
 				})]
 			})
 		]
 	});
 }
 function Tt() {
-	return /* @__PURE__ */ (0, U.jsxs)("div", {
+	return /* @__PURE__ */ (0, V.jsxs)("div", {
 		className: "end",
 		children: [
-			/* @__PURE__ */ (0, U.jsx)(d, {
+			/* @__PURE__ */ (0, V.jsx)(m, {
 				type: "display-3",
 				children: $.endText || "The End"
 			}),
-			/* @__PURE__ */ (0, U.jsx)(t, {
+			/* @__PURE__ */ (0, V.jsx)(a, {
 				label: "All comics",
 				href: $.gallery || "index.html",
-				icon: /* @__PURE__ */ (0, U.jsx)(ke, { size: 18 })
+				icon: /* @__PURE__ */ (0, V.jsx)(ke, { size: 18 })
 			}),
-			($.related || []).map((e) => /* @__PURE__ */ (0, U.jsx)(t, {
+			($.related || []).map((e) => /* @__PURE__ */ (0, V.jsx)(a, {
 				label: e.title,
 				variant: "ghost",
 				href: e.href,
@@ -1735,9 +1735,9 @@ function Tt() {
 		]
 	});
 }
-(0, ut.createRoot)(document.getElementById("reader")).render(/* @__PURE__ */ (0, U.jsx)(H.StrictMode, { children: /* @__PURE__ */ (0, U.jsx)(oe, {
+(0, ut.createRoot)(document.getElementById("reader")).render(/* @__PURE__ */ (0, V.jsx)(B.StrictMode, { children: /* @__PURE__ */ (0, V.jsx)(o, {
 	theme: gt,
 	mode: "dark",
-	children: /* @__PURE__ */ (0, U.jsx)(wt, {})
+	children: /* @__PURE__ */ (0, V.jsx)(wt, {})
 }) }));
 //#endregion
