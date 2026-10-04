@@ -9,7 +9,6 @@
 <meta property="og:image" content="og/deathstranding.webp">
 <meta property="og:url" content="https://snadiya-alpha.github.io/deathstranding.html">
 <meta property="og:site_name" content="Snadiya">
-<meta name="twitter:card" content="summary_large_image">
 <meta name="author" content="Snadiya">
 <meta name="characters" content="Jane">
 <meta name="themes" content="Rope Bondage, Latex, Tape Gag, Video Game Inspired, Outdoor">
@@ -150,6 +149,16 @@
   #cardview{position:absolute;inset:0;display:none;align-items:center;justify-content:center;padding:24px;overflow:auto}
   .shell.oncard[data-mode="pages"] #stage{display:none}
   .shell.oncard[data-mode="pages"] #cardview{display:flex}
+  /* cover card: page 1 blurred under the title, or the comic's own cover page (CONFIG.cover) */
+  .shell.oncover #cardview{padding:0}
+  .cover{position:relative;width:100%;height:100%;min-height:100%;display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--bg)}
+  #layer .cover{height:auto;min-height:0;aspect-ratio:var(--cover-ar,3/4);max-height:100vh}
+  .cover img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .cover.blur img{filter:blur(10px) brightness(.5);transform:scale(1.08)}
+  .cover.own img{object-fit:contain}
+  .cover .words{position:relative;text-align:center;padding:24px;max-width:var(--measure)}
+  .cover .ctitle{font-family:"Philosopher",Georgia,serif;font-weight:700;font-size:clamp(40px,8vw,84px);line-height:1.05;margin:0;color:var(--text)}
+  .cover .cby{font-family:"Yeseva One",Georgia,serif;font-size:clamp(24px,3.6vw,38px);margin:18px 0 0;color:var(--tint)}
 
   /* card + endcap shared look */
   .card{margin:0 auto;max-width:var(--measure);text-align:center}
@@ -282,6 +291,8 @@
     #backBtn{min-width:44px}
   }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&family=Yeseva+One&display=swap">
 </head>
 <body>
 
@@ -438,6 +449,22 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
     if(ch.afterNote && ci<CHAPTERS.length-1){ CARDS.push({ after:ch.to, title:ch.afterNote, isEnd:false }); }
   });
   CARDS.push({ after:TOTAL-1, title:(C.endText||"The End"), isEnd:true });
+  // cover card before page 1. CONFIG.cover: false = the comic opens on its own cover page already;
+  // a page number = show that page as the cover; unset = page 1 blurred under the title + Snadiya.
+  var COVER = C.cover===false ? null : { isCover:true, own:typeof C.cover==="number" };
+  function coverBlock(){
+    var p=PAGES[COVER.own?Math.max(0,Math.min(TOTAL-1,C.cover-1)):0];
+    var d=document.createElement("div"); d.className="cover "+(COVER.own?"own":"blur");
+    d.style.setProperty("--cover-ar",p.w+" / "+p.h);
+    var im=document.createElement("img"); im.src=p.src; im.alt=""; im.decoding="async"; d.appendChild(im);
+    if(!COVER.own){
+      var w=document.createElement("div"); w.className="words";
+      var t=document.createElement("p"); t.className="ctitle"; t.textContent=C.title;
+      var b=document.createElement("p"); b.className="cby"; b.textContent=C.artist;
+      w.appendChild(t); w.appendChild(b); d.appendChild(w);
+    }
+    return d;
+  }
   function cardAfter(i){ for(var k=0;k<CARDS.length;k++){ if(CARDS[k].after===i){ return CARDS[k]; } } return null; }
 
   var KEY="snadiya:"+(C.title||"comic").toLowerCase().replace(/[^a-z0-9]+/g,"-");
@@ -470,6 +497,7 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
   /* ---------- scroll strip (with interstitial blocks) ---------- */
   function buildScroll(){
     layer.textContent="";nodes=[];
+    if(COVER){ layer.appendChild(coverBlock()); }
     CHAPTERS.forEach(function(ch,ci){
       for(var i=ch.from;i<=ch.to;i++){
         var p=PAGES[i];
@@ -574,12 +602,12 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
   function syncNav(){ syncChapBar();
     var i=currentIndex(),ci=PAGES[i].chapter;
     if(MULTI){ CHAPTERS.forEach(function(ch,n){ if(ch.menuEl){ ch.menuEl.setAttribute("aria-current",n===ci?"true":"false"); } }); }
-    if(onCard){ document.getElementById("countTxt").textContent = onCard.isEnd ? "—" : "Preview"; }
+    if(onCard){ document.getElementById("countTxt").textContent = onCard.isCover ? "" : onCard.isEnd ? "—" : "Preview"; }
     else { document.getElementById("countTxt").innerHTML=posLabel(i); }
     var f=TOTAL>1?i/(TOTAL-1):0;
     document.getElementById("fill").style.width=(f*100)+"%";document.getElementById("knob").style.left=(f*100)+"%";
     zone.setAttribute("aria-valuenow",String(i+1));
-    document.getElementById("prevBtn").disabled=(mode==="pages"&&i===0&&!onCard);
+    document.getElementById("prevBtn").disabled=(mode==="pages"&&i===0&&(onCard?!!onCard.isCover:!COVER));
     document.getElementById("nextBtn").disabled=(mode==="pages"&&!!onCard&&onCard.isEnd);
     updateMarkLabel();updateThumbCurrent();savePos();
   }
@@ -603,7 +631,7 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
     }
   }
   function renderPage(){
-    onCard=null; shell.classList.remove("oncard");
+    onCard=null; shell.classList.remove("oncard","oncover");
     stageZoom = SPOT[page] ? Math.max(1.5,userZoom) : userZoom;
     var want=page;
     stage.classList.add("loading");
@@ -642,9 +670,10 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
     syncNav();
   }
   function showCard(c){
-    onCard=c; shell.classList.add("oncard"); stage.classList.remove("loading");
+    onCard=c; shell.classList.add("oncard"); shell.classList.toggle("oncover",!!c.isCover); stage.classList.remove("loading");
     cardview.innerHTML="";
-    if(c.isEnd){ cardview.appendChild(endBlock()); }
+    if(c.isCover){ cardview.appendChild(coverBlock()); }
+    else if(c.isEnd){ cardview.appendChild(endBlock()); }
     else {
       var d=document.createElement("div");d.className="card";
       d.innerHTML='<p class="eyebrow">Preview</p><p class="big">'+c.title+'</p>'+
@@ -660,12 +689,12 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
   function step(d){
     if(mode==="scroll"){ vp.scrollBy({top:d*vp.clientHeight*0.75,behavior:"smooth"}); return; }
     if(d>0){
-      if(onCard){ if(onCard.isEnd){return;} var to=onCard.after+1; onCard=null; go(to); return; }
+      if(onCard){ if(onCard.isEnd){return;} var to=onCard.isCover?0:onCard.after+1; onCard=null; go(to); return; }
       var c=cardAfter(page); if(c){ showCard(c); return; }
       if(page<TOTAL-1){ go(page+1); } return;
     } else {
-      if(onCard){ renderPage(); return; }   // page still == the boundary page
-      if(page>0){ go(page-1); } else { toast("You're at the start"); }
+      if(onCard){ if(onCard.isCover){ return; } renderPage(); return; }   // page still == the boundary page
+      if(page>0){ go(page-1); } else if(COVER){ showCard(COVER); }
     }
   }
   document.getElementById("dUp").addEventListener("click",function(){gridVertical(-1);});
@@ -1030,8 +1059,8 @@ window.CONFIG = { title:"Death Stranding Fan", artist:"Snadiya", artistSite:"htt
   var savedMode=rd(K_MODE,(window.matchMedia&&matchMedia("(max-width:620px)").matches)?"scroll":"pages"); var s0=savedMode==="pages"?sPages:sScroll;
   fit=true;
   renderMarks();renderHelp();
-  if(savedMode==="scroll"){ mode="pages";setMode("scroll"); } else { renderPage(); }
-  setTimeout(function(){ if(mode==="scroll"){ if(nodes[page]){ vp.scrollTop=nodes[page].offsetTop; } } syncNav(); },60);
+  if(savedMode==="scroll"){ mode="pages";setMode("scroll"); } else if(COVER&&page===0){ showCard(COVER); } else { renderPage(); }
+  setTimeout(function(){ if(mode==="scroll"){ if(page===0){ vp.scrollTop=0; } else if(nodes[page]){ vp.scrollTop=nodes[page].offsetTop; } } syncNav(); },60);
   window.addEventListener("resize",function(){ clearTimeout(window.__rz);window.__rz=setTimeout(function(){ syncNav(); },160); });
 })();
 </script>
