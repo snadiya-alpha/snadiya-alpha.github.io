@@ -1,0 +1,73 @@
+/* Ant Design's look, borrowed in plain CSS for the home page. No Ant code is loaded.
+   Taken from Ant Design 6 as rendered on ant.design: 8px spacing grid, 4/6/8px corners, 1px hairline borders,
+   square checkboxes with a filled tick, soft tinted tags with a close cross, light image wells, lift shadow on hover.
+   Colours stay SNZweig: Deep Crimson ink on Ivory. Tints are Deep Crimson at low strength. Text is always full ink.
+
+   1. Tokens   2. Collection tiles   3. Filter sidebar   4. Active filters   5. Result grid   6. Phone drawer */
+
+/* 1. Tokens */
+:root{
+  --ant-line:rgba(60,24,21,.16);        /* hairline borders */
+  --ant-line-strong:rgba(60,24,21,.45); /* control borders */
+  --ant-fill:rgba(60,24,21,.05);        /* image wells, hover rows */
+  --ant-fill-2:rgba(60,24,21,.09);      /* selected rows, tags */
+  --ant-r-sm:4px; --ant-r:6px; --ant-r-lg:8px;
+  --ant-lift:0 1px 2px -2px rgba(60,24,21,.16),0 3px 6px 0 rgba(60,24,21,.12),0 5px 12px 4px rgba(60,24,21,.09);
+  --ant-t:.2s cubic-bezier(.645,.045,.355,1);
+}
+
+/* 2. Collection tiles: image well with hairline border, lifts on hover, ringed when chosen */
+.coll{gap:8px}
+.coll-img{border-radius:var(--ant-r-lg);border:1px solid var(--ant-line);transition:box-shadow var(--ant-t),transform var(--ant-t)}
+.coll:hover .coll-img{box-shadow:var(--ant-lift)}
+.coll[aria-pressed="true"] .coll-img{box-shadow:0 0 0 2px var(--snz-deep-crimson)}
+.coll-name{font-size:18px;font-weight:600}
+.coll:focus-visible{outline:none}.coll:focus-visible .coll-img{box-shadow:0 0 0 2px var(--snz-orange)}
+
+/* 3. Filter sidebar: menu-style rows, square checkbox, count badge */
+.grp h3{font-size:16px;font-weight:700;text-transform:none;margin:0 0 8px;padding:0 8px}
+.grp ul{gap:0}
+.opt{min-height:40px;padding:6px 8px;border-radius:var(--ant-r);gap:8px;transition:background-color var(--ant-t)}
+.opt:hover{background:var(--ant-fill)}
+.opt:has(input:checked){background:var(--ant-fill-2);font-weight:600}
+.opt input{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1px solid var(--ant-line-strong);
+  border-radius:var(--ant-r-sm);background:var(--snz-ivory);display:grid;place-content:center;cursor:pointer;
+  transition:background-color var(--ant-t),border-color var(--ant-t)}
+.opt input::after{content:"";width:5px;height:9px;border:solid var(--snz-ivory);border-width:0 2px 2px 0;
+  transform:translateY(-1px) rotate(45deg) scale(0);transition:transform var(--ant-t)}
+.opt:hover input:not(:disabled){border-color:var(--snz-deep-crimson)}
+.opt input:checked{background:var(--snz-deep-crimson);border-color:var(--snz-deep-crimson)}
+.opt input:checked::after{transform:translateY(-1px) rotate(45deg) scale(1)}
+.opt input:focus-visible{outline:2px solid var(--snz-orange);outline-offset:2px}
+.opt input:disabled{cursor:not-allowed}
+.opt-n{min-width:28px;padding:0 8px;border-radius:10px;background:var(--ant-fill-2);font-size:14px;line-height:20px;
+  font-weight:600;text-align:center}
+.opt.zero .opt-n{background:transparent}
+
+/* 4. Active filters: closable tags */
+#active{gap:8px;margin:0 0 16px}
+#active .chip.on{font-size:16px;font-weight:600;line-height:24px;padding:2px 6px 2px 10px;border-radius:var(--ant-r-sm);
+  border:1px solid var(--ant-line);background:var(--ant-fill-2);color:var(--snz-deep-crimson);gap:6px;align-items:center}
+#active .chip.on:hover{background:var(--ant-fill-2);color:var(--snz-deep-crimson);border-color:var(--ant-line-strong)}
+#active .chip-x{font-size:18px;line-height:1;width:20px;height:20px;display:grid;place-content:center;border-radius:var(--ant-r-sm)}
+#active .chip.on:hover .chip-x{background:var(--ant-fill-2)}
+.clear-btn{border:0;background:none;padding:4px 8px;border-radius:var(--ant-r);font-weight:600;color:var(--snz-deep-crimson);
+  text-decoration:none}
+.clear-btn:hover{background:var(--ant-fill)}
+
+/* 5. Result grid: image well, hairline, lift on hover, title below without underline */
+.grid{gap:24px 16px}
+.thumbwrap{border-radius:var(--ant-r-lg);border:1px solid var(--ant-line);transition:box-shadow var(--ant-t)}
+.thumb{background:var(--ant-fill)}
+.card:hover .thumbwrap,.card:focus-within .thumbwrap{box-shadow:var(--ant-lift)}
+.cardtext{padding:8px 2px 0}
+.card .name{font-size:18px;font-weight:600;text-decoration:none;border:0;background:none;color:var(--snz-deep-crimson)}
+.card:hover .name{text-decoration:underline;text-underline-offset:3px}
+
+/* 6. Phone drawer: default and primary buttons, dimmed page behind the open drawer */
+@media (max-width:800px){
+  .filters-btn{border-radius:var(--ant-r);border:1px solid var(--ant-line-strong);padding:8px 16px;font-size:18px}
+  .done-btn{border-radius:var(--ant-r);padding:8px 16px;font-size:18px}
+  .side{border-left:0;box-shadow:-6px 0 16px 0 rgba(60,24,21,.08),-3px 0 6px -4px rgba(60,24,21,.12)}
+  .side.open{box-shadow:0 0 0 100vmax rgba(60,24,21,.45)}
+}
