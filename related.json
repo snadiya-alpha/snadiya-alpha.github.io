@@ -939,7 +939,13 @@
    "why": "Emma returns in a Christmas render."
   }
  ],
- "Bound Corp": [
+ "Bound Corp - Animation": [
+  {
+   "id": "Chapters",
+   "why": "Rendered with the method first used in BoundBorne."
+  }
+ ],
+ "Bound Corp - Comic": [
   {
    "id": "Chapters",
    "why": "Rendered with the method first used in BoundBorne."

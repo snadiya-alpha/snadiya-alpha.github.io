@@ -38,6 +38,182 @@
   "loose": []
  },
  {
+  "name": "Horror",
+  "folder": "12 - GALLERY - Horror",
+  "pinned": [],
+  "sets": [
+   "Notebook/Jane, I have something for you...",
+   "Raven - Disgusting Requests",
+   "Corridor Raven",
+   "Simulation - Prey Parody",
+   "Notebook",
+   "Shadowheart Haunted tree",
+   "Intied/Pack 06 - Panam Palmer",
+   "Intied/Pack 07 - Margaret",
+   "Intied/Pack 04 - Lisa",
+   "Intied/Pack 08 - Caitlyn Web",
+   "Intied/Pack 09 Exclusive - Mel Web",
+   "Notebook/Caitlyn and Mel",
+   "Notebook/Cellar for toys",
+   "Notebook/How far will Vi run?",
+   "Shadowheart in the basement",
+   "Shadowheart in the basement 2",
+   "Shadowheart in the Corridor",
+   "Notebook/Would you like to play, Caitlyn?",
+   "Notebook/Why are you laughing, Jinx?",
+   "Intied/Pack 02 - Carly and Carmen",
+   "Intied/Pack 03 - Patricia",
+   "Intied/Pack 05 - Amy",
+   "Intied/Pack 05 Exclusive - Amy",
+   "Notebook/Preview",
+   "Intied/Pack 01 - Jane",
+   "Intied/Pack 10 - Surrounded by Silence",
+   "Hung from a Tree - Bonus"
+  ],
+  "loose": []
+ },
+ {
+  "name": "FBFC",
+  "folder": "14 - GALLERY - FBFC␠",
+  "pinned": [],
+  "sets": [
+   "Cleaning",
+   "Corridor/Chapter 1",
+   "Cell 113",
+   "Corridor/Chapter 2",
+   "Astral Plane",
+   "Dirty floor",
+   "Comic 4 - Tifa and Ciri",
+   "Bonus Files",
+   "Files 03",
+   "Archives 02",
+   "Archives 01",
+   "Fetish Control 03",
+   "Tifa Office and Ciri",
+   "Don't litter",
+   "Archives Mini Comic",
+   "Fetish Control 01",
+   "Roombox - Quack",
+   "Roombox - Where did Tina go",
+   "Archives 03 Exclusive",
+   "Emergency meeting - Panam Palmer"
+  ],
+  "loose": []
+ },
+ {
+  "name": "BoundBorne",
+  "folder": "9 - GALLERY - BoundBorne",
+  "pinned": [],
+  "sets": [
+   "Chapters",
+   "Prequel Comic",
+   "BoundBorne/Pack 01",
+   "Pack 02 - Alexia",
+   "Dark Souls Parody",
+   "FF",
+   "BoundBorne/Pack 02",
+   "BoundBorne/Pack 03",
+   "Pack 00",
+   "Spider Prey"
+  ],
+  "loose": [
+   "BoundBorne"
+  ]
+ },
+ {
+  "name": "Agents",
+  "folder": "5 - GALLERY - Agents",
+  "pinned": [],
+  "sets": [
+   "Phantom vs Shadowheart/Phantom vs Shadowheart - Suit Version",
+   "Jinx vs Phantom/Jinx vs Phantom - Nude Version",
+   "Jinx vs Phantom/Jinx vs Phantom - Suit Version",
+   "Phantom vs Shadowheart/Phantom vs Shadowheart - Nude Version",
+   "First Mission Comic",
+   "Shadowheart vs Jinx/Shadowheart vs Jinx - Nude Version",
+   "Shadowheart vs Jinx/Shadowheart vs Jinx - Suit Version",
+   "Three Bags",
+   "Bee Trap",
+   "Bunny Agents - Nude Version",
+   "Bunny Agents - Suit Version",
+   "Bonus"
+  ],
+  "loose": [
+   "Gag Pack Agents",
+   "Agents/Gag Pack Project Office"
+  ]
+ },
+ {
+  "name": "Backrooms",
+  "folder": "13 - GALLERY - Backrooms",
+  "pinned": [],
+  "sets": [
+   "Mel and Monster",
+   "Sticky",
+   "Ciri",
+   "Spider",
+   "Playrooms/Simply Phantom 01",
+   "Playrooms/Simply Phantom 02",
+   "Jessica",
+   "Playrooms",
+   "Toys",
+   "Cass",
+   "Test Video",
+   "Jane"
+  ],
+  "loose": [
+   "Gag Pack Backrooms"
+  ]
+ },
+ {
+  "name": "All Comics",
+  "folder": null,
+  "sets": [
+   "Project T Comics",
+   "Project SA Comics",
+   "Old Version",
+   "Chapter 1",
+   "Comic 1 - Caitlyn",
+   "Comic 2 - Jinx and Vi",
+   "Comic 3 - Akali",
+   "Comic 4 - Tifa and Ciri",
+   "Comic 5 - Caitlyn",
+   "Comic 6 - Jane",
+   "Chapter 2",
+   "Simulation - Prey Parody",
+   "Caitlyn in the Basement with comic",
+   "Comic 8 Amy Encased",
+   "Notebook",
+   "Corridor/Chapter 1",
+   "Corridor/Chapter 2",
+   "Dirty floor",
+   "Don't litter",
+   "Fetish Control 01",
+   "Fetish Control 03",
+   "Evil Domination",
+   "Spaceship Silent Whale",
+   "Prequel Comic",
+   "Chapters",
+   "Raven - Disgusting Requests",
+   "Cleaning",
+   "Bound Corp - Advertising",
+   "Bound Corp - Comic",
+   "Corridor Raven",
+   "Janember",
+   "Disciplinary Review for Jinx",
+   "Jinx in the Break Room",
+   "Mel Medarda - Arguments - Arcane in Office",
+   "Comic 7 - Ambushing Jane",
+   "Agent Peach and the Bee Drones",
+   "Beta 01 Heartshadow",
+   "The Producer",
+   "The Producer 2",
+   "First Mission Comic",
+   "Self-Testing/Part I",
+   "Self-Testing/Part II"
+  ]
+ },
+ {
   "name": "The Office",
   "folder": "4 - GALLERY - The Office",
   "pinned": [],
@@ -70,6 +246,7 @@
    "Caitlin's Office Badge",
    "Caitlin & Jinx - Office Politics Debate",
    "Office Girls Kidnapped (No Text)/Cass Simpli",
+   "Phantom on the Rooftop",
    "Office Girls Kidnapped (No Text)/Ciri Rec",
    "Office Girls Kidnapped (With text blurbs)",
    "Office Girls Kidnapped (No Text)/Ciri Phantom",
@@ -80,97 +257,6 @@
    "Gag Pack 04 Office",
    "Gag Pack Project Office"
   ]
- },
- {
-  "name": "Agents",
-  "folder": "5 - GALLERY - Agents",
-  "pinned": [],
-  "sets": [
-   "Phantom vs Shadowheart/Phantom vs Shadowheart - Suit Version",
-   "Jinx vs Phantom/Jinx vs Phantom - Nude Version",
-   "Jinx vs Phantom/Jinx vs Phantom - Suit Version",
-   "Phantom vs Shadowheart/Phantom vs Shadowheart - Nude Version",
-   "First Mission Comic",
-   "Shadowheart vs Jinx/Shadowheart vs Jinx - Nude Version",
-   "Shadowheart vs Jinx/Shadowheart vs Jinx - Suit Version",
-   "Three Bags",
-   "Bee Trap",
-   "Bunny Agents - Nude Version",
-   "Bunny Agents - Suit Version",
-   "Agents/Bonus"
-  ],
-  "loose": [
-   "Gag Pack Agents",
-   "Agents/Gag Pack Project Office"
-  ]
- },
- {
-  "name": "Afflatus",
-  "folder": "6 - GALLERY - Afflatus",
-  "pinned": [],
-  "sets": [
-   "Old Version",
-   "Chapter 2",
-   "Chapter 1",
-   "Afflatus 01 Old",
-   "Teaser",
-   "Exclusive"
-  ],
-  "loose": []
- },
- {
-  "name": "Bound Corp & Fallout",
-  "folder": "7 - GALLERY - Bound Corp & Fallout",
-  "pinned": [],
-  "sets": [
-   "Bound Corp"
-  ],
-  "loose": []
- },
- {
-  "name": "Brick BASEMENT BONDAGE",
-  "folder": "8 - GALLERY -  Brick BASEMENT BONDAGE",
-  "pinned": [],
-  "sets": [
-   "Samus 01",
-   "Cait&Cass Kidnapped",
-   "Ciri 2",
-   "Caitlyn in the Basement with comic",
-   "Cassandra 01",
-   "Ciri 01 Closeup"
-  ],
-  "loose": []
- },
- {
-  "name": "BoundBorne",
-  "folder": "9 - GALLERY - BoundBorne",
-  "pinned": [],
-  "sets": [
-   "Chapters",
-   "Prequel Comic",
-   "BoundBorne/Pack 01",
-   "Pack 02 - Alexia",
-   "Dark Souls Parody",
-   "FF",
-   "BoundBorne/Pack 02",
-   "BoundBorne/Pack 03",
-   "Pack 00",
-   "Spider Prey"
-  ],
-  "loose": [
-   "BoundBorne"
-  ]
- },
- {
-  "name": "Project T and SA Comics",
-  "folder": "10 GALLERY 10 - Project T and SA Comics",
-  "pinned": [],
-  "sets": [
-   "Project T Comics",
-   "Project T White",
-   "Project SA Comics"
-  ],
-  "loose": []
  },
  {
   "name": "Recruit",
@@ -200,106 +286,6 @@
   "loose": []
  },
  {
-  "name": "Horror",
-  "folder": "12 - GALLERY - Horror",
-  "pinned": [],
-  "sets": [
-   "Notebook/Jane, I have something for you...",
-   "Raven - Disgusting Requests",
-   "Corridor Raven",
-   "Simulation - Prey Parody",
-   "Notebook",
-   "Shadowheart Haunted tree",
-   "Intied/Pack 06 - Panam Palmer",
-   "Intied/Pack 07 - Margaret",
-   "Intied/Pack 04 - Lisa",
-   "Intied/Pack 08 - Caitlyn Web",
-   "Intied/Pack 09 Exclusive - Mel Web",
-   "Notebook/Caitlyn and Mel",
-   "Notebook/Cellar for toys",
-   "Notebook/How far will Vi run?",
-   "Shadowheart in the basement",
-   "Shadowheart in the basement 2",
-   "Shadowheart in the Corridor",
-   "Notebook/Would you like to play, Caitlyn?",
-   "Notebook/Why are you laughing, Jinx?",
-   "Intied/Pack 02 - Carly and Carmen",
-   "Intied/Pack 03 - Patricia",
-   "Intied/Pack 05 - Amy",
-   "Intied/Pack 05 Exclusive - Amy",
-   "Notebook/Preview",
-   "Intied/Pack 01 - Jane",
-   "Intied/Pack 10 - Surrounded by Silence"
-  ],
-  "loose": []
- },
- {
-  "name": "Backrooms",
-  "folder": "13 - GALLERY - Backrooms",
-  "pinned": [],
-  "sets": [
-   "Mel and Monster",
-   "Sticky",
-   "Bonus",
-   "Ciri",
-   "Spider",
-   "Playrooms/Simply Phantom 01",
-   "Playrooms/Simply Phantom 02",
-   "Jessica",
-   "Playrooms",
-   "Toys",
-   "Cass",
-   "Test Video",
-   "Jane"
-  ],
-  "loose": [
-   "Gag Pack Backrooms"
-  ]
- },
- {
-  "name": "FBFC",
-  "folder": "14 - GALLERY - FBFC␠",
-  "pinned": [],
-  "sets": [
-   "Cleaning",
-   "Corridor/Chapter 1",
-   "Cell 113",
-   "Corridor/Chapter 2",
-   "Astral Plane",
-   "Dirty floor",
-   "Comic 4 - Tifa and Ciri",
-   "Bonus Files",
-   "Files 03",
-   "Archives 02",
-   "Archives 01",
-   "Fetish Control 03",
-   "Tifa Office and Ciri",
-   "Don't litter",
-   "Archives Mini Comic",
-   "Fetish Control 01",
-   "Roombox - Quack",
-   "Roombox - Where did Tina go",
-   "Archives 03 Exclusive",
-   "Emergency meeting - Panam Palmer"
-  ],
-  "loose": []
- },
- {
-  "name": "Pantide Park",
-  "folder": "15 - GALLERY - Pantide Park",
-  "pinned": [],
-  "sets": [
-   "Pack 01",
-   "Pack 04",
-   "Pack 02",
-   "Pack 05",
-   "Pack 03"
-  ],
-  "loose": [
-   "Gag Pack October 2025"
-  ]
- },
- {
   "name": "JANE",
   "folder": "16-GALLERY：JANE",
   "pinned": [],
@@ -317,52 +303,71 @@
   ]
  },
  {
-  "name": "All Comics",
-  "folder": null,
+  "name": "Pantide Park",
+  "folder": "15 - GALLERY - Pantide Park",
+  "pinned": [],
+  "sets": [
+   "Pack 01",
+   "Pack 04",
+   "Pack 02",
+   "Pack 05",
+   "Pack 03",
+   "Hung from a Tree - Bonus"
+  ],
+  "loose": [
+   "Gag Pack October 2025"
+  ]
+ },
+ {
+  "name": "Afflatus",
+  "folder": "6 - GALLERY - Afflatus",
+  "pinned": [],
+  "sets": [
+   "Old Version",
+   "Chapter 2",
+   "Chapter 1",
+   "Afflatus 01 Old",
+   "Teaser",
+   "Exclusive"
+  ],
+  "loose": []
+ },
+ {
+  "name": "Project T and SA Comics",
+  "folder": "10 GALLERY 10 - Project T and SA Comics",
+  "pinned": [],
   "sets": [
    "Project T Comics",
-   "Project SA Comics",
-   "Old Version",
-   "Chapter 1",
-   "Comic 1 - Caitlyn",
-   "Comic 2 - Jinx and Vi",
-   "Comic 3 - Akali",
-   "Comic 4 - Tifa and Ciri",
-   "Comic 5 - Caitlyn",
-   "Comic 6 - Jane",
-   "Chapter 2",
-   "Simulation - Prey Parody",
+   "Project T White",
+   "Project SA Comics"
+  ],
+  "loose": []
+ },
+ {
+  "name": "Bound Corp & Fallout",
+  "folder": "7 - GALLERY - Bound Corp & Fallout",
+  "pinned": [],
+  "sets": [
+   "Bound Corp - Comic",
+   "Bound Corp - Advertising",
+   "Bound Corp - Advertising Bonus Pack",
+   "Bound Corp - Animation"
+  ],
+  "loose": []
+ },
+ {
+  "name": "Brick BASEMENT BONDAGE",
+  "folder": "8 - GALLERY -  Brick BASEMENT BONDAGE",
+  "pinned": [],
+  "sets": [
+   "Samus 01",
+   "Cait&Cass Kidnapped",
+   "Ciri 2",
    "Caitlyn in the Basement with comic",
-   "Comic 8 Amy Encased",
-   "Notebook",
-   "Corridor/Chapter 1",
-   "Corridor/Chapter 2",
-   "Dirty floor",
-   "Don't litter",
-   "Fetish Control 01",
-   "Fetish Control 03",
-   "Evil Domination",
-   "Spaceship Silent Whale",
-   "BoundBorne",
-   "Prequel Comic",
-   "Chapters",
-   "Raven - Disgusting Requests",
-   "Cleaning",
-   "Bound Corp",
-   "Corridor Raven",
-   "Janember",
-   "Disciplinary Review for Jinx",
-   "Jinx in the Break Room",
-   "Mel Medarda - Arguments - Arcane in Office",
-   "Comic 7 - Ambushing Jane",
-   "Agent Peach and the Bee Drones",
-   "Beta 01 Heartshadow",
-   "The Producer",
-   "The Producer 2",
-   "First Mission Comic",
-   "Self-Testing/Part I",
-   "Self-Testing/Part II"
-  ]
+   "Cassandra 01",
+   "Ciri 01 Closeup"
+  ],
+  "loose": []
  },
  {
   "name": "Animations",
@@ -378,7 +383,7 @@
    "Dreadful Sacking Operation",
    "Director Mel Gets Sacked!",
    "Janember",
-   "Bound Corp",
+   "Bound Corp - Animation",
    "Jinx Kindapped",
    "2D-3D/Pack 06 - Skelebomb",
    "2D-3D/Pack 05 - ElijahPink",
