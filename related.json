@@ -1,57 +1,737 @@
 {
- "Cleaning/Chapter 1 - Help": [
+ "BoxRoom": [
   {
-   "id": "Gag Pack Project Office#recruit-cleaner",
-   "why": "The cleaning lady comes back as the Cleaner, next to the Recruit."
+   "id": "Akali",
+   "why": "Akali from the club render, moved here in a changed outfit."
+  }
+ ],
+ "Gag Pack 05 Mel": [
+  {
+   "id": "Mel Medarda - Arguments - Arcane in Office",
+   "why": "Arguments, the companion comic with Mel and Cassandra."
+  }
+ ],
+ "Gag Pack Shadowheart": [
+  {
+   "id": "Beta 01 Heartshadow",
+   "why": "The Shadowheart comic that followed, after a poll picked Agents."
+  }
+ ],
+ "Gag pack 07 Caitlyn": [
+  {
+   "id": "Gag pack 02 Bunny",
+   "why": "A second try at a Caitlyn pack after the Bunny trial run."
+  }
+ ],
+ "Animation": [
+  {
+   "id": "2D-3D/Pack 05 - ElijahPink",
+   "why": "The first short movie uses the redhead from the ElijahPink commission."
   },
   {
-   "id": "Federal Bureau of Fetish Control#04",
+   "id": "2D-3D/Pack 06 - Skelebomb",
+   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+  }
+ ],
+ "Akali": [
+  {
+   "id": "BoxRoom",
+   "why": "Akali was redone in the box room with a new outfit."
+  }
+ ],
+ "Alex Project": [
+  {
+   "id": "Renders",
+   "why": "The comic that came before."
+  },
+  {
+   "id": "Pack 02 - Alexia",
+   "why": "Alex returns, reworked, as Alexia in BoundBorne."
+  }
+ ],
+ "Caitlyn 2": [
+  {
+   "id": "Zelda",
+   "why": "Caitlyn is made in the older style first used for Zelda."
+  }
+ ],
+ "Emma": [
+  {
+   "id": "Chapter 1",
+   "why": "Emma's comic."
+  },
+  {
+   "id": "Old Version",
+   "why": "Emma is the character from Afflatus."
+  }
+ ],
+ "Pack 11 - Jinx": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Straitjacket Board Yennefer": [
+  {
+   "id": "Padded Cell",
+   "why": "Yennefer in the same soft room, released together as one set."
+  }
+ ],
+ "Zelda": [
+  {
+   "id": "Caitlyn 2",
+   "why": "This style was brought back for Caitlyn (Arcane)."
+  }
+ ],
+ "Zero Pants": [
+  {
+   "id": "Akali",
+   "why": "Akali from the club render, moved here in a changed outfit."
+  }
+ ],
+ "Project SA Comics": [
+  {
+   "id": "Afflatus 01 Old",
+   "why": "Started after the first Afflatus comic was closed."
+  },
+  {
+   "id": "Renders",
+   "why": "A spiritual successor to the Sperm Whale comic."
+  }
+ ],
+ "Project T Comics": [
+  {
+   "id": "Project T White",
+   "why": "Continued in Project T White, in white instead of grey."
+  }
+ ],
+ "Project T White": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  },
+  {
+   "id": "Project T Comics",
+   "why": "The next part of Project T, in white instead of grey."
+  }
+ ],
+ "Comic 1 - Caitlyn": [
+  {
+   "id": "Caitlyn in the Basement with comic",
+   "why": "Its Caitlyn returns, slightly changed, in Caitlyn in the Basement."
+  },
+  {
+   "id": "Chapter 1",
+   "why": "Made as the bright, comic opposite of the dark Afflatus comic."
+  }
+ ],
+ "Comic 2 - Jinx and Vi": [
+  {
+   "id": "Chapter 2",
+   "why": "Afflatus was closed to put all the effort into this mini comic."
+  }
+ ],
+ "Comic 5 - Caitlyn": [
+  {
+   "id": "Notebook/How far will Vi run?",
+   "why": "Vi's renders tried out gag sets for this comic's poll."
+  },
+  {
+   "id": "Notebook",
+   "why": "The Recruit and Caitlyn story of the Notebook project."
+  }
+ ],
+ "Jane and Rockroot": [
+  {
+   "id": "Rockroot",
+   "why": "Extra gag variants for the Rockroot scene of him carrying Jane off."
+  }
+ ],
+ "Recruit - Haunted House Concept": [
+  {
+   "id": "Rockroot",
+   "why": "Sketches of the second project made in parallel with Rockroot."
+  }
+ ],
+ "Recruitstein's Castle Poster": [
+  {
+   "id": "Gag Pack January 2026 Experiment",
+   "why": "Its style grew out of the January experiments."
+  }
+ ],
+ "Rockroot": [
+  {
+   "id": "Chapters",
+   "why": "Its ideas were developed further in BoundBorne."
+  },
+  {
+   "id": "Pack 02 - Alexia",
+   "why": "Its ideas were developed further in BoundBorne."
+  },
+  {
+   "id": "Jane and Rockroot",
+   "why": "Extra gag variants of Rockroot carrying Jane."
+  },
+  {
+   "id": "Recruit - Haunted House Concept",
+   "why": "Its sister project, made in parallel, is sketched in Sketches."
+  }
+ ],
+ "The Producer": [
+  {
+   "id": "The Producer 2",
+   "why": "Continued in The Producer 2, in a different style."
+  },
+  {
+   "id": "Gag Pack January 2026 Experiment",
+   "why": "The story continues with Recruit and Margaret in the next pack."
+  }
+ ],
+ "The Producer 2": [
+  {
+   "id": "The Producer",
+   "why": "Continues The Producer minicomic, in a different style."
+  }
+ ],
+ "Corridor Raven": [
+  {
+   "id": "Agent Peach and the Bee Drones",
+   "why": "Another comic in the same Corridor section."
+  },
+  {
+   "id": "2D-3D/Pack 17 - Maha Kittsri - Raven",
+   "why": "Raven comes from the Raven commission."
+  },
+  {
+   "id": "2D-3D/Pack 18 - inspired by some random fanart",
+   "why": "A commission model was moved into this project's setting."
+  },
+  {
+   "id": "Raven - Disgusting Requests",
+   "why": "One of two Raven comics made in parallel."
+  },
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "A rethinking of the earlier corridor comic."
+  },
+  {
+   "id": "Pack 12 - Isometric Concept",
+   "why": "Brings back concepts first made for Intied."
+  }
+ ],
+ "Intied/Pack 01 - Jane": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 02 - Carly and Carmen": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 03 - Patricia": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 04 - Lisa": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 05 - Amy": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 05 Exclusive - Amy": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 06 - Panam Palmer": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 07 - Margaret": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 08 - Caitlyn Web": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 09 Exclusive - Mel Web": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Intied/Pack 10 - Surrounded by Silence": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Panam Palmer returns from her earlier emergency meeting set."
+  }
+ ],
+ "Notebook": [
+  {
+   "id": "Caitlyn in the Basement with comic",
+   "why": "Its Recruit exclusive comic is Caitlyn in the Basement."
+  },
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built like the Bureau project, as small stories of different characters."
+  },
+  {
+   "id": "Notebook/How far will Vi run?",
+   "why": "Vi's renders take place in this same house."
+  },
+  {
+   "id": "Notebook/Jane, I have something for you...",
+   "why": "Jane's renders use this comic's hallway."
+  },
+  {
+   "id": "Comic 5 - Caitlyn",
+   "why": "The Recruit's story in the same Notebook project."
+  }
+ ],
+ "Notebook/How far will Vi run?": [
+  {
+   "id": "Notebook",
+   "why": "Set in the P.T.-style house of the Notebook project."
+  },
+  {
+   "id": "Comic 5 - Caitlyn",
+   "why": "These gag sets were trials for the poll in the Recruit and Caitlyn comic."
+  },
+  {
+   "id": "Notebook/Jane, I have something for you...",
+   "why": "Jane's renders use the same hallway."
+  }
+ ],
+ "Notebook/Jane, I have something for you...": [
+  {
+   "id": "Notebook/How far will Vi run?",
+   "why": "Same P.T.-style hallway as Vi's renders."
+  },
+  {
+   "id": "Notebook/Why are you laughing, Jinx?",
+   "why": "Same P.T.-style hallway as Jinx's renders."
+  },
+  {
+   "id": "Notebook",
+   "why": "Same hallway as the Notebook comic."
+  }
+ ],
+ "Notebook/Why are you laughing, Jinx?": [
+  {
+   "id": "Notebook/Jane, I have something for you...",
+   "why": "Jane's renders use the same hallway."
+  }
+ ],
+ "Raven - Disgusting Requests": [
+  {
+   "id": "2D-3D/Pack 17 - Maha Kittsri - Raven",
+   "why": "Raven comes from the Raven commission."
+  },
+  {
+   "id": "Corridor Raven",
+   "why": "The other Raven comic made in parallel."
+  }
+ ],
+ "Simulation - Prey Parody": [
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Grew out of the Corridor comic, which was dropped for this project."
+  }
+ ],
+ "Gag Pack Backrooms": [
+  {
+   "id": "Gag Pack Project Office",
+   "why": "Holds work first made for Project Office."
+  }
+ ],
+ "Spider": [
+  {
+   "id": "Spider Prey",
+   "why": "Lady Spider, an old character, returns to help the Recruit."
+  },
+  {
+   "id": "Pack 12 - Isometric Concept",
+   "why": "Lady Spider, an old character, returns to help the Recruit."
+  }
+ ],
+ "Archives 03 Exclusive": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Its Panam Palmer emergency meeting was redone with robots in Cachalot."
+  },
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built from Fetish Control ideas and the Control game."
+  },
+  {
+   "id": "Renders",
+   "why": "Built from Sperm Whale ideas."
+  },
+  {
+   "id": "Cleaning",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Intied/Pack 06 - Panam Palmer",
+   "why": "Panam Palmer returns in an Intied concept art."
+  }
+ ],
+ "Archives Mini Comic": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Its Panam Palmer emergency meeting was redone with robots in Cachalot."
+  },
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built from Fetish Control ideas and the Control game."
+  },
+  {
+   "id": "Renders",
+   "why": "Built from Sperm Whale ideas."
+  },
+  {
+   "id": "Cleaning",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Intied/Pack 06 - Panam Palmer",
+   "why": "Panam Palmer returns in an Intied concept art."
+  }
+ ],
+ "Astral Plane": [
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built from Fetish Control ideas and the Control game."
+  },
+  {
+   "id": "Renders",
+   "why": "Built from Sperm Whale ideas."
+  }
+ ],
+ "Cell 113": [
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built from Fetish Control ideas and the Control game."
+  },
+  {
+   "id": "Renders",
+   "why": "Built from Sperm Whale ideas."
+  }
+ ],
+ "Cleaning": [
+  {
+   "id": "Don't litter",
    "why": "Silvia is the cleaning lady from Don't litter."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
+   "id": "Archives Mini Comic",
    "why": "The whale-logo corporation sits in the background of this story."
   }
  ],
- "Gag Pack Project Office#recruit-cleaner": [
+ "Corridor/Chapter 1": [
   {
-   "id": "Cleaning/Chapter 1 - Help",
-   "why": "The cleaning lady's own comic."
+   "id": "Corridor Raven",
+   "why": "Its looping corridor was rethought for Raven's Corridor."
   },
   {
-   "id": "Federal Bureau of Fetish Control#04",
-   "why": "The cleaning lady from Don't litter returns as the Cleaner."
+   "id": "Archives Mini Comic",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Astral Plane",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Cell 113",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Notebook",
+   "why": "Notebook later used the same small-stories format on a smaller scale."
+  },
+  {
+   "id": "Simulation - Prey Parody",
+   "why": "Dropped for Simulation, which grew out of its idea."
+  }
+ ],
+ "Corridor/Chapter 2": [
+  {
+   "id": "Corridor Raven",
+   "why": "Its looping corridor was rethought for Raven's Corridor."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Astral Plane",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Cell 113",
+   "why": "Its ideas went into Sperm Whale Corp."
+  },
+  {
+   "id": "Notebook",
+   "why": "Notebook later used the same small-stories format on a smaller scale."
+  },
+  {
+   "id": "Simulation - Prey Parody",
+   "why": "Dropped for Simulation, which grew out of its idea."
+  }
+ ],
+ "Don't litter": [
+  {
+   "id": "Cleaning",
+   "why": "Its cleaning lady returns as Silvia in Cleaning."
+  },
+  {
+   "id": "Office Girls Kidnapped (No Text)/Cass Simpli",
+   "why": "Its cleaning lady returns as the Cleaner in Project Office."
+  }
+ ],
+ "Emergency meeting - Panam Palmer": [
+  {
+   "id": "M-ASH Robot",
+   "why": "Its Panam Palmer emergency meeting was redone with robots in Cachalot."
+  },
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Built from Fetish Control ideas and the Control game."
+  },
+  {
+   "id": "Renders",
+   "why": "Built from Sperm Whale ideas."
+  },
+  {
+   "id": "Cleaning",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Intied/Pack 06 - Panam Palmer",
+   "why": "Panam Palmer returns in an Intied concept art."
+  }
+ ],
+ "JANE/Animation": [
+  {
+   "id": "2D-3D/Pack 05 - ElijahPink",
+   "why": "The first short movie uses the redhead from the ElijahPink commission."
+  },
+  {
+   "id": "2D-3D/Pack 06 - Skelebomb",
+   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
   }
  ],
  "Janery": [
   {
-   "id": "Sperm Whale/Renders",
+   "id": "Renders",
    "why": "Emma's first appearance, next to her sister Donna."
   },
   {
-   "id": "Afflatus/Chapter 1",
+   "id": "Chapter 1",
    "why": "Emma in her earlier look."
   }
  ],
- "Sperm Whale/Renders": [
+ "Gag Pack December 2025 X Mas/XMas Card": [
+  {
+   "id": "Gag Pack January 2026 Experiment",
+   "why": "The simple style tests were made for the January experiment pack."
+  }
+ ],
+ "2D-3D/Pack 05 - ElijahPink": [
+  {
+   "id": "2D-3D/Pack 06 - Skelebomb",
+   "why": "Her model was reused for the first short movie."
+  }
+ ],
+ "2D-3D/Pack 17 - Maha Kittsri - Raven": [
+  {
+   "id": "Corridor Raven",
+   "why": "Raven from this commission goes on to star in Corridor."
+  },
+  {
+   "id": "Raven - Disgusting Requests",
+   "why": "Raven from this commission goes on to star in Disgusting Requests."
+  }
+ ],
+ "2D-3D/Pack 18 - inspired by some random fanart": [
+  {
+   "id": "Corridor Raven",
+   "why": "Alternative renders move this model into the project with the new mummy."
+  }
+ ],
+ "Agent Peach and the Bee Drones": [
+  {
+   "id": "Corridor Raven",
+   "why": "Agent Peach was started as a comic in the Corridor section."
+  },
+  {
+   "id": "Beta 01 Heartshadow",
+   "why": "The Agents setting returns for Shadowheart's comic."
+  }
+ ],
+ "Beta 01 Heartshadow": [
+  {
+   "id": "Gag Pack Shadowheart",
+   "why": "The Shadowheart pack this comic grew out of."
+  },
+  {
+   "id": "Agent Peach and the Bee Drones",
+   "why": "Shadowheart's comic uses the Agents setting from Agent Peach."
+  }
+ ],
+ "Evil Domination": [
+  {
+   "id": "Spaceship Silent Whale",
+   "why": "Its mask and pieces were reused on the space station."
+  },
+  {
+   "id": "Renders",
+   "why": "Develops ideas from Sperm Whale, and its models were kept for it."
+  },
+  {
+   "id": "Dark Souls Parody",
+   "why": "The bright twin of the wax comic, started at the same time."
+  }
+ ],
+ "Fall Girls": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  }
+ ],
+ "Ingag - Rough Draft of Sperm Whale Comics": [
+  {
+   "id": "Renders",
+   "why": "The first version of the comic later renamed Sperm Whale."
+  }
+ ],
+ "Isolation B": [
+  {
+   "id": "Spaceship Silent Whale",
+   "why": "Its bags come back on the space station."
+  },
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  }
+ ],
+ "M-ASH Robot": [
+  {
+   "id": "Archives Mini Comic",
+   "why": "Holds the robot update of the Panam Palmer emergency meeting."
+  },
+  {
+   "id": "Intied/Pack 06 - Panam Palmer",
+   "why": "Panam Palmer returns in an Intied concept art."
+  }
+ ],
+ "Pack 12 - Isometric Concept": [
+  {
+   "id": "Spider Prey",
+   "why": "The spider lady was reworked for BoundBorne."
+  },
+  {
+   "id": "Corridor Raven",
+   "why": "Its concepts came back in Corridor."
+  },
+  {
+   "id": "Spider",
+   "why": "Lady Spider returns in the Backrooms pack."
+  }
+ ],
+ "Padded Cell": [
+  {
+   "id": "Straitjacket Board Yennefer",
+   "why": "Yennefer in the same soft room, released together as one set."
+  }
+ ],
+ "Renders": [
   {
    "id": "Janery",
    "why": "Emma, redesigned as Jane's best friend."
   },
   {
-   "id": "Afflatus/Chapter 1",
+   "id": "Chapter 1",
    "why": "The continuation, bringing the other projects together."
   },
   {
-   "id": "Silent Whale",
+   "id": "Spaceship Silent Whale",
    "why": "A spin-off on a space station, starring Margaret."
   },
   {
-   "id": "Alex Project#01",
+   "id": "Alex Project",
    "why": "The new project that came after Sperm Whale."
   },
   {
-   "id": "Ingag",
+   "id": "Ingag - Rough Draft of Sperm Whale Comics",
    "why": "The comic began as Ingag before it was renamed Sperm Whale."
   },
   {
@@ -67,35 +747,31 @@
    "why": "An earlier project planned to be folded into the Sperm Whale story."
   },
   {
-   "id": "Recruit/Evil Domination",
+   "id": "Evil Domination",
    "why": "Its ideas were picked up again in Evil Domination."
   },
   {
-   "id": "Afflatus/Old Version",
+   "id": "Old Version",
    "why": "Its story continues in Afflatus."
   },
   {
-   "id": "Afflatus/Chapter 2",
+   "id": "Chapter 2",
    "why": "Its story continues in Afflatus."
   },
   {
-   "id": "Alex Project#02",
-   "why": "The project started next, after Sperm Whale ended."
-  },
-  {
-   "id": "BoundBorne/Spider Prey",
+   "id": "Spider Prey",
    "why": "Caroline's model returns as the spider in Spider Prey."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
+   "id": "Archives Mini Comic",
    "why": "Its ideas went into Sperm Whale Corp."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#02",
+   "id": "Astral Plane",
    "why": "Its ideas went into Sperm Whale Corp."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#03",
+   "id": "Cell 113",
    "why": "Its ideas went into Sperm Whale Corp."
   },
   {
@@ -103,509 +779,115 @@
    "why": "Project SA carries on this comic's ideas."
   }
  ],
- "Afflatus/Chapter 1": [
+ "Spaceship Silent Whale": [
   {
-   "id": "Janery",
-   "why": "Emma, redesigned as Jane's best friend."
-  },
-  {
-   "id": "Emma",
-   "why": "Emma on her own for Christmas."
-  },
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Afflatus continues Sperm Whale."
-  },
-  {
-   "id": "Silent Whale",
-   "why": "A comic set on the Afflatus space station."
-  },
-  {
-   "id": "Recruit/Mini Comics#01",
-   "why": "The Recruit mini comics were made as its bright, comic opposite."
-  }
- ],
- "Emma": [
-  {
-   "id": "Afflatus/Chapter 1",
-   "why": "Emma's comic."
-  },
-  {
-   "id": "Afflatus/Old Version",
-   "why": "Emma is the character from Afflatus."
-  }
- ],
- "Silent Whale": [
-  {
-   "id": "Sperm Whale/Renders",
+   "id": "Renders",
    "why": "The comic this spins off from."
   },
   {
-   "id": "Afflatus/Chapter 1",
+   "id": "Chapter 1",
    "why": "Set on the Afflatus space station."
   },
   {
-   "id": "Recruit/Evil Domination",
+   "id": "Evil Domination",
    "why": "The mask and more were made for Evil Domination."
   },
   {
    "id": "Isolation B",
    "why": "The bags come from Isolation B."
-  },
-  {
-   "id": "Silent Whale/Silent Whale Exclusive",
-   "why": "Bonus set made for this comic, in the ship's cockpit."
   }
  ],
- "Recruit/Evil Domination": [
+ "Gag Pack Project Office": [
   {
-   "id": "Silent Whale",
-   "why": "Its mask and pieces were reused on the space station."
-  },
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Develops ideas from Sperm Whale, and its models were kept for it."
-  },
-  {
-   "id": "Dark Souls Parody",
-   "why": "The bright twin of the wax comic, started at the same time."
+   "id": "Gag Pack Backrooms",
+   "why": "Some work meant for this pack moved into the Backrooms pack."
   }
  ],
- "Isolation B": [
+ "Mel Medarda - Arguments - Arcane in Office": [
   {
-   "id": "Silent Whale",
-   "why": "Its bags come back on the space station."
+   "id": "Gag Pack 05 Mel",
+   "why": "Companion comic to the Mel gag pack, the last Arcane office pack."
+  }
+ ],
+ "Office Girls Kidnapped (No Text)/Cass Simpli": [
+  {
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
   },
   {
-   "id": "Sperm Whale/Renders",
-   "why": "Sperm Whale was planned to take in this earlier project."
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
   }
  ],
- "Alex Project#01": [
+ "Office Girls Kidnapped (No Text)/Ciri Phantom": [
   {
-   "id": "Sperm Whale/Renders",
-   "why": "The comic that came before."
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
   },
   {
-   "id": "BoundBorne/Pack 02 - Alexia",
-   "why": "Alex returns, reworked, as Alexia in BoundBorne."
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
   }
  ],
- "Gag Pack Shadowheart": [
+ "Office Girls Kidnapped (No Text)/Ciri Rec": [
   {
-   "id": "Beta 01 Heartshadow",
-   "why": "The Shadowheart comic that followed, after a poll picked Agents."
-  }
- ],
- "Beta 01 Heartshadow": [
-  {
-   "id": "Gag Pack Shadowheart",
-   "why": "The Shadowheart pack this comic grew out of."
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
   },
   {
-   "id": "02 Agent Peach and the Bee Drones",
-   "why": "Shadowheart's comic uses the Agents setting from Agent Peach."
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
   }
  ],
- "Agents - Marathon/01 First Mission": [
+ "Office Girls Kidnapped (No Text)/Mel Cleaner": [
+  {
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
+  },
+  {
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
+  }
+ ],
+ "Office Girls Kidnapped (No Text)/Simpli Rec": [
+  {
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
+  },
+  {
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
+  }
+ ],
+ "Office Girls Kidnapped (With text blurbs)": [
+  {
+   "id": "Cleaning",
+   "why": "The cleaning lady's own comic."
+  },
+  {
+   "id": "Don't litter",
+   "why": "The cleaning lady from Don't litter returns as the Cleaner."
+  }
+ ],
+ "Gag Pack Agents": [
+  {
+   "id": "First Mission Comic",
+   "why": "Its first piece turned into a comic."
+  }
+ ],
+ "Agents/Gag Pack Project Office": [
+  {
+   "id": "Gag Pack Backrooms",
+   "why": "Some work meant for this pack moved into the Backrooms pack."
+  }
+ ],
+ "First Mission Comic": [
   {
    "id": "Gag Pack Agents",
    "why": "The gag pack this comic started as."
   }
  ],
- "Gag Pack Agents": [
-  {
-   "id": "Agents - Marathon/01 First Mission",
-   "why": "Its first piece turned into a comic."
-  }
- ],
- "League of Legends/Caitlyn 2": [
-  {
-   "id": "Zelda",
-   "why": "Caitlyn is made in the older style first used for Zelda."
-  }
- ],
- "Zelda": [
-  {
-   "id": "League of Legends/Caitlyn 2",
-   "why": "This style was brought back for Caitlyn (Arcane)."
-  }
- ],
- "Aeria and Wossa": [
-  {
-   "id": "Aeria and Wossy Bunny",
-   "why": "The same pair again, later, in bunny suits for WossaRem."
-  }
- ],
- "Aeria and Wossy Bunny": [
-  {
-   "id": "Aeria and Wossa",
-   "why": "The pair's first commission for WossaRem, as busts."
-  }
- ],
- "Ingag": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "The first version of the comic later renamed Sperm Whale."
-  }
- ],
- "Fall Girls": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Sperm Whale was planned to take in this earlier project."
-  }
- ],
- "Project T White": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Sperm Whale was planned to take in this earlier project."
-  },
-  {
-   "id": "Project T Comics#01",
-   "why": "The next part of Project T, in white instead of grey."
-  }
- ],
- "Cachalot": [
-  {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
-   "why": "Holds the robot update of the Panam Palmer emergency meeting."
-  },
-  {
-   "id": "Intied/Promo Art",
-   "why": "Panam Palmer returns in an Intied concept art."
-  }
- ],
- "Sperm Whale/Sperm Whale Corp#01": [
-  {
-   "id": "Cachalot",
-   "why": "Its Panam Palmer emergency meeting was redone with robots in Cachalot."
-  },
-  {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "Built from Fetish Control ideas and the Control game."
-  },
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Built from Sperm Whale ideas."
-  },
-  {
-   "id": "Cleaning/Chapter 1 - Help",
-   "why": "Its corporation is in the background of Cleaning."
-  },
-  {
-   "id": "Cleaning/Chapter 2 - Agreement",
-   "why": "Its corporation is in the background of Cleaning."
-  },
-  {
-   "id": "Cleaning/Chapter 3 - Cozy",
-   "why": "Its corporation is in the background of Cleaning."
-  },
-  {
-   "id": "Intied/Promo Art",
-   "why": "Panam Palmer returns in an Intied concept art."
-  }
- ],
- "Gag pack 07 Caitlyn": [
-  {
-   "id": "Gag pack 02 Bunny#1",
-   "why": "A second try at a Caitlyn pack after the Bunny trial run."
-  }
- ],
- "Gag pack 02 Bunny#1": [
-  {
-   "id": "Gag pack 07 Caitlyn",
-   "why": "The trial run Caitlyn pack that a later pack tried to improve on."
-  }
- ],
- "02 Agent Peach and the Bee Drones": [
-  {
-   "id": "Corridor",
-   "why": "Agent Peach was started as a comic in the Corridor section."
-  },
-  {
-   "id": "Beta 01 Heartshadow",
-   "why": "The Agents setting returns for Shadowheart's comic."
-  }
- ],
- "Corridor": [
-  {
-   "id": "02 Agent Peach and the Bee Drones",
-   "why": "Another comic in the same Corridor section."
-  },
-  {
-   "id": "Commissions 2/Pack 10 - Raven",
-   "why": "Raven comes from the Raven commission."
-  },
-  {
-   "id": "Commissions 2/Pack 11",
-   "why": "A commission model was moved into this project's setting."
-  },
-  {
-   "id": "Raven - Disgusting Requests",
-   "why": "One of two Raven comics made in parallel."
-  },
-  {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "A rethinking of the earlier corridor comic."
-  },
-  {
-   "id": "Intied",
-   "why": "Brings back concepts first made for Intied."
-  }
- ],
- "Afflatus/Old Version": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Afflatus continues the Sperm Whale story."
-  },
-  {
-   "id": "Emma",
-   "why": "Emma returns in a Christmas render."
-  }
- ],
- "Afflatus/Chapter 2": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Afflatus continues the Sperm Whale story."
-  },
-  {
-   "id": "Recruit/Mini Comics#02",
-   "why": "Afflatus was closed so work could go to this mini comic."
-  }
- ],
- "Recruit/Mini Comics#02": [
-  {
-   "id": "Afflatus/Chapter 2",
-   "why": "Afflatus was closed to put all the effort into this mini comic."
-  }
- ],
- "Bound Corp#01": [
-  {
-   "id": "BoundBorne/Chapters#01",
-   "why": "Rendered with the method first used in BoundBorne."
-  }
- ],
- "BoundBorne/Chapters#01": [
-  {
-   "id": "Bound Corp#01",
-   "why": "Its rendering method came back for the Bound Corp comic."
-  },
-  {
-   "id": "Rockroot",
-   "why": "Develops the Rockroot ideas with a woman as the lead."
-  },
-  {
-   "id": "Dark Souls Parody",
-   "why": "Made in the style of the earlier Dark Souls comic."
-  }
- ],
- "Alex Project#02": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "The new project started after Sperm Whale ended."
-  }
- ],
- "Animation": [
-  {
-   "id": "Commissions/Pack 05",
-   "why": "The first short movie uses the redhead from the ElijahPink commission."
-  },
-  {
-   "id": "Commissions/Pack 06",
-   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
-  }
- ],
- "Commissions/Pack 05": [
-  {
-   "id": "Animation",
-   "why": "Her model was reused for the first short movie."
-  }
- ],
- "Commissions/Pack 06": [
-  {
-   "id": "Animation",
-   "why": "Acerbic Sapphire stars in the second short film."
-  }
- ],
- "Commissions 2/Pack 10 - Raven": [
-  {
-   "id": "Corridor",
-   "why": "Raven from this commission goes on to star in Corridor."
-  },
-  {
-   "id": "Raven - Disgusting Requests",
-   "why": "Raven from this commission goes on to star in Disgusting Requests."
-  }
- ],
- "Raven - Disgusting Requests": [
-  {
-   "id": "Commissions 2/Pack 10 - Raven",
-   "why": "Raven comes from the Raven commission."
-  },
-  {
-   "id": "Corridor",
-   "why": "The other Raven comic made in parallel."
-  }
- ],
- "Commissions 2/Pack 11": [
-  {
-   "id": "Corridor",
-   "why": "Alternative renders move this model into the project with the new mummy."
-  }
- ],
- "BoundBorne/Pack 02 - Alexia": [
-  {
-   "id": "Alex Project#01",
-   "why": "Alexia is Alex from the Alex Project, reworked as the lead."
-  },
-  {
-   "id": "Rockroot",
-   "why": "Develops the Rockroot ideas with a woman as the lead."
-  }
- ],
- "Rockroot": [
-  {
-   "id": "BoundBorne/Chapters#01",
-   "why": "Its ideas were developed further in BoundBorne."
-  },
-  {
-   "id": "BoundBorne/Pack 02 - Alexia",
-   "why": "Its ideas were developed further in BoundBorne."
-  },
-  {
-   "id": "Jane and Rockroot",
-   "why": "Extra gag variants of Rockroot carrying Jane."
-  },
-  {
-   "id": "Recruit/Sketches",
-   "why": "Its sister project, made in parallel, is sketched in Sketches."
-  }
- ],
- "Dark Souls Parody": [
-  {
-   "id": "BoundBorne/Chapters#01",
-   "why": "Its dark fantasy style returned in BoundBorne."
-  },
-  {
-   "id": "Recruit/Evil Domination",
-   "why": "The dark twin of Evil Domination, started at the same time."
-  }
- ],
- "BoundBorne/Spider Prey": [
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "Caroline the spider uses a character model from Sperm Whale."
-  },
-  {
-   "id": "Intied",
-   "why": "The spider lady was carried over and reworked as a goddess."
-  },
-  {
-   "id": "Gag Pack Backrooms/Spider",
-   "why": "Lady Spider returns in the Backrooms pack."
-  }
- ],
- "Intied": [
-  {
-   "id": "BoundBorne/Spider Prey",
-   "why": "The spider lady was reworked for BoundBorne."
-  },
-  {
-   "id": "Corridor",
-   "why": "Its concepts came back in Corridor."
-  },
-  {
-   "id": "Gag Pack Backrooms/Spider",
-   "why": "Lady Spider returns in the Backrooms pack."
-  }
- ],
- "BoxRoom": [
-  {
-   "id": "Akali",
-   "why": "Akali from the club render, moved here in a changed outfit."
-  }
- ],
- "Akali": [
-  {
-   "id": "BoxRoom",
-   "why": "Akali was redone in the box room with a new outfit."
-  }
- ],
- "Caitlyn in the Basement#01": [
-  {
-   "id": "Recruit/Mini Comics#01",
-   "why": "The same Caitlyn who appeared in the first Recruit comic."
-  },
-  {
-   "id": "Notebook",
-   "why": "Posted as the Notebook Recruit exclusive comic."
-  }
- ],
- "Recruit/Mini Comics#01": [
-  {
-   "id": "Caitlyn in the Basement#01",
-   "why": "Its Caitlyn returns, slightly changed, in Caitlyn in the Basement."
-  },
-  {
-   "id": "Afflatus/Chapter 1",
-   "why": "Made as the bright, comic opposite of the dark Afflatus comic."
-  }
- ],
- "Notebook": [
-  {
-   "id": "Caitlyn in the Basement#01",
-   "why": "Its Recruit exclusive comic is Caitlyn in the Basement."
-  },
-  {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "Built like the Bureau project, as small stories of different characters."
-  },
-  {
-   "id": "Notebook/Renders#01",
-   "why": "Vi's renders take place in this same house."
-  },
-  {
-   "id": "Notebook/Renders#03",
-   "why": "Jane's renders use this comic's hallway."
-  },
-  {
-   "id": "Recruit/Mini Comics#05",
-   "why": "The Recruit's story in the same Notebook project."
-  }
- ],
- "Federal Bureau of Fetish Control#01": [
-  {
-   "id": "Corridor",
-   "why": "Its looping corridor was rethought for Raven's Corridor."
-  },
-  {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
-   "why": "Its ideas went into Sperm Whale Corp."
-  },
-  {
-   "id": "Sperm Whale/Sperm Whale Corp#02",
-   "why": "Its ideas went into Sperm Whale Corp."
-  },
-  {
-   "id": "Sperm Whale/Sperm Whale Corp#03",
-   "why": "Its ideas went into Sperm Whale Corp."
-  },
-  {
-   "id": "Notebook",
-   "why": "Notebook later used the same small-stories format on a smaller scale."
-  },
-  {
-   "id": "Simulation",
-   "why": "Dropped for Simulation, which grew out of its idea."
-  }
- ],
- "FF": [
-  {
-   "id": "Afflatus/Afflatus 01 Old",
-   "why": "Posted as the first Afflatus episode before the project was reworked."
-  }
- ],
- "Afflatus/Afflatus 01 Old": [
+ "Afflatus 01 Old": [
   {
    "id": "FF",
    "why": "The first Afflatus episode, kept in the archive as FF."
@@ -615,282 +897,102 @@
    "why": "Project SA started in its place when this was closed."
   }
  ],
- "Sperm Whale/Sperm Whale Corp#02": [
+ "Chapter 1": [
   {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "Built from Fetish Control ideas and the Control game."
+   "id": "Janery",
+   "why": "Emma, redesigned as Jane's best friend."
   },
   {
-   "id": "Sperm Whale/Renders",
-   "why": "Built from Sperm Whale ideas."
-  }
- ],
- "Sperm Whale/Sperm Whale Corp#03": [
-  {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "Built from Fetish Control ideas and the Control game."
+   "id": "Emma",
+   "why": "Emma on her own for Christmas."
   },
   {
-   "id": "Sperm Whale/Renders",
-   "why": "Built from Sperm Whale ideas."
-  }
- ],
- "Federal Bureau of Fetish Control#04": [
-  {
-   "id": "Cleaning/Chapter 1 - Help",
-   "why": "Its cleaning lady returns as Silvia in Cleaning."
+   "id": "Renders",
+   "why": "Afflatus continues Sperm Whale."
   },
   {
-   "id": "Cleaning/Chapter 2 - Agreement",
-   "why": "Its cleaning lady returns as Silvia in Cleaning."
+   "id": "Spaceship Silent Whale",
+   "why": "A comic set on the Afflatus space station."
   },
   {
-   "id": "Cleaning/Chapter 3 - Cozy",
-   "why": "Its cleaning lady returns as Silvia in Cleaning."
+   "id": "Comic 1 - Caitlyn",
+   "why": "The Recruit mini comics were made as its bright, comic opposite."
+  }
+ ],
+ "Chapter 2": [
+  {
+   "id": "Renders",
+   "why": "Afflatus continues the Sperm Whale story."
   },
   {
-   "id": "Gag Pack Project Office#recruit-cleaner",
-   "why": "Its cleaning lady returns as the Cleaner in Project Office."
+   "id": "Comic 2 - Jinx and Vi",
+   "why": "Afflatus was closed so work could go to this mini comic."
   }
  ],
- "Cleaning/Chapter 2 - Agreement": [
+ "Old Version": [
   {
-   "id": "Federal Bureau of Fetish Control#04",
-   "why": "Silvia is the cleaning lady from Don't litter."
+   "id": "Renders",
+   "why": "Afflatus continues the Sperm Whale story."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
-   "why": "The whale-logo corporation sits in the background of this story."
+   "id": "Emma",
+   "why": "Emma returns in a Christmas render."
   }
  ],
- "Cleaning/Chapter 3 - Cozy": [
+ "Bound Corp": [
   {
-   "id": "Federal Bureau of Fetish Control#04",
-   "why": "Silvia is the cleaning lady from Don't litter."
+   "id": "Chapters",
+   "why": "Rendered with the method first used in BoundBorne."
+  }
+ ],
+ "Caitlyn in the Basement with comic": [
+  {
+   "id": "Comic 1 - Caitlyn",
+   "why": "The same Caitlyn who appeared in the first Recruit comic."
   },
   {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
-   "why": "The whale-logo corporation sits in the background of this story."
+   "id": "Notebook",
+   "why": "Posted as the Notebook Recruit exclusive comic."
   }
  ],
- "Gag Pack December 2025 X Mas/Test": [
+ "Dark Souls Parody": [
   {
-   "id": "Gag Pack January 2026 Experiment#tests",
-   "why": "The simple style tests were made for the January experiment pack."
-  }
- ],
- "Gag Pack January 2026 Experiment#tests": [
-  {
-   "id": "Gag Pack December 2025 X Mas/Test",
-   "why": "Continues the simple style tests begun with Christmas Jane."
+   "id": "Chapters",
+   "why": "Its dark fantasy style returned in BoundBorne."
   },
   {
-   "id": "Gag Pack February 2026/Recruitstein's Castle",
-   "why": "Style experiments made to prepare the February pack."
+   "id": "Evil Domination",
+   "why": "The dark twin of Evil Domination, started at the same time."
   }
  ],
- "Gag Pack February 2026/Recruitstein's Castle": [
+ "FF": [
   {
-   "id": "Gag Pack January 2026 Experiment#tests",
-   "why": "Its style grew out of the January experiments."
+   "id": "Afflatus 01 Old",
+   "why": "Posted as the first Afflatus episode before the project was reworked."
   }
  ],
- "Gag Pack January 2026 Experiment#black-cat": [
+ "Pack 02 - Alexia": [
   {
-   "id": "Gag Pack February 2026#black-cat",
-   "why": "The first Black Cat sketch, made for the next gag pack."
-  }
- ],
- "Gag Pack February 2026#black-cat": [
-  {
-   "id": "Gag Pack January 2026 Experiment#black-cat",
-   "why": "Black Cat was first sketched in the January experiments."
-  }
- ],
- "Gag Pack Backrooms/Spider": [
-  {
-   "id": "BoundBorne/Spider Prey",
-   "why": "Lady Spider, an old character, returns to help the Recruit."
+   "id": "Alex Project",
+   "why": "Alexia is Alex from the Alex Project, reworked as the lead."
   },
-  {
-   "id": "Intied",
-   "why": "Lady Spider, an old character, returns to help the Recruit."
-  }
- ],
- "Gag Pack Project Office": [
-  {
-   "id": "Gag Pack Backrooms",
-   "why": "Some work meant for this pack moved into the Backrooms pack."
-  }
- ],
- "Gag Pack Backrooms": [
-  {
-   "id": "Gag Pack Project Office",
-   "why": "Holds work first made for Project Office."
-  }
- ],
- "GagPack Fall $5": [
-  {
-   "id": "GagPack Fall",
-   "why": "Released alongside the $10 Fall pack as its opposite."
-  }
- ],
- "GagPack Fall": [
-  {
-   "id": "GagPack Fall $5",
-   "why": "Released alongside the $5 Jane pack as its opposite."
-  }
- ],
- "GagPack Fall/07 Packaging testing": [
-  {
-   "id": "Gag pack 07 Caitlyn#1",
-   "why": "Margaret tests the Packer 2000 first tried on Caitlyn."
-  }
- ],
- "Gag pack 07 Caitlyn#1": [
-  {
-   "id": "GagPack Fall/07 Packaging testing",
-   "why": "The Packer 2000 returns in Margaret's lab."
-  }
- ],
- "Intied/Promo Art": [
-  {
-   "id": "Cachalot",
-   "why": "Panam Palmer returns from her earlier emergency meeting set."
-  },
-  {
-   "id": "Sperm Whale/Sperm Whale Corp#01",
-   "why": "Panam Palmer returns from her earlier emergency meeting set."
-  }
- ],
- "Jane and Rockroot": [
   {
    "id": "Rockroot",
-   "why": "Extra gag variants for the Rockroot scene of him carrying Jane off."
+   "why": "Develops the Rockroot ideas with a woman as the lead."
   }
  ],
- "Mel Medarda - Arguments - Arcane in Office": [
+ "Spider Prey": [
   {
-   "id": "Gag Pack 05 Mel",
-   "why": "Companion comic to the Mel gag pack, the last Arcane office pack."
-  }
- ],
- "Gag Pack 05 Mel": [
-  {
-   "id": "Mel Medarda - Arguments - Arcane in Office",
-   "why": "Arguments, the companion comic with Mel and Cassandra."
-  }
- ],
- "Notebook/Renders#01": [
-  {
-   "id": "Notebook",
-   "why": "Set in the P.T.-style house of the Notebook project."
+   "id": "Renders",
+   "why": "Caroline the spider uses a character model from Sperm Whale."
   },
   {
-   "id": "Recruit/Mini Comics#05",
-   "why": "These gag sets were trials for the poll in the Recruit and Caitlyn comic."
+   "id": "Pack 12 - Isometric Concept",
+   "why": "The spider lady was carried over and reworked as a goddess."
   },
   {
-   "id": "Notebook/Renders#03",
-   "why": "Jane's renders use the same hallway."
-  }
- ],
- "Recruit/Mini Comics#05": [
-  {
-   "id": "Notebook/Renders#01",
-   "why": "Vi's renders tried out gag sets for this comic's poll."
-  },
-  {
-   "id": "Notebook",
-   "why": "The Recruit and Caitlyn story of the Notebook project."
-  }
- ],
- "Notebook/Renders#03": [
-  {
-   "id": "Notebook/Renders#01",
-   "why": "Same P.T.-style hallway as Vi's renders."
-  },
-  {
-   "id": "Notebook/Renders#02",
-   "why": "Same P.T.-style hallway as Jinx's renders."
-  },
-  {
-   "id": "Notebook",
-   "why": "Same hallway as the Notebook comic."
-  }
- ],
- "Notebook/Renders#02": [
-  {
-   "id": "Notebook/Renders#03",
-   "why": "Jane's renders use the same hallway."
-  }
- ],
- "Padded Cell": [
-  {
-   "id": "Straitjacket Board - Long Hair",
-   "why": "Yennefer in the same soft room, released together as one set."
-  }
- ],
- "Straitjacket Board - Long Hair": [
-  {
-   "id": "Padded Cell",
-   "why": "Yennefer in the same soft room, released together as one set."
-  }
- ],
- "Project SA Comics": [
-  {
-   "id": "Afflatus/Afflatus 01 Old",
-   "why": "Started after the first Afflatus comic was closed."
-  },
-  {
-   "id": "Sperm Whale/Renders",
-   "why": "A spiritual successor to the Sperm Whale comic."
-  }
- ],
- "Project T Comics#01": [
-  {
-   "id": "Project T White",
-   "why": "Continued in Project T White, in white instead of grey."
-  }
- ],
- "Recruit/Sketches": [
-  {
-   "id": "Rockroot",
-   "why": "Sketches of the second project made in parallel with Rockroot."
-  }
- ],
- "Silent Whale/Silent Whale Exclusive": [
-  {
-   "id": "Silent Whale",
-   "why": "A bonus set for the Silent Whale comic."
-  }
- ],
- "Simulation": [
-  {
-   "id": "Federal Bureau of Fetish Control#01",
-   "why": "Grew out of the Corridor comic, which was dropped for this project."
-  }
- ],
- "The Producer 2": [
-  {
-   "id": "The Producer",
-   "why": "Continues The Producer minicomic, in a different style."
-  }
- ],
- "The Producer": [
-  {
-   "id": "The Producer 2",
-   "why": "Continued in The Producer 2, in a different style."
-  },
-  {
-   "id": "Gag Pack January 2026 Experiment#recruit-margaret",
-   "why": "The story continues with Recruit and Margaret in the next pack."
-  }
- ],
- "Gag Pack January 2026 Experiment#recruit-margaret": [
-  {
-   "id": "The Producer",
-   "why": "Continues The Producer minicomic with Recruit and Margaret."
+   "id": "Spider",
+   "why": "Lady Spider returns in the Backrooms pack."
   }
  ]
 }
