@@ -13,7 +13,7 @@
  ],
  "Gag Pack Shadowheart": [
   {
-   "id": "Beta 01 Heartshadow",
+   "id": "Shadowheart Meets Heartshadow",
    "why": "The Shadowheart comic that followed, after a poll picked Agents."
   }
  ],
@@ -823,18 +823,8 @@
    "why": "Agent Peach was started as a comic in the Corridor section."
   },
   {
-   "id": "Beta 01 Heartshadow",
+   "id": "Shadowheart Meets Heartshadow",
    "why": "The Agents setting returns for Shadowheart's comic."
-  }
- ],
- "Beta 01 Heartshadow": [
-  {
-   "id": "Gag Pack Shadowheart",
-   "why": "The Shadowheart pack this comic grew out of."
-  },
-  {
-   "id": "Agent Peach and the Bee Drones",
-   "why": "Shadowheart's comic uses the Agents setting from Agent Peach."
   }
  ],
  "Evil Domination": [
@@ -981,6 +971,16 @@
   {
    "id": "Project SA Comics",
    "why": "Project SA carries on this comic's ideas."
+  }
+ ],
+ "Shadowheart Meets Heartshadow": [
+  {
+   "id": "Gag Pack Shadowheart",
+   "why": "The Shadowheart pack this comic grew out of."
+  },
+  {
+   "id": "Agent Peach and the Bee Drones",
+   "why": "Shadowheart's comic uses the Agents setting from Agent Peach."
   }
  ],
  "Spaceship Silent Whale": [
