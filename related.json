@@ -25,12 +25,24 @@
  ],
  "Animation": [
   {
-   "id": "2D-3D/Pack 05 - ElijahPink",
+   "id": "Pack 05 - ElijahPink",
    "why": "The first short movie uses the redhead from the ElijahPink commission."
   },
   {
-   "id": "2D-3D/Pack 06 - Skelebomb",
+   "id": "Pack 06 - Skelebomb",
    "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+  }
+ ],
+ "Aeria and Wossy": [
+  {
+   "id": "Aeria and Wossy/Aeria and Wossa",
+   "why": "The pair's first commission for WossaRem, as busts."
+  }
+ ],
+ "Aeria and Wossy/Aeria and Wossa": [
+  {
+   "id": "Aeria and Wossy",
+   "why": "The same pair again, later, in bunny suits for WossaRem."
   }
  ],
  "Akali": [
@@ -49,6 +61,12 @@
    "why": "Alex returns, reworked, as Alexia in BoundBorne."
   }
  ],
+ "Alex Project/Renders pack 02": [
+  {
+   "id": "Renders",
+   "why": "The new project started after Sperm Whale ended."
+  }
+ ],
  "Caitlyn 2": [
   {
    "id": "Zelda",
@@ -65,6 +83,12 @@
    "why": "Emma is the character from Afflatus."
   }
  ],
+ "Gag pack 02 Bunny": [
+  {
+   "id": "Gag pack 07 Caitlyn",
+   "why": "The trial run Caitlyn pack that a later pack tried to improve on."
+  }
+ ],
  "Pack 11 - Jinx": [
   {
    "id": "M-ASH Robot",
@@ -76,6 +100,18 @@
   }
  ],
  "Straitjacket Board Yennefer": [
+  {
+   "id": "Padded Cell",
+   "why": "Yennefer in the same soft room, released together as one set."
+  }
+ ],
+ "Straitjacket Board Yennefer/Animation": [
+  {
+   "id": "Padded Cell",
+   "why": "Yennefer in the same soft room, released together as one set."
+  }
+ ],
+ "Straitjacket Board Yennefer/Straitjacket Board - Short Hair": [
   {
    "id": "Padded Cell",
    "why": "Yennefer in the same soft room, released together as one set."
@@ -103,19 +139,59 @@
    "why": "A spiritual successor to the Sperm Whale comic."
   }
  ],
- "Project T Comics": [
+ "Project T Comics A": [
   {
-   "id": "Project T White",
+   "id": "Project T White 1",
    "why": "Continued in Project T White, in white instead of grey."
   }
  ],
- "Project T White": [
+ "Project T White 1": [
   {
    "id": "Renders",
    "why": "Sperm Whale was planned to take in this earlier project."
   },
   {
-   "id": "Project T Comics",
+   "id": "Project T Comics A",
+   "why": "The next part of Project T, in white instead of grey."
+  }
+ ],
+ "Project T White 2": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  },
+  {
+   "id": "Project T Comics A",
+   "why": "The next part of Project T, in white instead of grey."
+  }
+ ],
+ "Project T White 3": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  },
+  {
+   "id": "Project T Comics A",
+   "why": "The next part of Project T, in white instead of grey."
+  }
+ ],
+ "Project T White 4": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  },
+  {
+   "id": "Project T Comics A",
+   "why": "The next part of Project T, in white instead of grey."
+  }
+ ],
+ "Project T White 5": [
+  {
+   "id": "Renders",
+   "why": "Sperm Whale was planned to take in this earlier project."
+  },
+  {
+   "id": "Project T Comics A",
    "why": "The next part of Project T, in white instead of grey."
   }
  ],
@@ -165,7 +241,7 @@
  ],
  "Rockroot": [
   {
-   "id": "Chapters",
+   "id": "Chapters/Prologue",
    "why": "Its ideas were developed further in BoundBorne."
   },
   {
@@ -203,11 +279,11 @@
    "why": "Another comic in the same Corridor section."
   },
   {
-   "id": "2D-3D/Pack 17 - Maha Kittsri - Raven",
+   "id": "Pack 17 - Maha Kittsri - Raven",
    "why": "Raven comes from the Raven commission."
   },
   {
-   "id": "2D-3D/Pack 18 - inspired by some random fanart",
+   "id": "Pack 18 - inspired by some random fanart",
    "why": "A commission model was moved into this project's setting."
   },
   {
@@ -391,7 +467,7 @@
  ],
  "Raven - Disgusting Requests": [
   {
-   "id": "2D-3D/Pack 17 - Maha Kittsri - Raven",
+   "id": "Pack 17 - Maha Kittsri - Raven",
    "why": "Raven comes from the Raven commission."
   },
   {
@@ -400,6 +476,12 @@
   }
  ],
  "Simulation - Prey Parody": [
+  {
+   "id": "Corridor/Chapter 1",
+   "why": "Grew out of the Corridor comic, which was dropped for this project."
+  }
+ ],
+ "Simulation - Prey Parody/Simulation - Bonus": [
   {
    "id": "Corridor/Chapter 1",
    "why": "Grew out of the Corridor comic, which was dropped for this project."
@@ -435,6 +517,14 @@
    "why": "Built from Sperm Whale ideas."
   },
   {
+   "id": "Cleaning/Chapter 1 - Help",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Cleaning/Chapter 2 - Agreement",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
    "id": "Cleaning",
    "why": "Its corporation is in the background of Cleaning."
   },
@@ -455,6 +545,14 @@
   {
    "id": "Renders",
    "why": "Built from Sperm Whale ideas."
+  },
+  {
+   "id": "Cleaning/Chapter 1 - Help",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Cleaning/Chapter 2 - Agreement",
+   "why": "Its corporation is in the background of Cleaning."
   },
   {
    "id": "Cleaning",
@@ -486,6 +584,30 @@
   }
  ],
  "Cleaning": [
+  {
+   "id": "Don't litter",
+   "why": "Silvia is the cleaning lady from Don't litter."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "The whale-logo corporation sits in the background of this story."
+  }
+ ],
+ "Cleaning/Chapter 1 - Help": [
+  {
+   "id": "Office Girls Kidnapped (No Text)/Cass Simpli",
+   "why": "The cleaning lady comes back as the Cleaner, next to the Recruit."
+  },
+  {
+   "id": "Don't litter",
+   "why": "Silvia is the cleaning lady from Don't litter."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "The whale-logo corporation sits in the background of this story."
+  }
+ ],
+ "Cleaning/Chapter 2 - Agreement": [
   {
    "id": "Don't litter",
    "why": "Silvia is the cleaning lady from Don't litter."
@@ -549,6 +671,14 @@
  ],
  "Don't litter": [
   {
+   "id": "Cleaning/Chapter 1 - Help",
+   "why": "Its cleaning lady returns as Silvia in Cleaning."
+  },
+  {
+   "id": "Cleaning/Chapter 2 - Agreement",
+   "why": "Its cleaning lady returns as Silvia in Cleaning."
+  },
+  {
    "id": "Cleaning",
    "why": "Its cleaning lady returns as Silvia in Cleaning."
   },
@@ -571,6 +701,14 @@
    "why": "Built from Sperm Whale ideas."
   },
   {
+   "id": "Cleaning/Chapter 1 - Help",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
+   "id": "Cleaning/Chapter 2 - Agreement",
+   "why": "Its corporation is in the background of Cleaning."
+  },
+  {
    "id": "Cleaning",
    "why": "Its corporation is in the background of Cleaning."
   },
@@ -579,17 +717,13 @@
    "why": "Panam Palmer returns in an Intied concept art."
   }
  ],
- "JANE/Animation": [
+ "Gag Pack December 2025 X Mas/XMas Card": [
   {
-   "id": "2D-3D/Pack 05 - ElijahPink",
-   "why": "The first short movie uses the redhead from the ElijahPink commission."
-  },
-  {
-   "id": "2D-3D/Pack 06 - Skelebomb",
-   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+   "id": "Gag Pack January 2026 Experiment",
+   "why": "The simple style tests were made for the January experiment pack."
   }
  ],
- "Janery": [
+ "Janery 08.01": [
   {
    "id": "Renders",
    "why": "Emma's first appearance, next to her sister Donna."
@@ -599,19 +733,69 @@
    "why": "Emma in her earlier look."
   }
  ],
- "Gag Pack December 2025 X Mas/XMas Card": [
+ "Janery 14.01": [
   {
-   "id": "Gag Pack January 2026 Experiment",
-   "why": "The simple style tests were made for the January experiment pack."
+   "id": "Renders",
+   "why": "Emma's first appearance, next to her sister Donna."
+  },
+  {
+   "id": "Chapter 1",
+   "why": "Emma in her earlier look."
   }
  ],
- "2D-3D/Pack 05 - ElijahPink": [
+ "Janery 16.01": [
   {
-   "id": "2D-3D/Pack 06 - Skelebomb",
+   "id": "Renders",
+   "why": "Emma's first appearance, next to her sister Donna."
+  },
+  {
+   "id": "Chapter 1",
+   "why": "Emma in her earlier look."
+  }
+ ],
+ "Pack 05 - ElijahPink": [
+  {
+   "id": "Pack 06 - Skelebomb/Animation - Pack 02 - Photo Shoot",
    "why": "Her model was reused for the first short movie."
   }
  ],
- "2D-3D/Pack 17 - Maha Kittsri - Raven": [
+ "Pack 05 - ElijahPink/Animation": [
+  {
+   "id": "Pack 05 - ElijahPink",
+   "why": "The first short movie uses the redhead from the ElijahPink commission."
+  },
+  {
+   "id": "Pack 06 - Skelebomb",
+   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+  }
+ ],
+ "Pack 06 - Skelebomb": [
+  {
+   "id": "Pack 06 - Skelebomb/Animation - Pack 02 - Photo Shoot",
+   "why": "Acerbic Sapphire stars in the second short film."
+  }
+ ],
+ "Pack 06 - Skelebomb/Animation": [
+  {
+   "id": "Pack 05 - ElijahPink",
+   "why": "The first short movie uses the redhead from the ElijahPink commission."
+  },
+  {
+   "id": "Pack 06 - Skelebomb",
+   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+  }
+ ],
+ "Pack 06 - Skelebomb/Animation - Pack 02 - Photo Shoot": [
+  {
+   "id": "Pack 05 - ElijahPink",
+   "why": "The first short movie uses the redhead from the ElijahPink commission."
+  },
+  {
+   "id": "Pack 06 - Skelebomb",
+   "why": "The second short film stars Acerbic Sapphire from the Skelebomb commission."
+  }
+ ],
+ "Pack 17 - Maha Kittsri - Raven": [
   {
    "id": "Corridor Raven",
    "why": "Raven from this commission goes on to star in Corridor."
@@ -621,7 +805,13 @@
    "why": "Raven from this commission goes on to star in Disgusting Requests."
   }
  ],
- "2D-3D/Pack 18 - inspired by some random fanart": [
+ "Pack 18 - inspired by some random fanart": [
+  {
+   "id": "Corridor Raven",
+   "why": "Alternative renders move this model into the project with the new mummy."
+  }
+ ],
+ "Pack 18 - inspired by some random fanart/Pack 02": [
   {
    "id": "Corridor Raven",
    "why": "Alternative renders move this model into the project with the new mummy."
@@ -693,6 +883,16 @@
    "why": "Panam Palmer returns in an Intied concept art."
   }
  ],
+ "M-ASH Robot/Tracer": [
+  {
+   "id": "Archives Mini Comic",
+   "why": "Holds the robot update of the Panam Palmer emergency meeting."
+  },
+  {
+   "id": "Intied/Pack 06 - Panam Palmer",
+   "why": "Panam Palmer returns in an Intied concept art."
+  }
+ ],
  "Pack 12 - Isometric Concept": [
   {
    "id": "Spider Prey",
@@ -715,7 +915,7 @@
  ],
  "Renders": [
   {
-   "id": "Janery",
+   "id": "Janery 08.01",
    "why": "Emma, redesigned as Jane's best friend."
   },
   {
@@ -743,7 +943,7 @@
    "why": "An earlier project planned to be folded into the Sperm Whale story."
   },
   {
-   "id": "Project T White",
+   "id": "Project T White 1",
    "why": "An earlier project planned to be folded into the Sperm Whale story."
   },
   {
@@ -757,6 +957,10 @@
   {
    "id": "Chapter 2",
    "why": "Its story continues in Afflatus."
+  },
+  {
+   "id": "Alex Project/Renders pack 02",
+   "why": "The project started next, after Sperm Whale ended."
   },
   {
    "id": "Spider Prey",
@@ -811,7 +1015,7 @@
  ],
  "Office Girls Kidnapped (No Text)/Cass Simpli": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -821,7 +1025,7 @@
  ],
  "Office Girls Kidnapped (No Text)/Ciri Phantom": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -831,7 +1035,7 @@
  ],
  "Office Girls Kidnapped (No Text)/Ciri Rec": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -841,7 +1045,7 @@
  ],
  "Office Girls Kidnapped (No Text)/Mel Cleaner": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -851,7 +1055,7 @@
  ],
  "Office Girls Kidnapped (No Text)/Simpli Rec": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -861,7 +1065,7 @@
  ],
  "Office Girls Kidnapped (With text blurbs)": [
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 1 - Help",
    "why": "The cleaning lady's own comic."
   },
   {
@@ -899,7 +1103,7 @@
  ],
  "Chapter 1": [
   {
-   "id": "Janery",
+   "id": "Janery 08.01",
    "why": "Emma, redesigned as Jane's best friend."
   },
   {
@@ -939,15 +1143,35 @@
    "why": "Emma returns in a Christmas render."
   }
  ],
+ "Old Version/Exclusive old - Emma": [
+  {
+   "id": "Renders",
+   "why": "Afflatus continues the Sperm Whale story."
+  },
+  {
+   "id": "Emma",
+   "why": "Emma returns in a Christmas render."
+  }
+ ],
+ "Old Version/Exclusive old - Jane": [
+  {
+   "id": "Renders",
+   "why": "Afflatus continues the Sperm Whale story."
+  },
+  {
+   "id": "Emma",
+   "why": "Emma returns in a Christmas render."
+  }
+ ],
  "Bound Corp - Animation": [
   {
-   "id": "Chapters",
+   "id": "Chapters/Prologue",
    "why": "Rendered with the method first used in BoundBorne."
   }
  ],
  "Bound Corp - Comic": [
   {
-   "id": "Chapters",
+   "id": "Chapters/Prologue",
    "why": "Rendered with the method first used in BoundBorne."
   }
  ],
@@ -961,9 +1185,23 @@
    "why": "Posted as the Notebook Recruit exclusive comic."
   }
  ],
+ "Chapters/Prologue": [
+  {
+   "id": "Bound Corp - Comic",
+   "why": "Its rendering method came back for the Bound Corp comic."
+  },
+  {
+   "id": "Rockroot",
+   "why": "Develops the Rockroot ideas with a woman as the lead."
+  },
+  {
+   "id": "Dark Souls Parody",
+   "why": "Made in the style of the earlier Dark Souls comic."
+  }
+ ],
  "Dark Souls Parody": [
   {
-   "id": "Chapters",
+   "id": "Chapters/Prologue",
    "why": "Its dark fantasy style returned in BoundBorne."
   },
   {
@@ -972,6 +1210,12 @@
   }
  ],
  "FF": [
+  {
+   "id": "Afflatus 01 Old",
+   "why": "Posted as the first Afflatus episode before the project was reworked."
+  }
+ ],
+ "FF/FF 2": [
   {
    "id": "Afflatus 01 Old",
    "why": "Posted as the first Afflatus episode before the project was reworked."
