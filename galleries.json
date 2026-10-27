@@ -34,7 +34,6 @@
    "Self-Testing/Part II",
    "Caitlin Meets the Gold Minion",
    "Death Stranding/Death Stranding - Pack 01",
-   "Pack 12 - Isometric Concept",
    "Sacked Caitlin Awaits Processing",
    "Animation/Donna Animation",
    "Fall Girls",
@@ -44,7 +43,9 @@
    "She's In The Hands of Sperm Whale Corp/Animation",
    "The Four Favorites are SACKED and layered!/Animation"
   ],
-  "loose": []
+  "loose": [
+   "Pack 12 - Isometric Concept"
+  ]
  },
  {
   "name": "Horror",
@@ -74,20 +75,21 @@
    "Intied/Pack 03 - Patricia",
    "Intied/Pack 05 - Amy",
    "Intied/Pack 05 Exclusive - Amy",
-   "Notebook/Preview",
    "Intied/Pack 01 - Jane",
    "Simulation - Prey Parody/Simulation - Bonus",
    "Intied/Pack 10 - Surrounded by Silence",
    "Hung from a Tree - Bonus"
   ],
-  "loose": []
+  "loose": [
+   "Notebook/Preview"
+  ]
  },
  {
   "name": "Bureau of Fetish Control",
   "folder": "14 - GALLERY - Bureau of Fetish Control",
   "pinned": [],
   "sets": [
-   "Cleaning",
+   "Cleaning/Chapter 3 - Cozy",
    "Corridor/Chapter 1",
    "Cleaning/Chapter 2 - Agreement",
    "Cell 113",
@@ -100,16 +102,15 @@
    "Files 03",
    "Fetish Control 03",
    "Tifa Office and Ciri",
+   "Don't litter",
    "Archives Mini Comic",
    "Archives 02",
-   "Don't litter",
    "Archives 01",
    "Archives 01/Files 01 Re",
    "Archives 02/Files 02 Re",
    "Fetish Control 01",
    "Roombox - Quack",
    "Roombox - Where did Tina go",
-   "Don't litter/Art - Pack 01",
    "Archives 03 Exclusive",
    "Emergency meeting - Panam Palmer"
   ],
@@ -121,12 +122,12 @@
   "pinned": [],
   "sets": [
    "Prequel Comic",
-   "Chapters",
+   "Chapters/Chapter I",
    "Pack 02 - Alexia",
    "Chapters/Chapter II",
    "Dark Souls Parody",
    "BoundBorne/Pack 01",
-   "FF",
+   "FF/FF 1",
    "FF/FF 2",
    "Pack 01/Supporter - Pack 01 - Renders 2",
    "Chapters/Prologue",
@@ -181,11 +182,11 @@
    "Jessica",
    "Toys",
    "Cass",
-   "Test Video",
    "Jane"
   ],
   "loose": [
-   "Gag Pack Backrooms"
+   "Gag Pack Backrooms",
+   "Test Video"
   ]
  },
  {
@@ -226,6 +227,8 @@
    "Caitlyn in the Basement with comic",
    "Comic 8 Amy Encased",
    "Notebook",
+   "Archives 01",
+   "Archives 02",
    "Corridor/Chapter 1",
    "Corridor/Chapter 2",
    "Dirty floor",
@@ -236,15 +239,17 @@
    "Briar/Briar Comic",
    "Spaceship Silent Whale",
    "Prequel Comic",
-   "Chapters",
+   "Chapters/Chapter I",
    "Chapters/Chapter II",
    "Chapters/Extra - Pack 01",
    "Chapters/Extra - Pack 02",
    "Chapters/Prologue",
    "Raven - Disgusting Requests",
-   "Cleaning",
+   "Archives Mini Comic",
+   "Astral Plane",
    "Cleaning/Chapter 1 - Help",
    "Cleaning/Chapter 2 - Agreement",
+   "Cleaning/Chapter 3 - Cozy",
    "Bound Corp - Advertising",
    "Bound Corp - Comic",
    "Corridor Raven",
@@ -257,6 +262,7 @@
    "Shadowheart Meets Heartshadow",
    "The Producer",
    "The Producer 2",
+   "Caitlin & Jinx - Office Politics Debate",
    "Gag pack 02 Bunny",
    "Gag pack 02 Bunny/Bonus 1",
    "Gag pack 02 Bunny/Mini mini Comic",
@@ -375,12 +381,13 @@
    "Recruitenstein's Stage 3",
    "Recruitenstein's Stage 5 - Game Over!",
    "Comic 8 Amy Encased",
-   "Recruit - Haunted House Concept",
    "Recruitenstein's Stage 1 - Story",
    "Recruitstein's Castle Poster",
    "Test Subject Caitlyn"
   ],
-  "loose": []
+  "loose": [
+   "Recruit - Haunted House Concept"
+  ]
  },
  {
   "name": "Just Jane",
@@ -406,14 +413,15 @@
    "Gag Pack December 2025 X Mas",
    "Janember 17.12",
    "Janember 19.12",
-   "Gag Pack December 2025 X Mas/XMas Card",
    "Janember 13.12",
    "Janember 31.12",
    "Janember 01.12",
-   "Jane - Animation",
-   "Janember 15.12"
+   "Jane - Animation"
   ],
-  "loose": []
+  "loose": [
+   "Gag Pack December 2025 X Mas/XMas Card",
+   "Janember 15.12"
+  ]
  },
  {
   "name": "Pantide Park",
@@ -470,6 +478,8 @@
    "Caitlyn in the Basement with comic",
    "Cassandra 01",
    "Ciri 01 Closeup",
+   "Caitlyn in the Basement with comic/Caitlyn",
+   "Caitlyn in the Basement with comic/Gag Variants",
    "Samus 01/Samus Aran 01",
    "Cait&Cass Kidnapped/Animation",
    "Samus 01/Animation"

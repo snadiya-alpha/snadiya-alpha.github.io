@@ -88,5 +88,35 @@
    "slug": "akali",
    "folder": ""
   }
+ ],
+ "Black Canary": [
+  {
+   "slug": "black-canary",
+   "folder": ""
+  }
+ ],
+ "Caitlyn": [
+  {
+   "slug": "caitlyn-misc",
+   "folder": ""
+  }
+ ],
+ "Bulletgirl": [
+  {
+   "slug": "bulletgirl",
+   "folder": ""
+  }
+ ],
+ "Caitlyn and Vi": [
+  {
+   "slug": "caitlyn-and-vi",
+   "folder": ""
+  }
+ ],
+ "2B Tiled Cell": [
+  {
+   "slug": "2b-tiled-cell",
+   "folder": ""
+  }
  ]
 }

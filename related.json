@@ -525,7 +525,7 @@
    "why": "Its corporation is in the background of Cleaning."
   },
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 3 - Cozy",
    "why": "Its corporation is in the background of Cleaning."
   },
   {
@@ -555,7 +555,7 @@
    "why": "Its corporation is in the background of Cleaning."
   },
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 3 - Cozy",
    "why": "Its corporation is in the background of Cleaning."
   },
   {
@@ -583,16 +583,6 @@
    "why": "Built from Sperm Whale ideas."
   }
  ],
- "Cleaning": [
-  {
-   "id": "Don't litter",
-   "why": "Silvia is the cleaning lady from Don't litter."
-  },
-  {
-   "id": "Archives Mini Comic",
-   "why": "The whale-logo corporation sits in the background of this story."
-  }
- ],
  "Cleaning/Chapter 1 - Help": [
   {
    "id": "Office Girls Kidnapped (No Text)/Cass Simpli",
@@ -608,6 +598,16 @@
   }
  ],
  "Cleaning/Chapter 2 - Agreement": [
+  {
+   "id": "Don't litter",
+   "why": "Silvia is the cleaning lady from Don't litter."
+  },
+  {
+   "id": "Archives Mini Comic",
+   "why": "The whale-logo corporation sits in the background of this story."
+  }
+ ],
+ "Cleaning/Chapter 3 - Cozy": [
   {
    "id": "Don't litter",
    "why": "Silvia is the cleaning lady from Don't litter."
@@ -679,7 +679,7 @@
    "why": "Its cleaning lady returns as Silvia in Cleaning."
   },
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 3 - Cozy",
    "why": "Its cleaning lady returns as Silvia in Cleaning."
   },
   {
@@ -709,7 +709,7 @@
    "why": "Its corporation is in the background of Cleaning."
   },
   {
-   "id": "Cleaning",
+   "id": "Cleaning/Chapter 3 - Cozy",
    "why": "Its corporation is in the background of Cleaning."
   },
   {
@@ -1093,7 +1093,7 @@
  ],
  "Afflatus 01 Old": [
   {
-   "id": "FF",
+   "id": "FF/FF 1",
    "why": "The first Afflatus episode, kept in the archive as FF."
   },
   {
@@ -1209,7 +1209,7 @@
    "why": "The dark twin of Evil Domination, started at the same time."
   }
  ],
- "FF": [
+ "FF/FF 1": [
   {
    "id": "Afflatus 01 Old",
    "why": "Posted as the first Afflatus episode before the project was reworked."
