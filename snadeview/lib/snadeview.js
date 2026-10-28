@@ -36,6 +36,8 @@
     // el.bigUrl (set by the host page) wins: the site knows each picture's own folder (10-27: Izumi's Pink and Red live apart)
     const bigUrl = f => el.bigUrl ? el.bigUrl(f) : full ? full + encodeURIComponent(f).replace(/%28/g, '(').replace(/%29/g, ')') : url('full/' + f);
     let s = new Array(N).fill(0), hist = [], tab = N - 1 === seq && N > 1 ? 0 : 0;
+    // data-start "1.0.0" = the look to open on (10-27: the Nude Version page of a Suit + Nude builder opens on Nude)
+    if (el.dataset.start && S.pics[el.dataset.start]) s = el.dataset.start.split('.').map(Number);
     if (!S.pics[s.join('.') || '0']) s = (Object.keys(S.pics)[0] || '0').split('.').map(Number);
 
     el.classList.add('sv'); el.tabIndex = 0; el.innerHTML = '';
