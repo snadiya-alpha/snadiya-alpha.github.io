@@ -1,0 +1,45 @@
+{
+ "total-enclosure": [
+  "Women Mummy",
+  "Mallory",
+  "GagPack Fall",
+  "Corridor",
+  "Recruit/Program",
+  "BoundBorne",
+  "Federal Bureau of Fetish Control",
+  "Raven - Disgusting Requests",
+  "Recruit/Evil Domination"
+ ],
+ "spies": [
+  "Recruit/Evil Domination",
+  "Beta 01 Heartshadow",
+  "02 Agent Peach and the Bee Drones"
+ ],
+ "mad-doctor": [
+  "Self-Testing",
+  "GagPack Fall"
+ ],
+ "producer": [
+  "The Producer",
+  "The Producer 2"
+ ],
+ "first-mission": [
+  "Agents - Marathon/01 First Mission"
+ ],
+ "_groups": {
+  "PARODIES": [
+   {
+    "at": 0,
+    "name": "First Mission",
+    "rule": "first-mission"
+   }
+  ],
+  "RECRUIT": [
+   {
+    "at": 3,
+    "name": "The Producer",
+    "rule": "producer"
+   }
+  ]
+ }
+}
