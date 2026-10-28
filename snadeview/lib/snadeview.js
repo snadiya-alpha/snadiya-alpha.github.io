@@ -132,7 +132,11 @@
     let wide = false, two = false;
     function layout() {
       const W = el.clientWidth, H = el.clientHeight;
-      const nowWide = W >= 700 && W - H * R >= 300;
+      // Jet 10-27 ("that sucks shit's cut off"): the panel never covers the picture. Side card or tiles under it,
+      // whichever shows the picture bigger.
+      const tileT = (W - 16 - 30) / 5.5, needT = 40 + 8 + (N > 1 ? 40 + 8 : 0) + tileT + 16;
+      const fitW = (aw, ah) => Math.max(0, Math.min(aw, ah * R));
+      const nowWide = W >= 700 && fitW(W - 300 - 48, H - 32) > fitW(W, H - needT);
       if (nowWide !== wide) { closeInfo(false); wide = nowWide; el.classList.toggle('wide', wide); draw(); }
       el.classList.toggle('narrow', W < 380);
       if (wide) {
@@ -148,10 +152,10 @@
         panel.style.maxHeight = '';
         const tile = (W - 16 - 30) / 5.5, need = 40 + 8 + (N > 1 ? 40 + 8 : 0) + tile + 16;
         // inside a page (not the whole screen), a tall box shrinks to the picture plus one tile row instead of leaving empty space
-        if (el.dataset.keys !== 'page' && Math.abs(H - (W / R + need)) > 1 && H > W / R + need) { el.style.height = W / R + need + 'px'; return; }
-        const ph = Math.min(W / R, H - 40);
+        if (el.dataset.keys !== 'page' && Math.abs(H - (W / R + need)) > 1 && H > W / R + need && el.style.height !== W / R + need + 'px') { el.style.height = W / R + need + 'px'; return; } // (a page's min-height can keep the box taller: lay out anyway)
+        const ph = Math.max(80, Math.min(W / R, H - need));
         Object.assign(pic.style, {left: '0', top: '0', width: W + 'px', height: ph + 'px'});
-        const top = Math.min(ph, H - need); // under the picture, or over its bottom edge when the box is short
+        const top = ph; // always under the picture
         const nowTwo = H - top >= need + tile + 6; if (nowTwo !== two) { two = nowTwo; draw(); } // room for a second row
         Object.assign(panel.style, {left: '0', top: top + 'px', width: W + 'px', height: (H - top) + 'px'});
       }
