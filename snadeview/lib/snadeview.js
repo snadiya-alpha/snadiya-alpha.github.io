@@ -33,7 +33,8 @@
     const url = f => base + f.split('/').map(encodeURIComponent).join('/');
     // data-full = where the big pictures live (the site's own copies, same names); else the set's full/ folder
     const full = el.dataset.full ? el.dataset.full.replace(/\/?$/, '/') : null;
-    const bigUrl = f => full ? full + encodeURIComponent(f).replace(/%28/g, '(').replace(/%29/g, ')') : url('full/' + f);
+    // el.bigUrl (set by the host page) wins: the site knows each picture's own folder (10-27: Izumi's Pink and Red live apart)
+    const bigUrl = f => el.bigUrl ? el.bigUrl(f) : full ? full + encodeURIComponent(f).replace(/%28/g, '(').replace(/%29/g, ')') : url('full/' + f);
     let s = new Array(N).fill(0), hist = [], tab = N - 1 === seq && N > 1 ? 0 : 0;
     if (!S.pics[s.join('.') || '0']) s = (Object.keys(S.pics)[0] || '0').split('.').map(Number);
 
