@@ -1,1 +1,18 @@
-{"Bulletgirl":[{"label":"Blender file","file":"Bulletgirl-Blender-Bulletgirl.rar","url":"https://github.com/snadiya-alpha/snadiya-alpha.github.io/releases/download/blender-models/Bulletgirl-Blender-Bulletgirl.rar","bytes":30419692}]}
+{
+ "Bulletgirl": [
+  {
+   "label": "Blender file",
+   "file": "Bulletgirl-Blender-Bulletgirl.rar",
+   "url": "https://github.com/snadiya-alpha/snadiya-alpha.github.io/releases/download/blender-models/Bulletgirl-Blender-Bulletgirl.rar",
+   "bytes": 30419692
+  }
+ ],
+ "Miyuri Gozen": [
+  {
+   "label": "Blender file",
+   "file": "Miyuri-Gozen-Blender-Miyuri.rar",
+   "url": "https://github.com/snadiya-alpha/snadiya-alpha.github.io/releases/download/blender-models/Miyuri-Gozen-Blender-Miyuri.rar",
+   "bytes": 60163486
+  }
+ ]
+}
