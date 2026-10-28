@@ -52,6 +52,11 @@
     // Jet 10-27: the Google Drive icon + "Drive" (not "Snadiya's Google Drive")
     const driveLink = () => { const a = h('a', 'sv-drive', '<svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12.01 1.485c-2.082 0-3.754.02-3.743.047.01.02 1.708 3.001 3.774 6.62l3.76 6.574h3.76c2.081 0 3.753-.02 3.742-.047-.005-.02-1.708-3.001-3.775-6.62l-3.76-6.574zm-4.76 1.73a789.828 789.861 0 0 0-3.63 6.319L0 15.868l1.89 3.298 1.885 3.297 3.62-6.335 3.618-6.33-1.88-3.287C8.1 4.704 7.255 3.22 7.25 3.214zm2.259 12.653-.203.348c-.114.198-.96 1.672-1.88 3.287a423.93 423.948 0 0 1-1.698 2.97c-.01.026 3.24.042 7.222.042h7.244l1.796-3.157c.992-1.734 1.85-3.23 1.906-3.323l.104-.167h-7.249z"/></svg>' + '<span>Drive</span>'); a.href = drive; a.target = '_blank'; a.rel = 'noopener'; return a; };
     panel.append(acts, bar, groups); el.append(pic, panel);
+    // Jet 10-27 "customizers can still have text & lore on 'em": the set's title + Snade's words (data-desc) sit left of the
+    // picture when the box has room there; otherwise they open at the top of Info
+    const desc = el.dataset.desc || '';
+    const side = h('div', 'sv-text'); let sideOn = false;
+    if (desc) { const t = h('h2'), p = h('p'); t.textContent = S.title; p.textContent = desc; side.append(t, p); side.hidden = true; el.append(side); }
 
     // the count is the camera's place, like "1 / 115" in the site's reader bar; it keeps the width of its longest value
     if (A[seq] && A[seq].seq) { const n = A[seq].options.length; count.dataset.max = `${n} / ${n}`; }
@@ -151,7 +156,10 @@
         // every tile must show: when the card is taller than its space, the tiles get smaller until it fits (72px down to 48px)
         let t = 72; panel.style.setProperty('--sv-tile', t + 'px');
         while (panel.scrollHeight > panel.clientHeight + 1 && t > 48) { t -= 4; panel.style.setProperty('--sv-tile', t + 'px'); }
+        sideOn = !!desc && px - 2 * G >= 240;
+        if (sideOn) { const sw = Math.min(400, px - 2 * G); Object.assign(side.style, {left: px - G - sw + 'px', top: G + 'px', width: sw + 'px', maxHeight: ph + 'px'}); }
       } else {
+        sideOn = false;
         panel.style.maxHeight = '';
         const tile = (W - 16 - 30) / 5.5, need = 40 + 8 + (N > 1 ? 40 + 8 : 0) + tile + 16;
         // inside a page (not the whole screen), a tall box shrinks to the picture plus one tile row instead of leaving empty space
@@ -162,6 +170,7 @@
         const nowTwo = H - top >= need + tile + 6; if (nowTwo !== two) { two = nowTwo; draw(); } // room for a second row
         Object.assign(panel.style, {left: '0', top: top + 'px', width: W + 'px', height: (H - top) + 'px'});
       }
+      if (desc && side.hidden === sideOn) { side.hidden = !sideOn; el.classList.toggle('sv-texted', sideOn); if (pop) closeInfo(false); }
       place();
     }
     // the picture fits its area without cropping; the set's trim cuts the frame Snade bakes into some renders
@@ -202,6 +211,7 @@
       const rows = fine
         ? [cam ? ['← →', 'Turn the camera'] : null, v >= 0 ? ['↑ ↓', 'Change the ' + vn] : null, ['Wheel, double-click', 'Zoom'], ['Ctrl+Z', 'Undo'], ['R', 'Shuffle']]
         : [cam ? ['Swipe sideways', 'Turn the camera'] : null, v >= 0 ? ['Swipe up or down', 'Change the ' + vn] : null, ['Pinch, double-tap', 'Zoom']];
+      if (desc && !sideOn) { const p = h('p', 'sv-info-desc'); p.textContent = desc; b.append(p); }
       if (drive) b.append(driveLink());
       b.append(h('h3', '', 'Controls'));
       const dl = h('dl'); rows.filter(Boolean).forEach(([k, d]) => dl.append(h('dt', '', k), h('dd', '', d))); b.append(dl);
