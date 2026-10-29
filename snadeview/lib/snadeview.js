@@ -149,15 +149,16 @@
       el.classList.toggle('narrow', W < 380);
       if (wide) {
         // the picture sits in the middle of the box; the card goes beside it, or the two are centred together when there is no room
-        const G = 16, ph = H - 2 * G; let pw = Math.min(ph * R, W - 300 - 3 * G), px = (W - pw) / 2, P = Math.min(420, W - px - pw - 2 * G);
+        // Jet 10-29 "I want the image BIG": the picture uses the box's full height (no gap above or below)
+        const G = 16, ph = H; let pw = Math.min(ph * R, W - 300 - 3 * G), px = (W - pw) / 2, P = Math.min(420, W - px - pw - 2 * G);
         if (P < 300) { P = 300; pw = Math.min(pw, W - P - 3 * G); px = (W - pw - P - G) / 2; }
-        Object.assign(pic.style, {left: px + 'px', top: G + 'px', width: pw + 'px', height: ph + 'px'});
-        Object.assign(panel.style, {left: px + pw + G + 'px', top: G + 'px', width: P + 'px', height: '', maxHeight: ph + 'px', bottom: ''});
+        Object.assign(pic.style, {left: px + 'px', top: '0', width: pw + 'px', height: ph + 'px'});
+        Object.assign(panel.style, {left: px + pw + G + 'px', top: '0', width: P + 'px', height: '', maxHeight: ph + 'px', bottom: ''});
         // every tile must show: when the card is taller than its space, the tiles get smaller until it fits (72px down to 48px)
         let t = 72; panel.style.setProperty('--sv-tile', t + 'px');
         while (panel.scrollHeight > panel.clientHeight + 1 && t > 48) { t -= 4; panel.style.setProperty('--sv-tile', t + 'px'); }
         sideOn = !!desc && px - 2 * G >= 240;
-        if (sideOn) { const sw = Math.min(400, px - 2 * G); Object.assign(side.style, {left: px - G - sw + 'px', top: G + 'px', width: sw + 'px', maxHeight: ph + 'px'}); }
+        if (sideOn) { const sw = Math.min(400, px - 2 * G); Object.assign(side.style, {left: px - G - sw + 'px', top: '0', width: sw + 'px', maxHeight: ph + 'px'}); }
       } else {
         sideOn = false;
         panel.style.maxHeight = '';
