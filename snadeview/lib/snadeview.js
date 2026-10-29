@@ -119,14 +119,14 @@
       acts.innerHTML = ''; bar.innerHTML = ''; groups.innerHTML = '';
       if (wide) {
         // undo, shuffle and info share the first heading's line; the Drive link closes the card
-        A.forEach((ax, a) => { const g = h('div', 'sv-group'), hd = h('div', 'sv-head'); hd.append(h('h3', '', ax.name)); if (!a) hd.append(h('span', 'sv-sp'), undoB, rndB, infoB); if (a === seq && ax.seq) hd.append(h('span', 'sv-sp'), count); g.append(hd, row(a)); groups.append(g); });
+        A.forEach((ax, a) => { const g = h('div', 'sv-group'), hd = h('div', 'sv-head'); hd.append(h('h3', '', ax.label || ax.name)); if (!a) hd.append(h('span', 'sv-sp'), undoB, rndB, infoB); if (a === seq && ax.seq) hd.append(h('span', 'sv-sp'), count); g.append(hd, row(a)); groups.append(g); });
         if (drive) { const d = h('div', 'sv-group'); d.append(driveLink()); groups.append(d); }
       } else {
         // phones: a row of actions under the picture (count left, buttons right), then the switcher, then the tiles
         acts.append(count, h('span', 'sv-sp'), undoB, rndB, infoB);
         if (N > 1) {
           const sw = h('div', 'sv-seg'); sw.setAttribute('role', 'tablist');
-          A.forEach((ax, a) => { const b = h('button', '', ax.name); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', a === tab); b.onclick = () => { tab = a; draw(); }; sw.append(b); });
+          A.forEach((ax, a) => { const b = h('button', '', ax.label || ax.name); b.type = 'button'; b.setAttribute('role', 'tab'); b.setAttribute('aria-selected', a === tab); b.onclick = () => { tab = a; draw(); }; sw.append(b); });
           bar.append(sw);
         }
         if (N) { const r = row(tab); r.classList.toggle('sv-two', two && A[tab].options.length > 5); groups.append(r); }
@@ -139,7 +139,9 @@
     // layout from the box's own size: tall = picture docked at the top, wide = picture left at full height
     let wide = false, two = false;
     function layout() {
-      const W = el.clientWidth, H = el.clientHeight;
+      // Jet 10-29 (Creatures blank on phones): the box's own cap comes off while measuring, so the page's height is what counts
+      const capped = el.style.maxHeight; if (capped) el.style.maxHeight = '';
+      const W = el.clientWidth; let H = el.clientHeight;
       // Jet 10-27 ("that sucks shit's cut off"): the panel never covers the picture. Side card or tiles under it,
       // whichever shows the picture bigger.
       const tileT = (W - 16 - 30) / 5.5, needT = 40 + 8 + (N > 1 ? 40 + 8 : 0) + tileT + 16;
@@ -164,7 +166,9 @@
         panel.style.maxHeight = '';
         const tile = (W - 16 - 30) / 5.5, need = 40 + 8 + (N > 1 ? 40 + 8 : 0) + tile + 16;
         // inside a page (not the whole screen), a tall box shrinks to the picture plus one tile row instead of leaving empty space
-        if (el.dataset.keys !== 'page' && Math.abs(H - (W / R + need)) > 1 && H > W / R + need && el.style.height !== W / R + need + 'px') { el.style.height = W / R + need + 'px'; return; } // (a page's min-height can keep the box taller: lay out anyway)
+        // 10-29: a cap (max-height), not a new height: the host page sets the height too, and two height-setters
+        // fought until the browser dropped the resize that lays the picture out (Creatures, 2B, Bunny Agents: blank on phones)
+        if (el.dataset.keys !== 'page' && H > W / R + need + 1) { el.style.maxHeight = W / R + need + 'px'; H = el.clientHeight; }
         const ph = Math.max(80, Math.min(W / R, H - need));
         Object.assign(pic.style, {left: '0', top: '0', width: W + 'px', height: ph + 'px'});
         const top = ph; // always under the picture
@@ -208,7 +212,7 @@
     let pop = null;
     function infoBody() {
       const b = h('div', 'sv-info'), fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
-      const v = vAx(), vn = v >= 0 ? A[v].name.toLowerCase() : '', cam = A[seq] && A[seq].seq;
+      const v = vAx(), vn = v >= 0 ? (A[v].label || A[v].name).toLowerCase() : '', cam = A[seq] && A[seq].seq;
       const rows = fine
         ? [cam ? ['← →', 'Turn the camera'] : null, v >= 0 ? ['↑ ↓', 'Change the ' + vn] : null, ['Wheel, double-click', 'Zoom'], ['Ctrl+Z', 'Undo'], ['R', 'Shuffle']]
         : [cam ? ['Swipe sideways', 'Turn the camera'] : null, v >= 0 ? ['Swipe up or down', 'Change the ' + vn] : null, ['Pinch, double-tap', 'Zoom']];
