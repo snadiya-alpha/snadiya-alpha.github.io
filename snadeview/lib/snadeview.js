@@ -175,7 +175,7 @@
     }
     // the picture fits its area without cropping; the set's trim cuts the frame Snade bakes into some renders
     function place() {
-      const f = fileOf(s), d = (S.dims && S.dims[f]) || S.ratio, r = d[0] / d[1], t = S.trim || 0;
+      const f = fileOf(s), d = (S.dims && S.dims[f]) || S.ratio, r = d[0] / d[1], t = 0; // Jet 10-29: never crop a customizer picture (the set's trim cut real picture on 31 of 33 sets)
       const PW = pic.clientWidth, PH = pic.clientHeight; let w = PW, hh = PW / r; if (hh > PH) { hh = PH; w = PH * r; }
       const W2 = w / (1 - 2 * t), H2 = hh / (1 - 2 * t); // the frame is clipped off, so the kept part fills the fitted box
       for (const im of [front, back]) Object.assign(im.style, {width: W2 + 'px', height: H2 + 'px', left: (PW - W2) / 2 + 'px',
